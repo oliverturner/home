@@ -1,15 +1,18 @@
 {
-  "name": "@example/blog",
+  "name": "@oliverturner/home",
   "type": "module",
   "version": "0.0.1",
   "private": true,
+  "devDependencies": {
+    "open-props": "^1.4.25",
+    "postcss-jit-props": "^1.0.7",
+    "postcss-preset-env": "^7.8.3"
+  },
   "dependencies": {
     "@astrojs/mdx": "^0.11.6",
     "@astrojs/rss": "^1.0.3",
     "@astrojs/sitemap": "^1.0.0",
-    "astro": "^1.6.10",
-    "open-props": "^1.4.25",
-    "postcss-jit-props": "^1.0.7"
+    "astro": "^1.6.10"
   },
   "scripts": {
     "dev": "astro dev",
@@ -17,8 +20,5 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
-  },
-  "devDependencies": {
-    "postcss-preset-env": "^7.8.3"
   }
 }
