@@ -1,43 +1,33 @@
 ---
 import Layout from "../layouts/base.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import Header from "../components/header.astro";
+import { SITE_TITLE } from "../config";
 ---
 
 <Layout>
-  <Header title={SITE_TITLE} />
-  <main>
-
-  </main>
-  <Footer />
+  <div class="content">
+    <Header title={SITE_TITLE} />
+    <main>
+      <!--
+      <h1>{SITE_TITLE}</h1>
+      <p>{SITE_DESCRIPTION}</p>
+      -->
+    </main>
+  </div>
 </Layout>
 
 <style>
   body {
-    --avatar-wh: 200px;
-    --avatar-y: calc(var(--avatar-wh) * -0.5);
-    --content-pt: calc(var(--avatar-y) * -1.25);
-    --content-pb: calc(var(--content-pt) * 0.5);
-    --tint1: #a8a6ea;
-    --tint2: #7c295d;
-    --tint3: #fff;
-    --tint4: #fff382;
-    --tint5: #ffefd5;
-
-    --top: var(--tint1);
-    --bottom: var(--tint2);
-    --stripe: #ffffff33;
-    background-image: repeating-linear-gradient(
-        135deg,
-        var(--stripe),
-        var(--stripe) 100px,
-        transparent 100px,
-        transparent 200px
-      ),
-      linear-gradient(135deg, var(--top) 0, var(--bottom) 100%);
-    background-position: 0 0;
+    background-image: url("bg.avif");
+    background-position: center top;
     background-repeat: no-repeat;
-    background-size: 100% 50%, cover;
+    background-color: var(--tint-bg);
+  }
+
+  .content {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    min-height: 100vh;
   }
 </style>

@@ -4,15 +4,28 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
+/* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1140,16,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+
 :root {
+  --step--2: clamp(0.64rem, calc(0.72rem + -0.11vw), 0.69rem);
+  --step--1: clamp(0.80rem, calc(0.85rem + -0.06vw), 0.83rem);
+  --step-0: clamp(1.00rem, calc(1.00rem + 0.00vw), 1.00rem);
+  --step-1: clamp(1.20rem, calc(1.18rem + 0.10vw), 1.25rem);
+  --step-2: clamp(1.44rem, calc(1.39rem + 0.24vw), 1.56rem);
+  --step-3: clamp(1.73rem, calc(1.64rem + 0.44vw), 1.95rem);
+  --step-4: clamp(2.07rem, calc(1.93rem + 0.72vw), 2.44rem);
+  --step-5: clamp(2.49rem, calc(2.27rem + 1.10vw), 3.05rem);
+
+  --text-light: var(--gray-1);
   --text-normal: var(--gray-8);
   --text-strong: var(--gray-9);
+
+  --tint-bg: #0c0e0d;
 }
 
 body {
   min-height: 100vh;
-  margin: auto;
-  padding: 20px;
+  margin: 0;
   font-family: system-ui, Verdana, sans-serif;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -31,12 +44,6 @@ body {
 
 a {
   color: #3273dc;
-}
-
-nav {
-  & a {
-    margin-right: 10px;
-  }
 }
 
 textarea {

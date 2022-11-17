@@ -1,5 +1,5 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
+import Link from "./header-link.astro";
 import { SITE_TITLE } from "../config";
 ---
 
@@ -8,24 +8,44 @@ import { SITE_TITLE } from "../config";
     {SITE_TITLE}
   </h2>
   <nav>
-    <HeaderLink href="/">Home</HeaderLink>
-    <HeaderLink href="/blog">Blog</HeaderLink>
-    <HeaderLink href="/about">About</HeaderLink>
-    <HeaderLink href="https://toot.cafe/@oliverturner" target="_blank"
-      >Mastodon</HeaderLink
-    >
-    <HeaderLink href="https://github.com/withastro/astro" target="_blank"
-      >GitHub</HeaderLink
-    >
+    <Link href="/">Home</Link>
+    <Link href="https://toot.cafe/@oliverturner" target="_blank">
+      Mastodon
+    </Link>
+    <Link href="https://github.com/oliverturner" target="_blank">
+      GitHub
+    </Link>
   </nav>
 </header>
 
 <style>
   header {
-    margin: 0em 0 2em;
+    display: grid;
+    gap: var(--step--1);
+
+    padding: var(--step--2) var(--step--1);
+    text-align: center;
+
+    @media (min-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      text-align: left;
+    }
   }
 
   h2 {
-    margin: 0.5em 0;
+    margin: 0;
+    line-height: 1;
+    font-weight: 200;
+    letter-spacing: 2px;
+    color: var(--text-light);
+  }
+
+  nav {
+    display: flex;
+    gap: var(--step-0);
+    justify-content: center;
   }
 </style>
