@@ -20,5 +20,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
+  },
+  "volta": {
+    "node": "18.12.1",
+    "npm": "8.19.3"
   }
 }
