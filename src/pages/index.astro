@@ -1,34 +1,44 @@
 ---
-import Layout from "../layouts/base.astro";
-import Header from "../components/header.astro";
+import Base from "../layouts/base.astro";
+import SiteHeader from "../components/site-header.astro";
+import SiteFooter from "../components/site-footer.astro";
 import { SITE_TITLE } from "../config";
 ---
 
-<Layout>
+<Base>
   <div class="content">
-    <Header title={SITE_TITLE} />
+    <SiteHeader title={SITE_TITLE} />
     <main>
       <!--
-      <h1>{SITE_TITLE}</h1>
-      <p>{SITE_DESCRIPTION}</p>
+        <h1>{SITE_TITLE}</h1>
+        <p>{SITE_DESCRIPTION}</p>
       -->
     </main>
+    <SiteFooter />
   </div>
-</Layout>
+</Base>
 
 <style>
+  :root {
+    --site-header-bg: var(--bg-transparent-dark);
+    --site-header-text: var(--text-light);
+
+    --site-footer-border: none;
+    --site-footer-bg: var(--bg-transparent-dark);
+    --site-footer-text: var(--text-mid);
+  }
+
   body {
-    background-image: url("/bg.avif");
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-color: var(--tint-bg);
+    height: 100vh;
+    overflow: hidden;
   }
 
   .content {
     display: grid;
     grid-template-rows: auto 1fr auto;
 
-    min-height: 100vh;
+    height: 100vh;
+    height: 100svh;
     max-width: calc(2200px - 2rem);
     margin: auto;
   }

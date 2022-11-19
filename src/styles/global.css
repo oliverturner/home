@@ -8,28 +8,47 @@
 
 :root {
   --step--2: clamp(0.64rem, calc(0.72rem + -0.11vw), 0.69rem);
-  --step--1: clamp(0.80rem, calc(0.85rem + -0.06vw), 0.83rem);
-  --step-0: clamp(1.00rem, calc(1.00rem + 0.00vw), 1.00rem);
-  --step-1: clamp(1.20rem, calc(1.18rem + 0.10vw), 1.25rem);
+  --step--1: clamp(0.8rem, calc(0.85rem + -0.06vw), 0.83rem);
+  --step-0: clamp(1rem, calc(1rem + 0vw), 1rem);
+  --step-1: clamp(1.2rem, calc(1.18rem + 0.1vw), 1.25rem);
   --step-2: clamp(1.44rem, calc(1.39rem + 0.24vw), 1.56rem);
   --step-3: clamp(1.73rem, calc(1.64rem + 0.44vw), 1.95rem);
   --step-4: clamp(2.07rem, calc(1.93rem + 0.72vw), 2.44rem);
-  --step-5: clamp(2.49rem, calc(2.27rem + 1.10vw), 3.05rem);
+  --step-5: clamp(2.49rem, calc(2.27rem + 1.1vw), 3.05rem);
 
   --text-light: var(--gray-1);
+  --text-mid: var(--gray-6);
   --text-normal: var(--gray-8);
   --text-strong: var(--gray-9);
+  --text-link: var(--blue-6);
 
+  --site-header-text: var(--text-strong);
+  --site-header-bg: transparent;
+
+  --site-footer-border: 1px solid var(--gray-4);
+
+  --bg-transparent-dark: #000a;
   --tint-bg: #0c0e0d;
 }
 
-body {
-  min-height: 100dvh;
+:where(body) {
   margin: 0;
   font-family: system-ui, Verdana, sans-serif;
   word-wrap: break-word;
   overflow-wrap: break-word;
   line-height: 1.5;
+  background-repeat: no-repeat;
+
+  background-image: url("/bg.avif");
+    background-position: center;
+    background-size: cover;
+
+    @media (min-width: 900px) {
+      background-size: auto;
+      background-position: center top;
+    }
+
+  background-color: var(--tint-bg);
   color: var(--text-normal);
 }
 
@@ -42,8 +61,8 @@ body {
   margin: auto;
 }
 
-a {
-  color: #3273dc;
+:where(a) {
+  color: inherit;
 }
 
 textarea {
@@ -63,7 +82,7 @@ table {
   width: 100%;
 }
 
-img {
+:where(img) {
   max-width: 100%;
   height: auto;
 }
@@ -75,10 +94,10 @@ code {
 
 pre {
   padding: 1rem;
-}
 
-pre > code {
-  all: unset;
+  & > code {
+    all: unset;
+  }
 }
 
 blockquote {
@@ -87,4 +106,22 @@ blockquote {
   padding: 2px 0px 2px 20px;
   margin: 0px;
   font-style: italic;
+}
+
+:where(.copy) {
+  padding: var(--step-0);
+
+  & > * {
+    margin: 0;
+  }
+
+  & > * + * {
+    margin-top: var(--step-1);
+  }
+
+  & img {
+    display: block;
+    margin: var(--step-2) auto;
+    width: 80% !important;
+  }
 }

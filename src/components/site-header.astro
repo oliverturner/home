@@ -9,27 +9,20 @@ import { SITE_TITLE } from "../config";
   </h2>
   <nav>
     <Link href="/">Home</Link>
-    <Link href="https://toot.cafe/@oliverturner" target="_blank">
-      Mastodon
-    </Link>
-    <Link href="https://github.com/oliverturner" target="_blank">
-      GitHub
-    </Link>
+    <Link href="/about">About</Link>
   </nav>
 </header>
 
 <style>
   header {
     display: grid;
-    gap: var(--step--1);
-
-    padding: var(--step--2) var(--step--1);
     text-align: center;
 
-    @media (min-width: 768px) {
+    @media (min-width: 640px) {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: var(--step--1);
 
       text-align: left;
     }
@@ -37,15 +30,22 @@ import { SITE_TITLE } from "../config";
 
   h2 {
     margin: 0;
+    padding: var(--step--2) var(--step--1);
+    border-bottom-right-radius: 0.25rem;
+
     line-height: 1;
     font-weight: 200;
     letter-spacing: 2px;
-    color: var(--text-light);
+    background: var(--site-header-bg);
+    color: var(--site-header-text);
   }
 
   nav {
     display: flex;
     gap: var(--step-0);
     justify-content: center;
+
+    padding: var(--step--2) var(--step--1);
+    color: var(--text-link);
   }
 </style>

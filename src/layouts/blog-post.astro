@@ -1,56 +1,92 @@
 ---
-import BaseHead from '../components/base-head.astro';
-import Header from '../components/header.astro';
-import Footer from '../components/footer.astro';
+import BaseHead from "../components/base-head.astro";
+import SiteHeader from "../components/site-header.astro";
+import SiteFooter from "../components/site-footer.astro";
+import Base from "./base.astro";
 
 export interface Props {
-	content: {
-		title: string;
-		description: string;
-		pubDate?: string;
-		updatedDate?: string;
-		heroImage?: string;
-	};
+  content: {
+    title: string;
+    description: string;
+    pubDate?: string;
+    updatedDate?: string;
+    heroImage?: string;
+  };
 }
 
 const {
-	content: { title, description, pubDate, updatedDate, heroImage },
+  content: { title, description, pubDate, updatedDate, heroImage },
 } = Astro.props;
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			.title {
-				font-size: 2em;
-				margin: 0.25em 0 0;
-			}
-			hr {
-				border-top: 1px solid #ddd;
-				margin: 1rem 0;
-			}
-		</style>
-	</head>
+<Base>
+  <BaseHead title={title} description={description} slot="meta" />
+  <div class="content">
+    <SiteHeader title={title} />
+    <article>
+      {
+        heroImage && (
+          <img class="hero" width={720} height={360} src={heroImage} alt="" />
+        )
+      }
+      <header>
+        <h1 class="title">{title}</h1>
+        {pubDate && <time>{pubDate}</time>}
+        {
+          updatedDate && (
+            <p>
+              Last updated on <time>{updatedDate}</time>
+            </p>
+          )
+        }
+      </header>
+      <hr />
+      <div class="copy">
+        <slot />
+      </div>
+    </article>
+    <SiteFooter />
+  </div>
+</Base>
 
-	<body>
-		<Header />
-		<main>
-			<article>
-				{heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-				<h1 class="title">{title}</h1>
-				{pubDate && <time>{pubDate}</time>}
-				{
-					updatedDate && (
-						<div>
-							Last updated on <time>{updatedDate}</time>
-						</div>
-					)
-				}
-				<hr />
-				<slot />
-			</article>
-		</main>
-		<Footer />
-	</body>
-</html>
+<style>
+  .content {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    min-height: 100vh;
+    min-height: 100svh;
+    max-width: 60ch;
+    margin: auto;
+    background: var(--gray-1);
+  }
+
+  .hero {
+    display: block;
+    width: 100%;
+    max-height: 360px;
+    object-fit: contain;
+  }
+
+  header {
+    padding: var(--step-0);
+
+    & p {
+      margin: 0;
+      font-size: var(--step--1);
+    }
+  }
+
+  .title {
+    font-size: 2em;
+    margin: 0;
+  }
+  hr {
+    margin: 0;
+    border-top: 1px solid var(--gray-4);
+  }
+
+  .copy {
+    padding: var(--step-0) var(--step-3);
+  }
+</style>
