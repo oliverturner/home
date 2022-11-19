@@ -24,7 +24,7 @@
 }
 
 body {
-  min-height: 100svh;
+  min-height: 100dvh;
   margin: 0;
   font-family: system-ui, Verdana, sans-serif;
   word-wrap: break-word;
