@@ -2,7 +2,7 @@
 layout: "../layouts/blog-post.astro"
 title: "About Me"
 description: "Lorem ipsum dolor sit amet"
-updatedDate: "19th November 2022"
+updatedDate: "20th November 2022"
 ---
 
 Hi! I'm Oliver. I don't know whether I really believe in the term "full-stack", but I do know that I love CSS just as much as I enjoy designing Cloud architecture, building APIs or optimising performance. I got into web development (after deciding I didn't want to be a barrister) in about 2007 because I wanted to help make the web more accessible, a calling that continues to inspire me to this day.
