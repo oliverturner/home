@@ -29,6 +29,8 @@
 
   --bg-transparent-dark: #000a;
   --tint-bg: #0c0e0d;
+  --tint-bg-start: #000;
+  --tint-bg-end: var(--blue-9);
 }
 
 :where(body) {
@@ -39,14 +41,14 @@
   line-height: 1.5;
   background-repeat: no-repeat;
 
-  background-image: url("/bg.avif");
-    background-position: center;
-    background-size: cover;
+  background-image: url("/bg.avif"), linear-gradient(180deg, var(--tint-bg-start), var(--tint-bg-end));
+  background-position: center;
+  background-size: cover;
 
-    @media (min-width: 900px) {
-      background-size: auto;
-      background-position: center top;
-    }
+  @media (min-width: 900px) {
+    background-size: auto;
+    background-position: center top;
+  }
 
   background-color: var(--tint-bg);
   color: var(--text-normal);
