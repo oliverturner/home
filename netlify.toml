@@ -1,6 +1,12 @@
+[[plugins]]
+  # Installs the Lighthouse Build Plugin for all deploy contexts
+  package = "@netlify/plugin-lighthouse"
+
 [[headers]]
   for = "/*"
+
   [headers.values]
+    # Validate CSP on https://securityheaders.com/?q=oliverturner.cloud&followRedirects=on
     Content-Security-Policy = '''
       default-src 'self';
       script-src 'self' 'unsafe-inline' https://storage.googleapis.com;
