@@ -1,45 +1,54 @@
 ---
 import Base from "../layouts/base.astro";
 import SiteHeader from "../components/site-header.astro";
-import SiteFooter from "../components/site-footer.astro";
+import SiteNav from "../components/site-nav.astro";
 import { SITE_TITLE } from "../config";
 ---
 
 <Base>
-  <div class="content">
-    <SiteHeader title={SITE_TITLE} />
-    <main>
-      <!--
-        <h1>{SITE_TITLE}</h1>
-        <p>{SITE_DESCRIPTION}</p>
-      -->
-    </main>
-    <SiteFooter />
+  <div class="layout">
+    <div class="header">
+      <SiteHeader title={SITE_TITLE} />
+    </div>
+    <div class="main" />
+    <div class="nav">
+      <SiteNav />
+    </div>
   </div>
 </Base>
 
 <style>
-  :root {
-    --site-header-bg: var(--bg-transparent-dark);
-    --site-header-text: var(--text-light);
-
-    --site-footer-border: none;
-    --site-footer-bg: var(--bg-transparent-dark);
-    --site-footer-text: var(--text-mid);
-  }
-
   body {
     height: 100vh;
     overflow: hidden;
   }
 
-  .content {
+  .layout {
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr 0;
+    grid-template-areas:
+      "header header"
+      "main   nav";
 
     height: 100vh;
     height: 100svh;
     max-width: calc(2200px - 2rem);
     margin: auto;
+
+    & .header {
+      grid-area: header;
+    }
+
+    & .main {
+      grid-area: main;
+    }
+    & .nav {
+      grid-area: nav;
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr var(--nav-width);
+    }
   }
 </style>

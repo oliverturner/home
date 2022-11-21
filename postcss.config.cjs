@@ -8,6 +8,7 @@ module.exports = {
     postcssPresetEnv({
       features: {
         "nesting-rules": true,
+        "custom-media-queries": true,
       },
     }),
   ],
