@@ -1,59 +1,100 @@
 ---
-import BaseHead from '../components/base-head.astro';
-import SiteHeader from '../components/site-header.astro';
-import ContentFooter from '../components/content-footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import Layout from "../layouts/base.astro";
+import SiteHeader from "../components/site-header.astro";
+import SiteNav from "../components/site-nav.astro";
+import { SITE_TITLE } from "../config";
+
+const title = `${SITE_TITLE}: Blog`;
+const description =
+  "Musings on the web, design, and development. Occasionally, foxes.";
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
-const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
-	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
+  (a, b) =>
+    new Date(b.frontmatter.pubDate).valueOf() -
+    new Date(a.frontmatter.pubDate).valueOf()
 );
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			ul {
-				list-style-type: none;
-				padding: unset;
-			}
-			ul li {
-				display: flex;
-			}
-			ul li time {
-				flex: 0 0 130px;
-				font-style: italic;
-				color: #595959;
-			}
-			ul li a:visited {
-				color: #8e32dc;
-			}
-		</style>
-	</head>
-	<body>
-		<SiteHeader />
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<time datetime={post.frontmatter.pubDate}>
-									{new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
-										year: 'numeric',
-										month: 'short',
-										day: 'numeric',
-									})}
-								</time>
-								<a href={post.url}>{post.frontmatter.title}</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<ContentFooter />
-	</body>
-</html>
+<Layout title={title} description={description}>
+  <div class="layout">
+    <div class="header">
+      <SiteHeader title={SITE_TITLE} />
+    </div>
+
+    <div class="content">
+      <ul>
+        {
+          posts.map((post) => (
+            <li>
+              <time datetime={post.frontmatter.pubDate}>
+                {new Date(post.frontmatter.pubDate).toLocaleDateString(
+                  "en-us",
+                  {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  }
+                )}
+              </time>
+              <a href={post.url}>{post.frontmatter.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="nav">
+      <SiteNav />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  body {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr 0;
+    grid-template-areas:
+      "header  header"
+      "content nav";
+
+    height: 100vh;
+    height: 100svh;
+    max-width: calc(2200px - 2rem);
+    margin: auto;
+
+    & .header {
+      grid-area: header;
+    }
+
+    & .content {
+      grid-area: content;
+    }
+    & .nav {
+      grid-area: nav;
+    }
+
+    @media (--mq-medium) {
+      grid-template-areas:
+        "header  header  header"
+        ".       content nav";
+      grid-template-columns: 1fr var(--content-width) var(--nav-width);
+    }
+
+    @media (--mq-large) {
+      grid-template-columns: 1fr var(--content-width) 1fr;
+    }
+  }
+
+  .content {
+    overflow-y: auto;
+    height: 100%;
+    max-height: 100%;
+    background: var(--gray-1);
+  }
+</style>
