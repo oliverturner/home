@@ -21,7 +21,6 @@
       style-src 'self';
       object-src 'none'
     '''
-    Permissions-Policy = "fullscreen=('self')"
     Referrer-Policy = "same-origin"
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
