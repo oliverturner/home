@@ -1,11 +1,18 @@
 ---
 import Page from "../layouts/page.astro";
+
+const props = {
+  title: "Welcome",
+  description: "Oliver Turner's personal website",
+}
 ---
 
-<Page>
+<Page {...props}>
   <div></div>
 </Page>
 
 <style>
-  /* placeholder */
+  :root {
+    --content-bg: transparent;
+  }
 </style>

@@ -34,6 +34,7 @@
 
   /* TODO: import from JS (see below on Custom Media) */
   --content-width: 65ch;
+  --content-bg: var(--gray-1);
   --nav-width: 40ch;
 
   --nav-bg-colour: var(--bg-transparent-dark);
