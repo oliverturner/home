@@ -15,6 +15,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 ---
 
 <Page title={title} description={description}>
+  <h1>Week notes</h1>
   <ul>
     {
       posts.map((post) => (

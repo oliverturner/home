@@ -16,9 +16,9 @@ const { title, description } = Astro.props;
     <div class="content">
       <slot />
     </div>
-    <nav>
+    <div class="nav">
       <SiteNav />
-    </nav>
+    </div>
   </div>
 </Base>
 
@@ -44,7 +44,7 @@ const { title, description } = Astro.props;
     & .content {
       grid-area: content;
     }
-    & nav {
+    & .nav {
       grid-area: nav;
     }
 
@@ -94,9 +94,5 @@ const { title, description } = Astro.props;
 
   .copy {
     padding: var(--step-2) var(--step-3);
-  }
-
-  nav {
-    /* background-color: var(--bg-transparent-dark); */
   }
 </style>
