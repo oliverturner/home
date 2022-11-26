@@ -1,45 +1,18 @@
 ---
-import Base from "../layouts/base.astro";
-import SiteHeader from "../components/site-header.astro";
-import SiteFooter from "../components/site-footer.astro";
-import { SITE_TITLE } from "../config";
+import Page from "../layouts/page.astro";
+
+const props = {
+  title: "Welcome",
+  description: "Oliver Turner's personal website",
+}
 ---
 
-<Base>
-  <div class="content">
-    <SiteHeader title={SITE_TITLE} />
-    <main>
-      <!--
-        <h1>{SITE_TITLE}</h1>
-        <p>{SITE_DESCRIPTION}</p>
-      -->
-    </main>
-    <SiteFooter />
-  </div>
-</Base>
+<Page {...props}>
+  <div></div>
+</Page>
 
 <style>
   :root {
-    --site-header-bg: var(--bg-transparent-dark);
-    --site-header-text: var(--text-light);
-
-    --site-footer-border: none;
-    --site-footer-bg: var(--bg-transparent-dark);
-    --site-footer-text: var(--text-mid);
-  }
-
-  body {
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  .content {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-
-    height: 100vh;
-    height: 100svh;
-    max-width: calc(2200px - 2rem);
-    margin: auto;
+    --content-bg: transparent;
   }
 </style>

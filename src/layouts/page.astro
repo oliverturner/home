@@ -1,0 +1,98 @@
+---
+import BaseHead from "../components/base-head.astro";
+import SiteHeader from "../components/site-header.astro";
+import SiteNav from "../components/site-nav.astro";
+import Base from "./base.astro";
+
+const { title, description } = Astro.props;
+---
+
+<Base>
+  <BaseHead title={title} description={description} slot="meta" />
+  <div class="layout">
+    <div class="header">
+      <SiteHeader title={title} />
+    </div>
+    <div class="content">
+      <slot />
+    </div>
+    <div class="nav">
+      <SiteNav />
+    </div>
+  </div>
+</Base>
+
+<style>
+  .layout {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr 0;
+    grid-template-areas:
+      "header  header"
+      "content nav";
+
+    overflow: hidden;
+    height: 100vh;
+    height: 100svh;
+    max-width: calc(2200px - 2rem);
+    margin: auto;
+
+    & .header {
+      grid-area: header;
+    }
+
+    & .content {
+      grid-area: content;
+    }
+    & .nav {
+      grid-area: nav;
+    }
+
+    @media (--mq-medium) {
+      grid-template-areas:
+        "header  header  header"
+        ".       content nav";
+      grid-template-columns: 1fr var(--content-width) var(--nav-width);
+    }
+
+    @media (--mq-large) {
+      grid-template-columns: 1fr var(--content-width) 1fr;
+    }
+  }
+
+  .content {
+    overflow-y: auto;
+    height: 100%;
+    max-height: 100%;
+    background: var(--content-bg);
+  }
+
+  .content__hero {
+    display: block;
+    width: 100%;
+    max-height: 360px;
+    object-fit: contain;
+  }
+
+  .content__header {
+    padding: var(--step-0);
+
+    & p {
+      margin: 0;
+      font-size: var(--step--1);
+    }
+  }
+
+  .title {
+    font-size: 2em;
+    margin: 0;
+  }
+  hr {
+    margin: 0;
+    border-top: 1px solid var(--gray-4);
+  }
+
+  .copy {
+    padding: var(--step-2) var(--step-3);
+  }
+</style>

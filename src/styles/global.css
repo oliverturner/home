@@ -22,15 +22,30 @@
   --text-strong: var(--gray-9);
   --text-link: var(--blue-6);
 
-  --site-header-text: var(--text-strong);
-  --site-header-bg: transparent;
+  --site-header-bg: var(--bg-transparent-dark);
+  --site-header-text: var(--text-light);
 
   --site-footer-border: 1px solid var(--gray-4);
 
-  --bg-transparent-dark: #000a;
+  --bg-transparent-dark: #000b;
   --tint-bg: #0c0e0d;
   --tint-bg-start: #000;
-  --tint-bg-end: var(--blue-9);
+  --tint-bg-end: darkslateblue;
+
+
+  --content-width: 65ch;
+  --content-bg: var(--gray-1);
+
+  --nav-width: 40ch;
+  --nav-padding: var(--step-1);
+  --nav-bg-colour: var(--bg-transparent-dark);
+  --nav-text-colour: var(--text-light);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 :where(body) {
@@ -41,7 +56,8 @@
   line-height: 1.5;
   background-repeat: no-repeat;
 
-  background-image: url("/bg.avif"), linear-gradient(180deg, var(--tint-bg-start), var(--tint-bg-end));
+  background-image: url("/bg.avif"),
+    linear-gradient(180deg, var(--tint-bg-start), var(--tint-bg-end));
   background-position: center;
   background-size: cover;
 
@@ -59,7 +75,7 @@
 }
 
 :where(main) {
-  max-width: 65ch;
+  max-width: var(--content-width);
   margin: auto;
 }
 
@@ -124,6 +140,6 @@ blockquote {
   & img {
     display: block;
     margin: var(--step-2) auto;
-    width: 80% !important;
+    max-height: 30ch;
   }
 }
