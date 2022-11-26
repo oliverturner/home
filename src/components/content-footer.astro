@@ -9,38 +9,38 @@ const yearEnd = today.getFullYear() - millennium;
 ---
 
 <footer>
-  <span>
-    &copy;{yearStart}-{yearEnd}
-    {SITE_TITLE}
-  </span>
+	<span>
+		&copy;{yearStart}-{yearEnd}
+		{SITE_TITLE}
+	</span>
 
-  <div class="links">
-    <IconLink href="https://toot.cafe/@oliverturner" icon="mastodon">
-      Mastodon
-    </IconLink>
-    <IconLink href="https://github.com/oliverturner" icon="github">
-      Github
-    </IconLink>
-  </div>
+	<div class="links">
+		<IconLink href="https://toot.cafe/@oliverturner" icon="mastodon">
+			Mastodon
+		</IconLink>
+		<IconLink href="https://github.com/oliverturner" icon="github">
+			Github
+		</IconLink>
+	</div>
 </footer>
 
 <style>
-  footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+	footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 
-    border-top: var(--site-footer-border);
-    padding: var(--step--2) var(--step--1);
-    font-size: var(--step--1);
-    line-height: 1;
-    text-align: center;
-    background: var(--site-footer-bg);
-    color: var(--site-footer-text);
-  }
+		border-top: var(--site-footer-border);
+		padding: var(--step--2) var(--step--1);
+		font-size: var(--step--1);
+		line-height: 1;
+		text-align: center;
+		background: var(--site-footer-bg);
+		color: var(--site-footer-text);
+	}
 
-  .links {
-    display: flex;
-    gap: 1rem;
-  }
+	.links {
+		display: flex;
+		gap: 1rem;
+	}
 </style>

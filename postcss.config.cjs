@@ -1,22 +1,16 @@
-const OpenProps = require("open-props");
-const postcssJitProps = require("postcss-jit-props");
-const postcssPresetEnv = require("postcss-preset-env");
+async function getConfig() {
+	const { default: openProps } = await import("open-props");
+	const { customMedia, customProperties } = await import("./src/theme.js");
 
-const { customMedia, customProperties } = require("./src/theme.cjs");
+	console.log({ customMedia, customProperties });
 
-console.log({ customMedia, customProperties });
+	return {
+		plugins: {
+			"postcss-jit-props": { ...openProps, ...customProperties },
+			"postcss-custom-media": { importFrom: { customMedia } },
+			"postcss-nesting": {},
+		},
+	};
+}
 
-module.exports = {
-  plugins: [
-    postcssJitProps({
-      ...OpenProps,
-      ...customProperties,
-    }),
-    postcssPresetEnv({
-      features: {
-        "nesting-rules": true,
-        "custom-media-queries": { importFrom: [{ customMedia }] },
-      },
-    }),
-  ],
-};
+module.exports = getConfig();

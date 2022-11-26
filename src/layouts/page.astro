@@ -1,98 +1,97 @@
 ---
 import BaseHead from "../components/base-head.astro";
 import SiteHeader from "../components/site-header.astro";
-import SiteNav from "../components/site-nav.astro";
+import SiteLinks from "../components/site-links.astro";
 import Base from "./base.astro";
 
 const { title, description } = Astro.props;
 ---
 
 <Base>
-  <BaseHead title={title} description={description} slot="meta" />
-  <div class="layout">
-    <div class="header">
-      <SiteHeader title={title} />
-    </div>
-    <div class="content">
-      <slot />
-    </div>
-    <div class="nav">
-      <SiteNav />
-    </div>
-  </div>
+	<BaseHead title={title} description={description} slot="meta" />
+	<div class="layout">
+		<div class="header">
+			<SiteHeader title={title} />
+		</div>
+		<div class="content">
+			<slot />
+		</div>
+		<nav>
+			<SiteLinks />
+		</nav>
+	</div>
+	<script>
+		(async function () {
+			if (CSS["paintWorklet"] === undefined) {
+				await import("https://unpkg.com/css-paint-polyfill");
+			}
+
+			CSS.paintWorklet.addModule(
+				"https://unpkg.com/@londoncss/paintlet-contour@1.0.2/dist/paintlet-contour.umd.js"
+			);
+		})();
+	</script>
 </Base>
 
 <style>
-  .layout {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    grid-template-columns: 1fr 0;
-    grid-template-areas:
-      "header  header"
-      "content nav";
+	.layout {
+		--bg-image: paint(contour);
 
-    overflow: hidden;
-    height: 100vh;
-    height: 100svh;
-    max-width: calc(2200px - 2rem);
-    margin: auto;
+		overflow: hidden;
+		height: 100vh;
+		height: 100svh;
+		max-width: calc(2200px - 2rem);
+		margin: auto;
 
-    & .header {
-      grid-area: header;
-    }
+		background-image: var(--bg-image);
 
-    & .content {
-      grid-area: content;
-    }
-    & .nav {
-      grid-area: nav;
-    }
+		@media (--mq-medium) {
+			display: grid;
+			grid-template-columns: var(--width-content) var(--width-nav);
+			grid-template-rows: auto 1fr;
+			grid-template-areas:
+				"header  nav"
+				"content nav";
 
-    @media (--mq-medium) {
-      grid-template-areas:
-        "header  header  header"
-        ".       content nav";
-      grid-template-columns: 1fr var(--content-width) var(--nav-width);
-    }
+			& .header {
+				grid-area: header;
+			}
 
-    @media (--mq-large) {
-      grid-template-columns: 1fr var(--content-width) 1fr;
-    }
-  }
+			& .content {
+				grid-area: content;
+			}
 
-  .content {
-    overflow-y: auto;
-    height: 100%;
-    max-height: 100%;
-    background: var(--content-bg);
-  }
+			& nav {
+				grid-area: nav;
+			}
+		}
 
-  .content__hero {
-    display: block;
-    width: 100%;
-    max-height: 360px;
-    object-fit: contain;
-  }
+		@media (--mq-large) {
+			grid-template-columns: 1fr var(--width-content) 1fr;
+			grid-template-rows: initial;
+			grid-template-areas: "header content nav";
+		}
+	}
 
-  .content__header {
-    padding: var(--step-0);
+	.content {
+		overflow-y: auto;
+		height: 100%;
+		max-height: 100%;
+		background: var(--content-bg);
+	}
 
-    & p {
-      margin: 0;
-      font-size: var(--step--1);
-    }
-  }
+	nav {
+		display: grid;
+		align-content: start;
 
-  .title {
-    font-size: 2em;
-    margin: 0;
-  }
-  hr {
-    margin: 0;
-    border-top: 1px solid var(--gray-4);
-  }
+		height: 100%;
+		padding: var(--nav-padding);
+		background-color: var(--nav-bg-colour);
+		color: var(--nav-text-colour);
+	}
 
-  .copy {
-    padding: var(--step-2) var(--step-3);
-  }
+	nav a {
+		text-decoration: none;
+		background-color: hotpink;
+	}
 </style>

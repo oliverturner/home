@@ -1,0 +1,44 @@
+{
+	"/projects/home": {
+		"app_url": "https://www.oliverturner.cloud",
+		"repo_url": "https://github.com/oliverturner/home",
+		"platform": {
+			"id": "280e5208-eaa0-4091-ac6e-60ceb6dec8a9"
+		}
+	},
+	"/projects/ikon": {
+		"app_url": "https://ikon.oliverturner.cloud",
+		"repo_url": "https://github.com/oliverturner/ikon",
+		"platform": {
+			"id": "99414afd-a15c-4cb6-81d1-0fb1574e71ff"
+		}
+	},
+	"/projects/mrsravoon": {
+		"app_url": "https://www.mrsravoon.uk",
+		"repo_url": "https://github.com/oliverturner/mrsravoon.uk",
+		"platform": {
+			"id": "55d0b70b-4cad-4c9d-9f5b-a013c7503c2e"
+		}
+	},
+	"/projects/londoncss": {
+		"app_url": "https://www.londoncss.dev",
+		"repo_url": "https://github.com/LondonCSS/website",
+		"platform": {
+			"id": "b1505b63-38f8-45cf-8a9d-78be01b48a1a"
+		}
+	},
+	"/projects/paintlets": {
+		"app_url": "https://paintlets.londoncss.dev",
+		"repo_url": "",
+		"platform": {
+			"id": "1e32144a-45fb-4463-9282-e5877feb2024"
+		}
+	},
+	"/projects/jeffsum": {
+		"app_url": "https://jeffsum.oliverturner.cloud",
+		"repo_url": "https://github.com/oliverturner/jeffsum",
+		"platform": {
+			"id": "be031da0-2f31-49e4-a6fc-d1c2023a564b"
+		}
+	}
+}
