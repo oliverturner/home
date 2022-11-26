@@ -1,54 +1,11 @@
 ---
-import Base from "../layouts/base.astro";
-import SiteHeader from "../components/site-header.astro";
-import SiteNav from "../components/site-nav.astro";
-import { SITE_TITLE } from "../config";
+import Page from "../layouts/page.astro";
 ---
 
-<Base>
-  <div class="layout">
-    <div class="header">
-      <SiteHeader title={SITE_TITLE} />
-    </div>
-    <div class="main" />
-    <div class="nav">
-      <SiteNav />
-    </div>
-  </div>
-</Base>
+<Page>
+  <div></div>
+</Page>
 
 <style>
-  body {
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  .layout {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    grid-template-columns: 1fr 0;
-    grid-template-areas:
-      "header header"
-      "main   nav";
-
-    height: 100vh;
-    height: 100svh;
-    max-width: calc(2200px - 2rem);
-    margin: auto;
-
-    & .header {
-      grid-area: header;
-    }
-
-    & .main {
-      grid-area: main;
-    }
-    & .nav {
-      grid-area: nav;
-    }
-
-    @media (min-width: 768px) {
-      grid-template-columns: 1fr var(--nav-width);
-    }
-  }
+  /* placeholder */
 </style>

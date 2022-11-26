@@ -1,10 +1,8 @@
 ---
-import Layout from "../layouts/base.astro";
-import SiteHeader from "../components/site-header.astro";
-import SiteNav from "../components/site-nav.astro";
+import Page from "../layouts/page.astro";
 import { SITE_TITLE } from "../config";
 
-const title = `${SITE_TITLE}: Blog`;
+const title = `Blog - ${SITE_TITLE}`;
 const description =
   "Musings on the web, design, and development. Occasionally, foxes.";
 
@@ -16,85 +14,25 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 );
 ---
 
-<Layout title={title} description={description}>
-  <div class="layout">
-    <div class="header">
-      <SiteHeader title={SITE_TITLE} />
-    </div>
-
-    <div class="content">
-      <ul>
-        {
-          posts.map((post) => (
-            <li>
-              <time datetime={post.frontmatter.pubDate}>
-                {new Date(post.frontmatter.pubDate).toLocaleDateString(
-                  "en-us",
-                  {
-                    year: "numeric",
-                    month: "short",
-                    day: "numeric",
-                  }
-                )}
-              </time>
-              <a href={post.url}>{post.frontmatter.title}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-    <div class="nav">
-      <SiteNav />
-    </div>
-  </div>
-</Layout>
+<Page title={title} description={description}>
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <time datetime={post.frontmatter.pubDate}>
+            {new Date(post.frontmatter.pubDate).toLocaleDateString("en-us", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            })}
+          </time>
+          <a href={post.url}>{post.frontmatter.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</Page>
 
 <style>
-  body {
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  .layout {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    grid-template-columns: 1fr 0;
-    grid-template-areas:
-      "header  header"
-      "content nav";
-
-    height: 100vh;
-    height: 100svh;
-    max-width: calc(2200px - 2rem);
-    margin: auto;
-
-    & .header {
-      grid-area: header;
-    }
-
-    & .content {
-      grid-area: content;
-    }
-    & .nav {
-      grid-area: nav;
-    }
-
-    @media (--mq-medium) {
-      grid-template-areas:
-        "header  header  header"
-        ".       content nav";
-      grid-template-columns: 1fr var(--content-width) var(--nav-width);
-    }
-
-    @media (--mq-large) {
-      grid-template-columns: 1fr var(--content-width) 1fr;
-    }
-  }
-
-  .content {
-    overflow-y: auto;
-    height: 100%;
-    max-height: 100%;
-    background: var(--gray-1);
-  }
+  /* placeholder */
 </style>

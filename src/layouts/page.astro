@@ -2,21 +2,10 @@
 import BaseHead from "../components/base-head.astro";
 import SiteHeader from "../components/site-header.astro";
 import SiteNav from "../components/site-nav.astro";
-import ContentFooter from "../components/content-footer.astro";
 import Base from "./base.astro";
 
-export interface Props {
-  content: {
-    title: string;
-    description: string;
-    pubDate?: string;
-    updatedDate?: string;
-    heroImage?: string;
-  };
-}
-
 const {
-  content: { title, description, pubDate, updatedDate, heroImage },
+  content: { title, description },
 } = Astro.props;
 ---
 
@@ -26,35 +15,9 @@ const {
     <div class="header">
       <SiteHeader title={title} />
     </div>
-    <article class="content">
-      {
-        heroImage && (
-          <img
-            class="content__hero"
-            width={720}
-            height={360}
-            src={heroImage}
-            alt=""
-          />
-        )
-      }
-      <header class="content__header">
-        <h1 class="title">{title}</h1>
-        {pubDate && <time>{pubDate}</time>}
-        {
-          updatedDate && (
-            <p>
-              Last updated on <time>{updatedDate}</time>
-            </p>
-          )
-        }
-      </header>
-      <hr />
-      <div class="copy">
-        <slot />
-      </div>
-      <ContentFooter />
-    </article>
+    <div class="content">
+      <slot />
+    </div>
     <nav>
       <SiteNav />
     </nav>
