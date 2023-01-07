@@ -1,8 +1,10 @@
 ---
 layout: "../../layouts/page-blogpost.astro"
 title: "Jeffsum"
-description: "Lorem ipsum dolor sit amet"
-updatedDate: "19th November 2022"
+description: "Declaratively animating gradients using Houdini CSS"
+tags: ["houdini", "vite"]
+date: "2019-11-19"
+dateUpdated: "2019-11-19"
 ---
 
 ## Jeffsum

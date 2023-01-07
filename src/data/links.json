@@ -1,0 +1,26 @@
+[
+	{
+		"url": "/",
+		"label": "Home"
+	},
+	{
+		"url": "/about",
+		"label": "About"
+	},
+	{
+		"url": "/projects",
+		"label": "Projects"
+	},
+	{
+		"url": "/articles",
+		"label": "Articles"
+	},
+	{
+		"url": "/weeknotes",
+		"label": "Weeknotes"
+	},
+	{
+		"url": "/in-use",
+		"label": "In use"
+	}
+]

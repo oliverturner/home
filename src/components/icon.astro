@@ -1,0 +1,13 @@
+---
+const { icon } = Astro.props;
+---
+
+<svg><use xlink:href={`/spritesheet.svg#icon-${icon}`}></use></svg>
+
+<style>
+	svg {
+		width: var(--icon-wh);
+		height: var(--icon-wh);
+		fill: currentColor;
+	}
+</style>

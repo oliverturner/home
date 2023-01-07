@@ -1,73 +1,59 @@
 ---
+import type { Project } from "../types";
+
 interface Page {
 	frontmatter: {
 		title: string;
-		url: string;
+		description: string;
+		tags: string[];
+		url: keyof typeof projects;
+		date: string;
+		dateUpdated?: string;
 	};
 	url: string;
 }
 
-import Layout from "../layouts/page.astro";
+import Page from "../layouts/page.astro";
 import projects from "../data/projects.json";
-import { SITE_TITLE } from "../config";
+import ProjectLink from "../components/project-link.astro";
 
-const title = `Projects - ${SITE_TITLE}`;
+const title = "Projects";
 const description = "Deeper dives into web development";
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
 const pages: Page[] = await Astro.glob("./projects/*.{md,mdx}");
+pages.sort((a, b) => {
+	const aDate = new Date(a.frontmatter.dateUpdated || a.frontmatter.date);
+	const bDate = new Date(b.frontmatter.dateUpdated || b.frontmatter.date);
 
-const data = [];
+	return bDate.getTime() - aDate.getTime();
+});
+
+const data: Project[] = [];
 for (const page of pages) {
-	console.log(page.frontmatter.title, page.url);
-	const pageUrl = page.url;
-	const { title, description } = page.frontmatter;
-	data.push({ title, description, pageUrl, ...projects[page.url] });
-}
+	console.log(page.frontmatter.title, page.frontmatter.date, page.url);
 
-console.log(data);
+	const pageUrl = page.url as keyof typeof projects;
+	data.push({ pageUrl, ...page.frontmatter, ...projects[pageUrl] });
+}
 ---
 
-<Layout title={title} description={description}>
-	<h1>Projects</h1>
+<Page title={title} description={description}>
 	<div class="projects">
-		{
-			data.map((project) => (
-				<article class="project">
-					<a href={project.pageUrl}>
-						<h2>{project.title}</h2>
-						<p>{project.description}</p>
-						<p>Read more...</p>
-					</a>
-					<div>
-						<a href={project.repo_url}>GitHub</a>
-						<a href="https://app.netlify.com/sites/jeffsum/deploys">
-							<img
-								src={`https://api.netlify.com/api/v1/badges/${project.platform.id}/deploy-status`}
-								alt={`Build status of ${project.title}`}
-							/>
-						</a>
-						<a href={project.app_url}>
-							<p>Screenshot</p>
-						</a>
-					</div>
-				</article>
-			))
-		}
+		{data.map((project) => <ProjectLink project={project} />)}
 	</div>
-</Layout>
+</Page>
 
 <style>
-	:root {
-		--content-bg: transparent;
-	}
 	.projects {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		grid-gap: 1rem;
-	}
+		grid-gap: var(--step-0);
 
-	.project {
-		background-color: var(--gray-1);
+		padding: var(--step-0);
+
+		@media (--mq-medium) {
+			padding: var(--step-1) 0;
+		}
 	}
 </style>

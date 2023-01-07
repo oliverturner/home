@@ -1,8 +1,10 @@
 ---
 layout: "../../layouts/page-blogpost.astro"
 title: "London CSS"
-description: "Lorem ipsum dolor sit amet"
-updatedDate: "19th November 2022"
+description: "Notes on the London CSS meetup group I ran with @anarodriguez and @phazn in the Before Times."
+tags: ["houdini", "astro"]
+date: "2021-11-19"
+dateUpdated: "2021-11-19"
 ---
 
 ## London CSS

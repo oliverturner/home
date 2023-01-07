@@ -1,17 +1,12 @@
 ---
-import Page from "../layouts/page.astro";
-import { SITE_TITLE } from "../config";
+import Page from "../layouts/page-content.astro";
 
-const title = `Articles - ${SITE_TITLE}`;
+const title = "Articles";
 const description = "Deeper dives into web development";
 
 // const posts = await Astro.glob("./articles/*.{md,mdx}");
 ---
 
 <Page title={title} description={description}>
-	<h1>Articles</h1>
+	<h1 slot="header">Articles</h1>
 </Page>
-
-<style>
-	/* placeholder */
-</style>

@@ -1,20 +1,21 @@
 ---
+import BaseHead from "../components/base-head.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+
 export type Props = {
 	title?: string;
 	description?: string;
 };
 
-import BaseHead from "../components/base-head.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
-
-export const { title, description } = Astro.props || {};
+export const { title = SITE_TITLE, description = SITE_DESCRIPTION } =
+	Astro.props || {};
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<slot name="meta">
-			<BaseHead {title || SITE_TITLE} {description || SITE_DESCRIPTION} />
+			<BaseHead title={title} description={description} />
 		</slot>
 	</head>
 	<body>

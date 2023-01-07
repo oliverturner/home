@@ -1,5 +1,67 @@
-<a href="/">Home</a>
-<a href="/projects">Projects</a>
-<a href="/articles">Articles</a>
-<a href="/blog">Blog posts</a>
-<a href="/about">About</a>
+---
+import links from "../data/links.json";
+
+const currentUrl = new URL(Astro.request.url).pathname;
+---
+
+{
+	links.map(({ url, label }) => {
+		const cls = url === currentUrl ? "title is-active" : "title";
+		return (
+			<a class={cls} href={url?.length ? url : "/"}>
+				{label}
+			</a>
+		);
+	})
+}
+
+<style>
+	a {
+		--colour: var(--colour-site-text);
+		--colour-text: var(--colour-site-bg);
+
+		padding: var(--step--1) var(--step-1);
+		line-height: 1;
+		letter-spacing: 2px;
+		text-decoration: none;
+		color: var(--colour);
+
+		transition: background-color, color;
+		transition-duration: 0.3s;
+		transition-timing-function: ease-in-out;
+
+		&.is-active,
+		&:hover,
+		&:focus {
+			outline: none;
+
+			background-color: var(--colour);
+			color: var(--colour-text);
+		}
+
+		&[href="/about"] {
+			--colour: var(--colour-topic-about);
+			--colour-text: var(--colour-topic-about-text);
+		}
+
+		&[href="/articles"] {
+			--colour: var(--colour-topic-articles);
+			--colour-text: var(--colour-topic-articles-text);
+		}
+
+		&[href="/projects"] {
+			--colour: var(--colour-topic-projects);
+			--colour-text: var(--colour-topic-projects-text);
+		}
+
+		&[href="/weeknotes"] {
+			--colour: var(--colour-topic-weeknotes);
+			--colour-text: var(--colour-topic-weeknotes-text);
+		}
+
+		&[href="/in-use"] {
+			--colour: var(--colour-topic-inuse);
+			--colour-text: var(--colour-topic-inuse-text);
+		}
+	}
+</style>

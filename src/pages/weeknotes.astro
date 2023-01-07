@@ -1,13 +1,12 @@
 ---
-import Page from "../layouts/page.astro";
-import { SITE_TITLE } from "../config";
+import Page from "../layouts/page-content.astro";
 
-const title = `Blog - ${SITE_TITLE}`;
+const title = "Weeknotes";
 const description =
 	"Musings on the web, design, and development. Occasionally, foxes.";
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
-const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
+const posts = (await Astro.glob("./weeknotes/*.{md,mdx}")).sort(
 	(a, b) =>
 		new Date(b.frontmatter.pubDate).valueOf() -
 		new Date(a.frontmatter.pubDate).valueOf()
@@ -15,7 +14,8 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 ---
 
 <Page title={title} description={description}>
-	<h1>Week notes</h1>
+	<h1 slot="header">Weeknotes</h1>
+
 	<ul>
 		{
 			posts.map((post) => (
@@ -33,7 +33,3 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 		}
 	</ul>
 </Page>
-
-<style>
-	/* placeholder */
-</style>

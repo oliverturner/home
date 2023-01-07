@@ -1,8 +1,8 @@
 import { getCustomMedia, getCustomProps } from "./utils/theme.js";
 
 const widths = {
-	nav: 40,
-	content: 65,
+	nav: 20,
+	content: 60,
 };
 
 export const breakpoints = {
@@ -11,8 +11,11 @@ export const breakpoints = {
 };
 
 export const breakpointTable = Object.entries(breakpoints);
-export const customMedia = getCustomMedia(breakpointTable);
+export const customMedia = {
+	...getCustomMedia(breakpointTable, "min-width"),
+	...getCustomMedia(breakpointTable, "max-width"),
+};
 export const customProperties = {
 	...getCustomProps("width", Object.entries(widths)),
-	...getCustomProps("viewport", breakpointTable),
+	...getCustomProps("layout", breakpointTable),
 };

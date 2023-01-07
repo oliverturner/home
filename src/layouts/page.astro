@@ -1,97 +1,17 @@
 ---
-import BaseHead from "../components/base-head.astro";
-import SiteHeader from "../components/site-header.astro";
-import SiteLinks from "../components/site-links.astro";
 import Base from "./base.astro";
+import Page from "../components/page.astro";
+
+interface Props {
+	title: string;
+	description: string;
+}
 
 const { title, description } = Astro.props;
 ---
 
-<Base>
-	<BaseHead title={title} description={description} slot="meta" />
-	<div class="layout">
-		<div class="header">
-			<SiteHeader title={title} />
-		</div>
-		<div class="content">
-			<slot />
-		</div>
-		<nav>
-			<SiteLinks />
-		</nav>
-	</div>
-	<script>
-		(async function () {
-			if (CSS["paintWorklet"] === undefined) {
-				await import("https://unpkg.com/css-paint-polyfill");
-			}
-
-			CSS.paintWorklet.addModule(
-				"https://unpkg.com/@londoncss/paintlet-contour@1.0.2/dist/paintlet-contour.umd.js"
-			);
-		})();
-	</script>
+<Base title={title} description={description}>
+	<Page>
+		<slot />
+	</Page>
 </Base>
-
-<style>
-	.layout {
-		--bg-image: paint(contour);
-
-		overflow: hidden;
-		height: 100vh;
-		height: 100svh;
-		max-width: calc(2200px - 2rem);
-		margin: auto;
-
-		background-image: var(--bg-image);
-
-		@media (--mq-medium) {
-			display: grid;
-			grid-template-columns: var(--width-content) var(--width-nav);
-			grid-template-rows: auto 1fr;
-			grid-template-areas:
-				"header  nav"
-				"content nav";
-
-			& .header {
-				grid-area: header;
-			}
-
-			& .content {
-				grid-area: content;
-			}
-
-			& nav {
-				grid-area: nav;
-			}
-		}
-
-		@media (--mq-large) {
-			grid-template-columns: 1fr var(--width-content) 1fr;
-			grid-template-rows: initial;
-			grid-template-areas: "header content nav";
-		}
-	}
-
-	.content {
-		overflow-y: auto;
-		height: 100%;
-		max-height: 100%;
-		background: var(--content-bg);
-	}
-
-	nav {
-		display: grid;
-		align-content: start;
-
-		height: 100%;
-		padding: var(--nav-padding);
-		background-color: var(--nav-bg-colour);
-		color: var(--nav-text-colour);
-	}
-
-	nav a {
-		text-decoration: none;
-		background-color: hotpink;
-	}
-</style>

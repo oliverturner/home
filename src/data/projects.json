@@ -1,44 +1,49 @@
 {
 	"/projects/home": {
-		"app_url": "https://www.oliverturner.cloud",
-		"repo_url": "https://github.com/oliverturner/home",
-		"platform": {
-			"id": "280e5208-eaa0-4091-ac6e-60ceb6dec8a9"
-		}
+		"repoUrl": "https://github.com/oliverturner/home",
+		"deployUrl": "https://app.netlify.com/sites/home/deploys",
+		"screenshotUrl": "https://screenshot-proxy.netlify.app/f_avif,w_480/https://d33wubrfki0l68.cloudfront.net/638254416190000008f8a3b6/screenshot_2022-11-26-18-01-18-0000.png",
+		"buildStatusUrl": "https://api.netlify.com/api/v1/badges/280e5208-eaa0-4091-ac6e-60ceb6dec8a9/deploy-status"
+	},
+	"/projects/portify": {
+		"appUrl": "https://portify.rocks",
+		"repoUrl": "https://github.com/oliverturner/portify",
+		"deployUrl": "https://app.netlify.com/sites/ikon/deploys",
+		"screenshotUrl": "https://screenshot-proxy.netlify.app/f_avif,w_480/https://d33wubrfki0l68.cloudfront.net/6303dc2ba528e30009183ea9/screenshot_2022-08-22-19-43-26-0000.png",
+		"buildStatusUrl": "https://api.netlify.com/api/v1/badges/99414afd-a15c-4cb6-81d1-0fb1574e71ff/deploy-status"
 	},
 	"/projects/ikon": {
-		"app_url": "https://ikon.oliverturner.cloud",
-		"repo_url": "https://github.com/oliverturner/ikon",
-		"platform": {
-			"id": "99414afd-a15c-4cb6-81d1-0fb1574e71ff"
-		}
+		"appUrl": "https://ikon.oliverturner.cloud",
+		"repoUrl": "https://github.com/oliverturner/ikon",
+		"deployUrl": "https://app.netlify.com/sites/ikon/deploys",
+		"screenshotUrl": "https://screenshot-proxy.netlify.app/f_avif,w_480/https://d33wubrfki0l68.cloudfront.net/6303dc2ba528e30009183ea9/screenshot_2022-08-22-19-43-26-0000.png",
+		"buildStatusUrl": "https://api.netlify.com/api/v1/badges/99414afd-a15c-4cb6-81d1-0fb1574e71ff/deploy-status"
 	},
 	"/projects/mrsravoon": {
-		"app_url": "https://www.mrsravoon.uk",
-		"repo_url": "https://github.com/oliverturner/mrsravoon.uk",
-		"platform": {
-			"id": "55d0b70b-4cad-4c9d-9f5b-a013c7503c2e"
-		}
+		"appUrl": "https://www.mrsravoon.uk",
+		"repoUrl": "https://github.com/oliverturner/mrsravoon.uk",
+		"deployUrl": "https://app.netlify.com/sites/mrsravoon/deploys",
+		"screenshotUrl": "https://screenshot-proxy.netlify.app/f_avif,w_480/https://d33wubrfki0l68.cloudfront.net/638254416190000008f8a3b6/screenshot_2022-11-26-18-01-18-0000.png",
+		"buildStatusUrl": "https://api.netlify.com/api/v1/badges/55d0b70b-4cad-4c9d-9f5b-a013c7503c2e/deploy-status"
 	},
 	"/projects/londoncss": {
-		"app_url": "https://www.londoncss.dev",
-		"repo_url": "https://github.com/LondonCSS/website",
-		"platform": {
-			"id": "b1505b63-38f8-45cf-8a9d-78be01b48a1a"
-		}
+		"appUrl": "https://www.londoncss.dev",
+		"repoUrl": "https://github.com/LondonCSS/website",
+		"deployUrl": "https://app.netlify.com/sites/londoncss/deploys",
+		"screenshotUrl": "https://screenshot-proxy.netlify.app/f_avif,w_480/https://d33wubrfki0l68.cloudfront.net/6141e6745e597300072a1e34/screenshot_2021-09-15-12-28-10-0000.png",
+		"buildStatusUrl": "https://api.netlify.com/api/v1/badges/b1505b63-38f8-45cf-8a9d-78be01b48a1a/deploy-status"
 	},
 	"/projects/paintlets": {
-		"app_url": "https://paintlets.londoncss.dev",
-		"repo_url": "",
-		"platform": {
-			"id": "1e32144a-45fb-4463-9282-e5877feb2024"
-		}
+		"appUrl": "https://paintlets.londoncss.dev",
+		"repoUrl": "https://github.com/oliverturner/paintlets",
+		"deployUrl": "https://app.netlify.com/sites/paintlets/deploys",
+		"screenshotUrl": "https://screenshot-proxy.netlify.app/f_avif,w_480/https://d33wubrfki0l68.cloudfront.net/638507d15402d70009205732/screenshot_2022-11-28-19-11-43-0000.png",
+		"buildStatusUrl": "https://api.netlify.com/api/v1/badges/1e32144a-45fb-4463-9282-e5877feb2024/deploy-status"
 	},
 	"/projects/jeffsum": {
-		"app_url": "https://jeffsum.oliverturner.cloud",
-		"repo_url": "https://github.com/oliverturner/jeffsum",
-		"platform": {
-			"id": "be031da0-2f31-49e4-a6fc-d1c2023a564b"
-		}
+		"appUrl": "https://jeffsum.oliverturner.cloud",
+		"repoUrl": "https://github.com/oliverturner/jeffsum",
+		"screenshotUrl": "https://screenshot-proxy.netlify.app/f_avif,w_480/https://d33wubrfki0l68.cloudfront.net/63936f55ecf021000af8a036/screenshot_2022-12-09-17-25-36-0000.png",
+		"buildStatusUrl": "https://api.netlify.com/api/v1/badges/be031da0-2f31-49e4-a6fc-d1c2023a564b/deploy-status"
 	}
 }
