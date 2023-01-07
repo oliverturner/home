@@ -4,11 +4,16 @@ import SiteHeader from "../components/site-header.astro";
 import SiteLinks from "../components/site-links.astro";
 import Base from "./base.astro";
 
+export interface Props {
+	title: string;
+	description: string;
+}
+
 const { title, description } = Astro.props;
 ---
 
 <Base>
-	<BaseHead title={title} description={description} slot="meta" />
+	<BaseHead title={title} description={description} />
 	<div class="layout">
 		<div class="header">
 			<SiteHeader title={title} />
@@ -20,22 +25,14 @@ const { title, description } = Astro.props;
 			<SiteLinks />
 		</nav>
 	</div>
-	<script>
-		(async function () {
-			if (CSS["paintWorklet"] === undefined) {
-				await import("https://unpkg.com/css-paint-polyfill");
-			}
-
-			CSS.paintWorklet.addModule(
-				"https://unpkg.com/@londoncss/paintlet-contour@1.0.2/dist/paintlet-contour.umd.js"
-			);
-		})();
-	</script>
 </Base>
 
 <style>
 	.layout {
-		--bg-image: paint(contour);
+		display: grid;
+		grid-template-areas:
+			"header"
+			"content";
 
 		overflow: hidden;
 		height: 100vh;
@@ -43,27 +40,11 @@ const { title, description } = Astro.props;
 		max-width: calc(2200px - 2rem);
 		margin: auto;
 
-		background-image: var(--bg-image);
-
 		@media (--mq-medium) {
-			display: grid;
 			grid-template-columns: var(--width-content) var(--width-nav);
-			grid-template-rows: auto 1fr;
 			grid-template-areas:
 				"header  nav"
 				"content nav";
-
-			& .header {
-				grid-area: header;
-			}
-
-			& .content {
-				grid-area: content;
-			}
-
-			& nav {
-				grid-area: nav;
-			}
 		}
 
 		@media (--mq-large) {
@@ -73,25 +54,41 @@ const { title, description } = Astro.props;
 		}
 	}
 
+	.header {
+		grid-area: header;
+	}
+
 	.content {
+		grid-area: content;
+
 		overflow-y: auto;
-		height: 100%;
-		max-height: 100%;
+		min-height: 100%;
 		background: var(--content-bg);
 	}
 
 	nav {
+		grid-area: nav;
+
 		display: grid;
 		align-content: start;
+		gap: var(--step-1);
 
+		width: var(--width-nav);
 		height: 100%;
-		padding: var(--nav-padding);
-		background-color: var(--nav-bg-colour);
-		color: var(--nav-text-colour);
-	}
+		padding: var(--step-1);
+		background-color: #000;
+		color: var(--text-light);
 
-	nav a {
-		text-decoration: none;
-		background-color: hotpink;
+		@media (--mq-max-medium) {
+			grid-area: content;
+
+			position: fixed;
+			top: 0;
+			left: 100%;
+
+			will-change: transform;
+			transform: translateX(var(--nav-x));
+			transition: 0.3s transform ease-in-out;
+		}
 	}
 </style>

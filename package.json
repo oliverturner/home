@@ -3,43 +3,36 @@
   "type": "module",
   "version": "0.0.1",
   "private": true,
+  "volta": {
+    "node": "18.12.1",
+    "npm": "9.1.2"
+  },
   "devDependencies": {
     "@netlify/plugin-lighthouse": "4.0.3",
-    "@typescript-eslint/eslint-plugin": "5.48.0",
-    "@typescript-eslint/parser": "5.48.0",
-    "eslint": "8.31.0",
-    "eslint-plugin-astro": "0.21.1",
-    "eslint-plugin-jsx-a11y": "6.6.1",
-    "eslint-plugin-mdx": "2.0.5",
     "npm-run-all": "4.1.5",
-    "open-props": "^1.5.1",
+    "open-props": "^1.5.3",
     "postcss-custom-media": "8.0.2",
-    "postcss-jit-props": "^1.0.7",
+    "postcss-jit-props": "^1.0.9",
     "postcss-nesting": "10.2.0",
     "prettier": "2.8.2",
     "prettier-plugin-astro": "0.7.2"
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.12.0",
-    "@astrojs/rss": "^1.0.3",
+    "@astrojs/mdx": "^0.14.0",
+    "@astrojs/rss": "^2.0.0",
     "@astrojs/sitemap": "^1.0.0",
-    "astro": "^1.6.12"
+    "astro": "^1.9.1"
   },
   "scripts": {
     "lint:format": "prettier --write src",
-    "lint:syntax": "eslint . --ext .js,.mjs,.cjs,.ts,.astro,.mdx",
     "lint": "run-s lint:*",
     "check:format": "prettier --check src",
-    "check:types": "tsc --noEmit",
+    "check:types": "astro check",
     "checks": "run-s check:*",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
-  },
-  "volta": {
-    "node": "18.12.1",
-    "npm": "9.1.2"
   }
 }

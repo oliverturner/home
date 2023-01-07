@@ -2,16 +2,16 @@
 interface Page {
 	frontmatter: {
 		title: string;
-		url: string;
+		description: string;
+		url: keyof typeof projects;
 	};
 	url: string;
 }
 
-import Layout from "../layouts/page.astro";
+import Page from "../layouts/page.astro";
 import projects from "../data/projects.json";
-import { SITE_TITLE } from "../config";
 
-const title = `Projects - ${SITE_TITLE}`;
+const title = "Projects";
 const description = "Deeper dives into web development";
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
@@ -20,16 +20,16 @@ const pages: Page[] = await Astro.glob("./projects/*.{md,mdx}");
 const data = [];
 for (const page of pages) {
 	console.log(page.frontmatter.title, page.url);
-	const pageUrl = page.url;
+
+	const pageUrl = page.url as keyof typeof projects;
 	const { title, description } = page.frontmatter;
-	data.push({ title, description, pageUrl, ...projects[page.url] });
+	data.push({ title, description, pageUrl, ...projects[pageUrl] });
 }
 
-console.log(data);
+// console.log(data);
 ---
 
-<Layout title={title} description={description}>
-	<h1>Projects</h1>
+<Page title={title} description={description}>
 	<div class="projects">
 		{
 			data.map((project) => (
@@ -43,7 +43,7 @@ console.log(data);
 						<a href={project.repo_url}>GitHub</a>
 						<a href="https://app.netlify.com/sites/jeffsum/deploys">
 							<img
-								src={`https://api.netlify.com/api/v1/badges/${project.platform.id}/deploy-status`}
+								src={project.build_status_url}
 								alt={`Build status of ${project.title}`}
 							/>
 						</a>
@@ -55,7 +55,7 @@ console.log(data);
 			))
 		}
 	</div>
-</Layout>
+</Page>
 
 <style>
 	:root {

@@ -1,5 +1,6 @@
 ---
-import Page from "../layouts/page.astro";
+import ContentFooter from "../components/content-footer.astro";
+import Page from "../layouts/page-home.astro";
 
 const props = {
 	title: "Welcome",
@@ -8,11 +9,81 @@ const props = {
 ---
 
 <Page {...props}>
-	<div></div>
+	<div class="page">
+		<nav>
+			<a href="/about">About</a>
+			<a href="/articles">Articles</a>
+			<a href="/projects">Projects</a>
+			<a href="/blog">Blog</a>
+		</nav>
+		<ContentFooter />
+	</div>
 </Page>
 
 <style>
-	:root {
-		--content-bg: transparent;
+	.page {
+		--site-footer-border: none;
+		--site-footer-bg: #000a;
+		--site-footer-text: var(--stone-6);
+
+		display: grid;
+		grid-template-rows: 1fr auto;
+
+		height: 100%;
+
+		@media (--mq-large) {
+			align-items: start;
+		}
+	}
+	nav {
+		display: grid;
+		gap: var(--step-0);
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
+		padding: var(--step-0);
+	}
+
+	a {
+		--gradient-1: linear-gradient(
+			to top right,
+			lch(40% 132 320),
+			lch(90% 132 40)
+		);
+		--gradient-2: linear-gradient(
+			to top right,
+			lch(40% 132 20),
+			lch(90% 132 100)
+		);
+		--gradient-3: linear-gradient(
+			to top right,
+			lch(40% 132 100),
+			lch(90% 132 210)
+		);
+		--gradient-4: linear-gradient(
+			to top right,
+			lch(40% 132 280),
+			lch(90% 132 300)
+		);
+
+		padding: var(--step-0);
+		text-decoration: none;
+		background: #0006;
+		color: var(--stone-4);
+
+		&[href="/about"] {
+			background: var(--gradient-1);
+		}
+
+		&[href="/articles"] {
+			background: var(--gradient-2);
+		}
+
+		&[href="/projects"] {
+			background: var(--gradient-3);
+		}
+
+		&[href="/blog"] {
+			background: var(--gradient-4);
+		}
 	}
 </style>
