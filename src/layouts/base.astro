@@ -1,11 +1,11 @@
 ---
+import BaseHead from "../components/base-head.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+
 export type Props = {
 	title?: string;
 	description?: string;
 };
-
-import BaseHead from "../components/base-head.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
 export const { title, description } = Astro.props || {};
 ---
@@ -14,7 +14,10 @@ export const { title, description } = Astro.props || {};
 <html lang="en">
 	<head>
 		<slot name="meta">
-			<BaseHead {title || SITE_TITLE} {description || SITE_DESCRIPTION} />
+			<BaseHead
+				title={title || SITE_TITLE}
+				description={description || SITE_DESCRIPTION}
+			/>
 		</slot>
 	</head>
 	<body>
