@@ -5,9 +5,9 @@ description: "A "
 updatedDate: "27th November 2022"
 ---
 
-Hi! I'm Oliver. I don't know how meaningful I consider the term "full-stack" to be, but I do know that I love CSS and web standards just as much as I enjoy designing Cloud architecture, building scalable APIs, and thinking about systems and observability. I got into software development (after deciding I didn't want to be a barrister) in about 2007 because I wanted to help make the web more accessible; fifteen years later that aspiration continues to guide & inspire.
+Hi! I'm Oliver. I got into software development (after deciding I didn't want to be a barrister) in about 2007 because I wanted to help make the web more accessible; fifteen years later that aspiration continues to guide & inspire. I love building for the web platform: from designing and documenting Cloud architecture and scalable APIs, to authoring maintainable CSS and accessible markup, and from thinking about testable systems and observability
 
-I work at [The Financial Times](https://ft.com) on the Advertising and Privacy team, where I'm having a blast building a new ad platform for the FT Group. You can read more about that journey in this series of articles on [_Project Gwyneth_](/articles/project-gwyneth).
+I work at [The Financial Times](https://ft.com) on the Advertising and Privacy team, where I'm having a blast building out a new ad platform for the FT Group. You can read more about that journey in this series of articles on [_Project Gwyneth_](/articles/project-gwyneth).
 
 ![Portrait of Oliver](/portrait.avif)
 

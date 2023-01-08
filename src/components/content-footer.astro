@@ -1,6 +1,5 @@
 ---
 import IconLink from "./icon-link.astro";
-import { SITE_TITLE } from "../config";
 
 const today = new Date();
 const millennium = 2000;
@@ -11,7 +10,6 @@ const yearEnd = today.getFullYear() - millennium;
 <footer>
 	<span>
 		&copy;{yearStart}-{yearEnd}
-		{SITE_TITLE}
 	</span>
 
 	<div class="links">

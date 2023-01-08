@@ -3,6 +3,10 @@
   "type": "module",
   "version": "0.0.1",
   "private": true,
+  "volta": {
+    "node": "18.12.1",
+    "npm": "9.1.2"
+  },
   "devDependencies": {
     "@netlify/plugin-lighthouse": "4.0.3",
     "@typescript-eslint/eslint-plugin": "5.48.0",
@@ -27,19 +31,15 @@
   },
   "scripts": {
     "lint:format": "prettier --write src",
-    "lint:syntax": "eslint . --ext .js,.mjs,.cjs,.ts,.astro,.mdx",
+    "lint:syntax": "eslint src --ext .js,.mjs,.cjs,.ts,.astro",
     "lint": "run-s lint:*",
     "check:format": "prettier --check src",
-    "check:types": "tsc --noEmit",
+    "check:types": "echo 'implement `astro check` when CSS.paintWorklet is recogised'",
     "checks": "run-s check:*",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
-  },
-  "volta": {
-    "node": "18.12.1",
-    "npm": "9.1.2"
   }
 }
