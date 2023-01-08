@@ -1,5 +1,5 @@
 ---
-import Page from "../layouts/page.astro";
+import Page from "../layouts/page-content.astro";
 
 const title = "Articles";
 const description = "Deeper dives into web development";
@@ -8,9 +8,5 @@ const description = "Deeper dives into web development";
 ---
 
 <Page title={title} description={description}>
-	<h1>Articles</h1>
+	<h1 slot="header">Articles</h1>
 </Page>
-
-<style>
-	/* placeholder */
-</style>

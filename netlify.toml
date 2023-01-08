@@ -16,16 +16,18 @@
   [headers.values]
     # Validate CSP on https://securityheaders.com/?q=oliverturner.cloud&followRedirects=on
     Content-Security-Policy = '''
-      default-src 'self';
-      script-src 'self' https://storage.googleapis.com;
-      style-src 'self';
-      object-src 'none'
+      default-src 'self'
+      script-src  'self' https://*.netlify.app 'unsafe-inline';
+      style-src   'self' https://*.netlify.app 'unsafe-inline';
+      object-src  'self' https://*.netlify.app;
+      frame-src   'self' https://*.netlify.com;
     '''
     Referrer-Policy = "same-origin"
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
 
+# Fediverse-related redirects
 [[redirects]]
   from = "/.well-known/webfinger"
   to = "/.well-known/webfinger.json"

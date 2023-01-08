@@ -1,10 +1,8 @@
 ---
-import BaseHead from "../components/base-head.astro";
-import SiteHeader from "../components/site-header.astro";
-import SiteLinks from "../components/site-links.astro";
 import Base from "./base.astro";
+import Page from "../components/page.astro";
 
-export interface Props {
+interface Props {
 	title: string;
 	description: string;
 }
@@ -12,83 +10,8 @@ export interface Props {
 const { title, description } = Astro.props;
 ---
 
-<Base>
-	<BaseHead title={title} description={description} />
-	<div class="layout">
-		<div class="header">
-			<SiteHeader title={title} />
-		</div>
-		<div class="content">
-			<slot />
-		</div>
-		<nav>
-			<SiteLinks />
-		</nav>
-	</div>
+<Base title={title} description={description}>
+	<Page>
+		<slot />
+	</Page>
 </Base>
-
-<style>
-	.layout {
-		display: grid;
-		grid-template-areas:
-			"header"
-			"content";
-
-		overflow: hidden;
-		height: 100vh;
-		height: 100svh;
-		max-width: calc(2200px - 2rem);
-		margin: auto;
-
-		@media (--mq-medium) {
-			grid-template-columns: var(--width-content) var(--width-nav);
-			grid-template-areas:
-				"header  nav"
-				"content nav";
-		}
-
-		@media (--mq-large) {
-			grid-template-columns: 1fr var(--width-content) 1fr;
-			grid-template-rows: initial;
-			grid-template-areas: "header content nav";
-		}
-	}
-
-	.header {
-		grid-area: header;
-	}
-
-	.content {
-		grid-area: content;
-
-		overflow-y: auto;
-		min-height: 100%;
-		background: var(--content-bg);
-	}
-
-	nav {
-		grid-area: nav;
-
-		display: grid;
-		align-content: start;
-		gap: var(--step-1);
-
-		width: var(--width-nav);
-		height: 100%;
-		padding: var(--step-1);
-		background-color: #000;
-		color: var(--text-light);
-
-		@media (--mq-max-medium) {
-			grid-area: content;
-
-			position: fixed;
-			top: 0;
-			left: 100%;
-
-			will-change: transform;
-			transform: translateX(var(--nav-x));
-			transition: 0.3s transform ease-in-out;
-		}
-	}
-</style>

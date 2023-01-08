@@ -1,24 +1,52 @@
 ---
-import ContentFooter from "../components/content-footer.astro";
-import Page from "../layouts/page-home.astro";
+import Base from "../layouts/base.astro";
 
 const props = {
-	title: "Welcome",
+	title: "Home",
 	description: "Oliver Turner's personal website",
 };
 ---
 
-<Page {...props}>
+<Base {...props}>
 	<div class="page">
 		<nav>
-			<a href="/about">About</a>
-			<a href="/articles">Articles</a>
-			<a href="/projects">Projects</a>
-			<a href="/blog">Blog</a>
+			<h1 class="logo clipped">
+				<span>Oliver</span>
+				<span>Turner</span>
+			</h1>
+			<a class="link clipped" href="/about">
+				<div class="link__text">
+					<p class="subtitle">I'm Oliver. <br />Pleased to meet you!</p>
+					<p class="title">An introduction</p>
+				</div>
+			</a>
+			<a class="link clipped" href="/projects">
+				<div class="link__text">
+					<p class="subtitle">Notes on the <br />process of building</p>
+					<p class="title">Side projects</p>
+				</div>
+			</a>
+			<a class="link clipped" href="/articles">
+				<div class="link__text">
+					<p class="subtitle">Thoughts on <br />development & the web</p>
+					<p class="title">Some articles</p>
+				</div>
+			</a>
+			<a class="link clipped" href="/weeknotes">
+				<div class="link__text">
+					<p class="subtitle">Tracking the <br />personal & professional</p>
+					<p class="title">Weeknotes</p>
+				</div>
+			</a>
+			<a class="link clipped" href="/in-use">
+				<div class="link__text">
+					<p class="subtitle">These are a few <br />of my favourite things</p>
+					<p class="title">In use</p>
+				</div>
+			</a>
 		</nav>
-		<ContentFooter />
 	</div>
-</Page>
+</Base>
 
 <style>
 	.page {
@@ -27,63 +55,110 @@ const props = {
 		--site-footer-text: var(--stone-6);
 
 		display: grid;
-		grid-template-rows: 1fr auto;
+		align-items: start;
 
-		height: 100%;
+		overflow-x: hidden;
+		overflow-y: auto;
+		min-height: 100vh;
+		min-height: 100svh;
 
-		@media (--mq-large) {
-			align-items: start;
+		@media (--mq-medium) {
+			align-items: center;
 		}
 	}
 	nav {
 		display: grid;
 		gap: var(--step-0);
-		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
+		width: 100vw;
+		max-width: var(--viewport-large);
+		margin: 0 auto;
 		padding: var(--step-0);
 	}
 
-	a {
-		--gradient-1: linear-gradient(
-			to top right,
-			lch(40% 132 320),
-			lch(90% 132 40)
-		);
-		--gradient-2: linear-gradient(
-			to top right,
-			lch(40% 132 20),
-			lch(90% 132 100)
-		);
-		--gradient-3: linear-gradient(
-			to top right,
-			lch(40% 132 100),
-			lch(90% 132 210)
-		);
-		--gradient-4: linear-gradient(
-			to top right,
-			lch(40% 132 280),
-			lch(90% 132 300)
-		);
-
+	.logo,
+	.link {
 		padding: var(--step-0);
+		background: var(--bg);
+		color: var(--colour);
+	}
+
+	.logo {
+		--bg: #000;
+		--colour: var(--nord-grey-1);
+
+		font-size: 130%;
+		font-weight: 700;
+		line-height: 1;
+		letter-spacing: 4px;
+
+		@media (--mq-medium) {
+			display: grid;
+			align-content: end;
+
+			padding: 4px var(--step-0);
+			font-weight: 300;
+			line-height: 1.2;
+			word-spacing: initial;
+			font-size: 300%;
+		}
+	}
+
+	.link {
+		display: grid;
+		align-items: end;
+
 		text-decoration: none;
-		background: #0006;
-		color: var(--stone-4);
 
 		&[href="/about"] {
-			background: var(--gradient-1);
+			--bg: var(--colour-topic-about);
+			--colour: var(--colour-topic-about-text);
 		}
 
 		&[href="/articles"] {
-			background: var(--gradient-2);
+			--bg: var(--colour-topic-articles);
+			--colour: var(--colour-topic-articles-text);
 		}
 
 		&[href="/projects"] {
-			background: var(--gradient-3);
+			--bg: var(--colour-topic-projects);
+			--colour: var(--colour-topic-projects-text);
 		}
 
-		&[href="/blog"] {
-			background: var(--gradient-4);
+		&[href="/weeknotes"] {
+			--bg: var(--colour-topic-weeknotes);
+			--colour: var(--colour-topic-weeknotes-text);
+		}
+
+		&[href="/in-use"] {
+			--bg: var(--colour-topic-inuse);
+			--colour: var(--colour-topic-inuse-text);
+		}
+
+		@media (--mq-medium) {
+			aspect-ratio: 1;
+		}
+	}
+
+	.link__text {
+		display: grid;
+		gap: var(--step-2);
+
+		& p {
+			margin: 0;
+		}
+
+		& .subtitle {
+			font-size: 1.45rem;
+			line-height: 1.2;
+		}
+
+		& .title {
+			font-size: 1.25rem;
+			font-weight: 700;
+			letter-spacing: 2px;
+			line-height: 1;
 		}
 	}
 </style>

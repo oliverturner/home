@@ -9,7 +9,7 @@ const { title = SITE_TITLE } = Astro.props;
 ---
 
 <header>
-	<a href="/"><h2>{title}</h2></a>
+	<h2 class="subtitle">{title}</h2>
 </header>
 
 <style>
@@ -29,13 +29,13 @@ const { title = SITE_TITLE } = Astro.props;
 		text-decoration: none;
 	}
 
-	h2 {
+	.subtitle {
 		margin: 0;
 		padding: var(--step--2) var(--step--1);
 		border-bottom-right-radius: 0.25rem;
 
 		line-height: 1;
-		font-weight: 200;
+		font-weight: 400;
 		letter-spacing: 2px;
 		background: var(--site-header-bg);
 		color: var(--site-header-text);

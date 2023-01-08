@@ -1,6 +1,7 @@
 ---
+import Base from "./base.astro";
+import Page from "../components/page.astro";
 import ContentFooter from "../components/content-footer.astro";
-import Page from "./page.astro";
 
 export interface Props {
 	content: {
@@ -17,31 +18,41 @@ const {
 } = Astro.props;
 ---
 
-<Page title={title} description={description}>
-	{
-		heroImage && (
-			<img class="hero" width={720} height={360} src={heroImage} alt="" />
-		)
-	}
-	<header class="header">
-		<h1 class="title">{title}</h1>
-		{pubDate && <time>{pubDate}</time>}
-		{
-			updatedDate && (
-				<p>
-					Last updated: <time>{updatedDate}</time>
-				</p>
-			)
-		}
-	</header>
-	<hr />
-	<div class="copy">
-		<slot />
-	</div>
-	<ContentFooter />
-</Page>
+<Base title={title} description={description}>
+	<Page>
+		<div class="content">
+			{
+				heroImage && (
+					<img class="hero" width={720} height={360} src={heroImage} alt="" />
+				)
+			}
+			<header class="header">
+				<h1 class="title">{title}</h1>
+				{pubDate && <time>{pubDate}</time>}
+				{
+					updatedDate && (
+						<p>
+							Last updated: <time>{updatedDate}</time>
+						</p>
+					)
+				}
+			</header>
+			<div class="copy">
+				<slot />
+			</div>
+			<ContentFooter />
+		</div>
+	</Page>
+</Base>
 
 <style>
+	.content {
+		display: grid;
+		grid-template-rows: auto 1fr auto;
+
+		background-color: var(--colour-content-bg);
+		color: var(--colour-content-text);
+	}
 	.hero {
 		display: block;
 		width: 100%;
@@ -60,18 +71,13 @@ const {
 
 	.title {
 		font-size: 2em;
-		margin: 0;
 	}
 	hr {
 		margin: 0;
-		border-top: 1px solid var(--gray-4);
 	}
 
 	.copy {
 		padding: var(--step-2) var(--step-1);
-	}
-
-	nav {
-		/* background-color: var(--bg-transparent-dark); */
+		background-color: var(--nord-light-1);
 	}
 </style>

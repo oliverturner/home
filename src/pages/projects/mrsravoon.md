@@ -1,8 +1,10 @@
 ---
 layout: "../../layouts/page-blogpost.astro"
 title: "Mrs. Ravoon"
-description: "Lorem ipsum dolor sit amet"
-updatedDate: "19th November 2022"
+description: "Almost certainly the most whimsical website I've ever built"
+tags: ["astro"]
+date: "2021-11-19"
+dateUpdated: "2021-11-19"
 ---
 
 ## Mrs. Ravoon

@@ -1,38 +1,40 @@
 {
-  "name": "@oliverturner/home",
-  "type": "module",
-  "version": "0.0.1",
-  "private": true,
-  "volta": {
-    "node": "18.12.1",
-    "npm": "9.1.2"
-  },
-  "devDependencies": {
-    "@netlify/plugin-lighthouse": "4.0.3",
-    "npm-run-all": "4.1.5",
-    "open-props": "^1.5.3",
-    "postcss-custom-media": "8.0.2",
-    "postcss-jit-props": "^1.0.9",
-    "postcss-nesting": "10.2.0",
-    "prettier": "2.8.2",
-    "prettier-plugin-astro": "0.7.2"
-  },
-  "dependencies": {
-    "@astrojs/mdx": "^0.14.0",
-    "@astrojs/rss": "^2.0.0",
-    "@astrojs/sitemap": "^1.0.0",
-    "astro": "^1.9.1"
-  },
-  "scripts": {
-    "lint:format": "prettier --write src",
-    "lint": "run-s lint:*",
-    "check:format": "prettier --check src",
-    "check:types": "astro check",
-    "checks": "run-s check:*",
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  }
+	"name": "@oliverturner/home",
+	"type": "module",
+	"version": "0.0.1",
+	"private": true,
+	"volta": {
+		"node": "18.12.1",
+		"npm": "9.1.2"
+	},
+	"devDependencies": {
+		"@netlify/plugin-lighthouse": "4.0.3",
+		"lefthook": "1.2.7",
+		"npm-run-all": "4.1.5",
+		"open-props": "^1.5.3",
+		"postcss-custom-media": "8.0.2",
+		"postcss-jit-props": "^1.0.9",
+		"postcss-lab-function": "4.2.1",
+		"postcss-nesting": "10.2.0",
+		"prettier": "2.8.3",
+		"prettier-plugin-astro": "0.7.2"
+	},
+	"dependencies": {
+		"@astrojs/mdx": "0.14.0",
+		"@astrojs/rss": "2.0.0",
+		"@astrojs/sitemap": "1.0.0",
+		"astro": "1.9.2"
+	},
+	"scripts": {
+		"lint:format": "prettier --write src",
+		"lint": "run-s lint:*",
+		"check:format": "prettier --check src",
+		"check:types": "astro check",
+		"checks": "run-s check:*",
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	}
 }

@@ -1,8 +1,10 @@
 ---
 layout: "../../layouts/page-blogpost.astro"
 title: "This website"
-description: "Lorem ipsum dolor sit amet"
-updatedDate: "19th November 2022"
+description: "A breakdown of the technologies used to build this website."
+tags: ["astro", "vite", "typescript", "markdown"]
+date: "2023-01-15"
+dateUpdated: "2023-01-15"
 ---
 
 ## Home

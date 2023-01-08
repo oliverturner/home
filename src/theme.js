@@ -2,7 +2,7 @@ import { getCustomMedia, getCustomProps } from "./utils/theme.js";
 
 const widths = {
 	nav: 20,
-	content: 50,
+	content: 60,
 };
 
 export const breakpoints = {
