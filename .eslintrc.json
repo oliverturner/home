@@ -1,14 +1,10 @@
 {
 	"root": true,
-	"env": {
-		"node": true,
-		"browser": true
-	},
 	"extends": [
 		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
 		"plugin:astro/recommended",
-		"plugin:mdx/recommended",
-		"plugin:@typescript-eslint/recommended"
+		"plugin:mdx/recommended"
 	],
 	"parser": "@typescript-eslint/parser",
 	"plugins": ["@typescript-eslint"],

@@ -1,9 +1,10 @@
 ---
+import Icon from './icon.astro';
 const { icon, href } = Astro.props;
 ---
 
 <a class="iconlink" {href} target="_blank">
-	<svg><use xlink:href={`/spritesheet.svg#icon-${icon}`}></use></svg>
+	<Icon {icon} />
 	<span><slot /></span>
 </a>
 
