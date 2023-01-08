@@ -7,10 +7,10 @@ const { title, description } = Astro.props;
 ---
 
 <Base>
-	<BaseHead title={title} description={description} slot="meta" />
+	<BaseHead {title} {description} slot="meta" />
 	<div class="layout">
 		<div class="header">
-			<SiteHeader title={title} />
+			<SiteHeader {title} />
 		</div>
 		<div class="content">
 			<slot />
@@ -25,5 +25,7 @@ const { title, description } = Astro.props;
 
 		overflow: hidden;
 		height: 100vh;
+		max-width: var(--viewport-large);
+		margin: 0 auto;
 	}
 </style>

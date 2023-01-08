@@ -11,7 +11,10 @@ export const breakpoints = {
 };
 
 export const breakpointTable = Object.entries(breakpoints);
-export const customMedia = getCustomMedia(breakpointTable);
+export const customMedia = {
+	...getCustomMedia(breakpointTable, "min-width"),
+	...getCustomMedia(breakpointTable, "max-width"),
+};
 export const customProperties = {
 	...getCustomProps("width", Object.entries(widths)),
 	...getCustomProps("viewport", breakpointTable),

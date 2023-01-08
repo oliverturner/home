@@ -1,9 +1,15 @@
 ---
 import { SITE_TITLE } from "../config";
+
+export interface Props {
+	title: string;
+}
+
+const { title = SITE_TITLE } = Astro.props;
 ---
 
 <header>
-	<a href="/"><h2>{SITE_TITLE}</h2></a>
+	<a href="/"><h2>{title}</h2></a>
 </header>
 
 <style>
@@ -33,14 +39,5 @@ import { SITE_TITLE } from "../config";
 		letter-spacing: 2px;
 		background: var(--site-header-bg);
 		color: var(--site-header-text);
-	}
-
-	nav {
-		display: flex;
-		gap: var(--step-0);
-		justify-content: center;
-
-		padding: var(--step--2) var(--step--1);
-		color: var(--text-link);
 	}
 </style>

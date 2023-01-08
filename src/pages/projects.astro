@@ -8,11 +8,10 @@ interface Page {
 	url: string;
 }
 
-import Layout from "../layouts/page.astro";
+import Page from "../layouts/page.astro";
 import projects from "../data/projects.json";
-import { SITE_TITLE } from "../config";
 
-const title = `Projects - ${SITE_TITLE}`;
+const title = "Projects";
 const description = "Deeper dives into web development";
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
@@ -27,11 +26,10 @@ for (const page of pages) {
 	data.push({ title, description, pageUrl, ...projects[pageUrl] });
 }
 
-console.log(data);
+// console.log(data);
 ---
 
-<Layout title={title} description={description}>
-	<h1>Projects</h1>
+<Page title={title} description={description}>
 	<div class="projects">
 		{
 			data.map((project) => (
@@ -57,7 +55,7 @@ console.log(data);
 			))
 		}
 	</div>
-</Layout>
+</Page>
 
 <style>
 	:root {

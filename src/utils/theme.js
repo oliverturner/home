@@ -5,12 +5,16 @@
  * --mq-medium: 768ch;
  * ```
  * @param {[string, number][]} breakpointTable
+ * @param {string} condition
  * @param {Record<string, string>} dict
  * @returns {Record<string, string>}
  */
-export function getCustomMedia(breakpointTable, dict = {}) {
+export function getCustomMedia(breakpointTable, condition, dict = {}) {
+	const prefix = condition === "min-width" ? "mq" : "mq-max";
 	for (const [k, v] of breakpointTable) {
-		dict["--mq-" + k] = `(min-width: ${v}ch)`;
+		const key = `--${prefix}-${k}`;
+		const value = `(${condition}: ${v}ch)`;
+		dict[key] = value;
 	}
 
 	return dict;
