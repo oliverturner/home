@@ -17,5 +17,5 @@ export const customMedia = {
 };
 export const customProperties = {
 	...getCustomProps("width", Object.entries(widths)),
-	...getCustomProps("viewport", breakpointTable),
+	...getCustomProps("layout", breakpointTable),
 };
