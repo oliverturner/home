@@ -80,6 +80,7 @@
 
 	--nav-x: 0;
 	--icon-wh: 24px;
+	--width-home-nav: var(--layout-large);
 
 	&.nav-open {
 		--nav-x: calc(var(--width-nav) * -1);
