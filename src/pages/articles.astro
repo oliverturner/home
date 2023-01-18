@@ -1,5 +1,5 @@
 ---
-import Page from "../layouts/page-content.astro";
+import Layout from "../layouts/content.astro";
 
 const title = "Articles";
 const description = "Deeper dives into web development";
@@ -7,6 +7,8 @@ const description = "Deeper dives into web development";
 // const posts = await Astro.glob("./articles/*.{md,mdx}");
 ---
 
-<Page title={title} description={description}>
+<Layout title={title} description={description}>
 	<h1 slot="header">Articles</h1>
-</Page>
+
+	<p slot="default">WTF?!</p>
+</Layout>

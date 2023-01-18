@@ -1,7 +1,7 @@
 ---
 import type { Project } from "../types";
 
-interface Page {
+interface Layout {
 	frontmatter: {
 		title: string;
 		description: string;
@@ -13,7 +13,7 @@ interface Page {
 	url: string;
 }
 
-import Page from "../layouts/page.astro";
+import Layout from "../layouts/minimal.astro";
 import projects from "../data/projects.json";
 import ProjectLink from "../components/project-link.astro";
 
@@ -21,7 +21,7 @@ const title = "Projects";
 const description = "Deeper dives into web development";
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
-const pages: Page[] = await Astro.glob("./projects/*.{md,mdx}");
+const pages = await Astro.glob("./projects/*.{md,mdx}");
 pages.sort((a, b) => {
 	const aDate = new Date(a.frontmatter.dateUpdated || a.frontmatter.date);
 	const bDate = new Date(b.frontmatter.dateUpdated || b.frontmatter.date);
@@ -38,11 +38,11 @@ for (const page of pages) {
 }
 ---
 
-<Page title={title} description={description}>
+<Layout title={title} description={description}>
 	<div class="projects">
 		{data.map((project) => <ProjectLink project={project} />)}
 	</div>
-</Page>
+</Layout>
 
 <style>
 	.projects {

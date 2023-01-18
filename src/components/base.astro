@@ -1,6 +1,8 @@
 ---
-import BaseHead from "../components/base-head.astro";
+import BaseMeta from "../components/base-meta.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+
+import "../styles/global.css";
 
 export type Props = {
 	title?: string;
@@ -14,9 +16,9 @@ export const { title = SITE_TITLE, description = SITE_DESCRIPTION } =
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<slot name="meta">
-			<BaseHead title={title} description={description} />
-		</slot>
+		<title>{title}</title>
+		<BaseMeta title={title} description={description} />
+		<slot name="meta" />
 	</head>
 	<body>
 		<slot />

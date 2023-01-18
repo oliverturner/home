@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/page-blogpost.astro"
+layout: "../../layouts/blogpost.astro"
 title: "Portify"
 description: "An app to help you support the artists you love"
 tags: ["svelte", "vite", "typescript", "begin"]

@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/page-blogpost.astro"
+layout: "../../layouts/blogpost.astro"
 title: "This website"
 description: "A breakdown of the technologies used to build this website."
 tags: ["astro", "vite", "typescript", "markdown"]

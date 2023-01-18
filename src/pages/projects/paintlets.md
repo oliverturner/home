@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/page-blogpost.astro"
+layout: "../../layouts/blogpost.astro"
 title: "Paintlets"
 description: "Lorem ipsum dolor sit amet"
 tags: ["houdini", "vite", "astro"]

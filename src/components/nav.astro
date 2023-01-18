@@ -1,0 +1,63 @@
+<nav>
+	<button id="nav-btn" class="nav__btn iconbtn iconbtn--stacked">
+		<svg><use href="/spritesheet.svg#icon-burger"></use></svg>
+		<span class="visually-hidden">Menu</span>
+	</button>
+	<slot />
+</nav>
+<script src="../scripts/toggle-nav.ts"></script>
+
+<style>
+	nav {
+		grid-area: nav;
+
+		display: grid;
+		align-content: start;
+		gap: var(--step-1);
+
+		width: var(--width-nav);
+		height: 100%;
+		padding: var(--step-1) 0;
+		font-weight: 700;
+		background-color: #000;
+		color: var(--text-light);
+
+		@media (--mq-max-medium) {
+			grid-area: content;
+
+			position: fixed;
+			top: 0;
+			left: 100%;
+
+			will-change: transform;
+			transform: translateX(var(--nav-x));
+			transition: 0.3s transform ease-in-out;
+		}
+	}
+
+	.nav__btn {
+		display: none;
+
+		@media (--mq-max-medium) {
+			--clip-size: 0.75rem;
+			--clip: polygon(
+				0 0,
+				100% 0,
+				100% 100%,
+				var(--clip-size) 100%,
+				0 calc(100% - var(--clip-size)),
+				0 0
+			);
+
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 100%;
+
+			clip-path: var(--clip);
+			padding: var(--step--2) var(--step--1);
+			background-color: inherit;
+			color: inherit;
+		}
+	}
+</style>

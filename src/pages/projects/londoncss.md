@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/page-blogpost.astro"
+layout: "../../layouts/blogpost.astro"
 title: "London CSS"
 description: "Notes on the London CSS meetup group I ran with @anarodriguez and @phazn in the Before Times."
 tags: ["houdini", "astro"]

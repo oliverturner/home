@@ -1,5 +1,5 @@
 ---
-import Page from "../layouts/page-content.astro";
+import Layout from "../layouts/content.astro";
 
 const title = "Weeknotes";
 const description =
@@ -13,7 +13,7 @@ const posts = (await Astro.glob("./weeknotes/*.{md,mdx}")).sort(
 );
 ---
 
-<Page title={title} description={description}>
+<Layout title={title} description={description}>
 	<h1 slot="header">Weeknotes</h1>
 
 	<ul>
@@ -32,4 +32,4 @@ const posts = (await Astro.glob("./weeknotes/*.{md,mdx}")).sort(
 			))
 		}
 	</ul>
-</Page>
+</Layout>

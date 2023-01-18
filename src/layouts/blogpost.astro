@@ -1,6 +1,6 @@
 ---
-import Base from "./base.astro";
-import Page from "../components/page.astro";
+import Base from "../components/base.astro";
+import NavPage from "../components/nav-page.astro";
 import ContentFooter from "../components/content-footer.astro";
 
 export interface Props {
@@ -19,14 +19,15 @@ const {
 ---
 
 <Base title={title} description={description}>
-	<Page>
-		<div class="content">
+	<NavPage>
+		<article>
 			{
 				heroImage && (
 					<img class="hero" width={720} height={360} src={heroImage} alt="" />
 				)
 			}
-			<header class="header">
+
+			<header>
 				<h1 class="title">{title}</h1>
 				{pubDate && <time>{pubDate}</time>}
 				{
@@ -41,18 +42,19 @@ const {
 				<slot />
 			</div>
 			<ContentFooter />
-		</div>
-	</Page>
+		</article>
+	</NavPage>
 </Base>
 
 <style>
-	.content {
+	article {
 		display: grid;
 		grid-template-rows: auto 1fr auto;
 
 		background-color: var(--colour-content-bg);
 		color: var(--colour-content-text);
 	}
+
 	.hero {
 		display: block;
 		width: 100%;
@@ -60,7 +62,7 @@ const {
 		object-fit: contain;
 	}
 
-	.header {
+	header {
 		padding: var(--step-0);
 
 		& p {

@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/page-blogpost.astro"
+layout: "../../layouts/blogpost.astro"
 title: "Jeffsum"
 description: "Declaratively animating gradients using Houdini CSS"
 tags: ["houdini", "vite"]

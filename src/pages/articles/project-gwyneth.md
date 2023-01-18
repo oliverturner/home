@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/page-blogpost.astro"
+layout: "../../layouts/blogpost.astro"
 title: "Project Gwyneth: Part 1"
 description: "Lorem ipsum dolor sit amet"
 pubDate: "2022-11-26"

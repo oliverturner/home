@@ -1,5 +1,5 @@
 ---
-layout: "../layouts/page-blogpost.astro"
+layout: "../layouts/blogpost.astro"
 title: "In use"
 description: "Some background"
 ---
