@@ -35,11 +35,14 @@
 		"check:types": "astro check",
 		"checks": "run-s check:*",
 		"styles": "style-dictionary build -c ./styles.config.json",
-		"astro:dev": "astro dev",
-		"astro:build": "astro build",
-		"build": "run-s styles astro:build",
-		"preview": "astro preview",
-		"start": "run-s styles astro:dev",
+		"build:styles": "npm run styles",
+		"build:astro": "astro build",
+		"dev:styles": "npm run styles",
+		"dev:astro": "astro dev --host",
+		"start": "run-s dev:*",
+		"build": "run-s build:*",
+		"preview:astroe": "astro preview --host",
+		"preview": "run-s build:* preview:*",
 		"astro": "astro"
 	}
 }
