@@ -41,7 +41,7 @@
 		"dev:astro": "astro dev --host",
 		"start": "run-s dev:*",
 		"build": "run-s build:*",
-		"preview:astroe": "astro preview --host",
+		"preview:astro": "astro preview --host",
 		"preview": "run-s build:* preview:*",
 		"astro": "astro"
 	}
