@@ -7,7 +7,7 @@ const widths = {
 
 export const breakpoints = {
 	medium: widths.content + widths.nav,
-	large:  widths.content + widths.nav * 2,
+	large: widths.content + widths.nav * 2,
 };
 
 export const breakpointTable = Object.entries(breakpoints);

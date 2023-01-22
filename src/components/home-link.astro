@@ -1,0 +1,86 @@
+---
+const { href } = Astro.props;
+---
+
+<a class="link clipped--br" href={href}>
+	<p><span class="subtitle"><slot name="subtitle" /></span></p>
+	<p><span class="title"><slot name="title" /></span></p>
+</a>
+
+<style>
+	@design-tokens url("../styles/generated-tokens.json") format("style-dictionary3");
+
+	.link {
+		display: grid;
+		align-content: end;
+		gap: dt("step-1");
+
+		padding: dt("step-0");
+		line-height: 1;
+		text-decoration: none;
+		background: var(--bg)
+			repeating-linear-gradient(
+				-45deg,
+				transparent 0,
+				transparent 1rem,
+				#0001 0,
+				#0001 2rem
+			);
+		color: var(--colour);
+
+		&[href="/about"] {
+			--bg: dt("color.bg.about");
+			--colour: dt("color.text.about");
+		}
+
+		&[href="/articles"] {
+			--bg: dt("color.bg.articles");
+			--colour: dt("color.text.articles");
+		}
+
+		&[href="/projects"] {
+			--bg: dt("color.bg.projects");
+			--colour: dt("color.text.projects");
+		}
+
+		&[href="/weeknotes"] {
+			--bg: dt("color.bg.weeknotes");
+			--colour: dt("color.text.weeknotes");
+		}
+
+		&[href="/in-use"] {
+			--bg: dt("color.bg.inuse");
+			--colour: dt("color.text.inuse");
+		}
+
+		& p {
+			margin: 0;
+		}
+
+		& span {
+			--offset-plus: 6px;
+			--offset-minus: -6px;
+
+			padding: 6px 0;
+			background-color: var(--bg);
+			filter: drop-shadow(var(--offset-minus) 0 0 var(--bg))
+				drop-shadow(var(--offset-plus) 0 0 var(--bg));
+		}
+
+		@media (--mq-large) {
+			aspect-ratio: 1;
+		}
+	}
+
+	.subtitle {
+		font-size: 1.45rem;
+		line-height: 1.35;
+	}
+
+	.title {
+		font-size: 1.25rem;
+		font-weight: 700;
+		letter-spacing: 2px;
+		line-height: 1.6;
+	}
+</style>

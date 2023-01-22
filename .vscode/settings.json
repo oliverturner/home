@@ -1,15 +1,14 @@
 {
-	"cssvar.files": [
-		"./node_modules/open-props/open-props.min.css",
-		"src/styles/global.css"
-	],
+	"cssvar.files": ["src/styles/global.css"],
 	// Do not ignore node_modules css files, which is ignored by default
 	"cssvar.ignore": [],
 	// add support for autocomplete in JS or JS like files
 	"cssvar.extensions": ["css", "astro"],
 
+	"designTokens.valueFunctionName": "dt",
+
 	"eslint.options": {
-    "extensions": ["astro", ".js", ".ts", ".md", ".mdx"]
-  },
+		"extensions": ["astro", ".js", ".ts", ".md", ".mdx"]
+	},
 	"eslint.validate": ["astro", "javascript", "typescript", "markdown", "mdx"]
 }

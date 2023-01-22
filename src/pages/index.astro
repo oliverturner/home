@@ -1,5 +1,6 @@
 ---
 import Base from "../components/base.astro";
+import Link from "../components/home-link.astro";
 
 const props = {
 	title: "Home",
@@ -10,45 +11,51 @@ const props = {
 <Base {...props}>
 	<div class="page">
 		<nav>
-			<h1 class="logo clipped">
+			<h1 class="logo clipped--br">
 				<span>Oliver</span>
 				<span>Turner</span>
 			</h1>
-			<a class="link clipped" href="/about">
-				<div class="link__text">
-					<p class="subtitle">I'm Oliver. <br />Pleased to meet you!</p>
-					<p class="title">An introduction</p>
-				</div>
-			</a>
-			<a class="link clipped" href="/projects">
-				<div class="link__text">
-					<p class="subtitle">Notes on the <br />process of building</p>
-					<p class="title">Side projects</p>
-				</div>
-			</a>
-			<a class="link clipped" href="/articles">
-				<div class="link__text">
-					<p class="subtitle">Thoughts on <br />development & the web</p>
-					<p class="title">Some articles</p>
-				</div>
-			</a>
-			<a class="link clipped" href="/weeknotes">
-				<div class="link__text">
-					<p class="subtitle">Tracking the <br />personal & professional</p>
-					<p class="title">Weeknotes</p>
-				</div>
-			</a>
-			<a class="link clipped" href="/in-use">
-				<div class="link__text">
-					<p class="subtitle">These are a few <br />of my favourite things</p>
-					<p class="title">In use</p>
-				</div>
-			</a>
+
+			<Link class="link clipped--br" href="/about">
+				<Fragment slot="subtitle">
+					Hello, I'm Oliver. <br />Pleased to meet you!
+				</Fragment>
+				<Fragment slot="title">An introduction</Fragment>
+			</Link>
+
+			<Link class="link clipped--br" href="/projects">
+				<Fragment slot="subtitle">
+					Notes on the <br />process of building
+				</Fragment>
+				<Fragment slot="title">Side projects</Fragment>
+			</Link>
+
+			<Link href="/articles">
+				<Fragment slot="subtitle">
+					Thoughts on <br />development & the web
+				</Fragment>
+				<Fragment slot="title">Some articles</Fragment>
+			</Link>
+
+			<Link href="/weeknotes">
+				<Fragment slot="subtitle">
+					Tracking the <br />personal & professional
+				</Fragment>
+				<Fragment slot="title">Weeknotes</Fragment>
+			</Link>
+
+			<Link href="/in-use">
+				<Fragment slot="subtitle">
+					These are a few <br />of my favourite things
+				</Fragment>
+				<Fragment slot="title">In use</Fragment>
+			</Link>
 		</nav>
 	</div>
 </Base>
 
 <style>
+	@design-tokens url("../styles/generated-tokens.json") format("style-dictionary3");
 
 	.page {
 		--site-footer-border: none;
@@ -68,27 +75,16 @@ const props = {
 		}
 	}
 	nav {
+		--gap: dt("step-0");
+
 		display: grid;
-		gap: var(--step-0);
 		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: var(--gap);
 
 		width: 100vw;
-		max-width: var(--width-home-nav);
+		max-width: dt("viewport.large");
 		margin: 0 auto;
-		padding: var(--step-0);
-
-
-	}
-
-	.logo,
-	.link {
-		padding: var(--step-0);
-		background: var(--bg);
-		color: var(--colour);
-
-		@media (--mq-large) {
-			aspect-ratio: 1;
-		}
+		padding: var(--gap);
 	}
 
 	.logo {
@@ -99,80 +95,34 @@ const props = {
 		grid-template-columns: auto auto;
 		justify-content: start;
 		align-content: end;
-		gap: var(--step--2);
+		gap: dt("step-02");
 
-		padding-bottom: var(--step--2);
+		padding: var(--gap);
+		padding-bottom: dt("step-02");
+		line-height: 1;
 		font-size: 130%;
 		font-weight: 700;
-		line-height: 1;
 		letter-spacing: 4px;
 
+		background: var(--bg);
+		color: var(--colour);
+
 		@media (--mq-medium) {
+			padding: dt("step-0");
 			font-weight: 300;
 			font-size: 200%;
 		}
 
 		@media (--mq-large) {
 			grid-template-columns: 1fr;
-			gap: 0;
 
-			padding: 4px var(--step-0);
+			aspect-ratio: 1;
 			line-height: 1.2;
-			word-spacing: initial;
 			font-size: 300%;
-		}
-	}
 
-	.link {
-		display: grid;
-		align-items: end;
-
-		text-decoration: none;
-
-		&[href="/about"] {
-			--bg: var(--colour-topic-about);
-			--colour: var(--colour-topic-about-text);
-		}
-
-		&[href="/articles"] {
-			--bg: var(--colour-topic-articles);
-			--colour: var(--colour-topic-articles-text);
-		}
-
-		&[href="/projects"] {
-			--bg: var(--colour-topic-projects);
-			--colour: var(--colour-topic-projects-text);
-		}
-
-		&[href="/weeknotes"] {
-			--bg: var(--colour-topic-weeknotes);
-			--colour: var(--colour-topic-weeknotes-text);
-		}
-
-		&[href="/in-use"] {
-			--bg: var(--colour-topic-inuse);
-			--colour: var(--colour-topic-inuse-text);
-		}
-	}
-
-	.link__text {
-		display: grid;
-		gap: var(--step-2);
-
-		& p {
-			margin: 0;
-		}
-
-		& .subtitle {
-			font-size: 1.45rem;
-			line-height: 1.2;
-		}
-
-		& .title {
-			font-size: 1.25rem;
-			font-weight: 700;
-			letter-spacing: 2px;
-			line-height: 1;
+			& span {
+				margin-bottom: -0.3rem;
+			}
 		}
 	}
 </style>
