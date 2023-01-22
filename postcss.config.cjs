@@ -1,12 +1,18 @@
 async function getConfig() {
-	const { default: openProps } = await import("open-props");
-	const { customMedia, customProperties } = await import("./src/theme.js");
+	const { default: size } = await import("./tokens/size.cjs");
 
-	console.log({ customMedia, customProperties });
+	const customMedia = {};
+	for (const [k, v] of Object.entries(size.viewport)) {
+		const n = parseInt(v.value, 10);
+		customMedia[`--mq-${k}`] = `(min-width: ${n}ch)`;
+		customMedia[`--mq-max-${k}`] = `(max-width: ${n}ch)`;
+	}
+
+	console.log({ customMedia });
 
 	return {
 		plugins: {
-			"postcss-jit-props": { ...openProps, ...customProperties },
+			"@csstools/postcss-design-tokens": { valueFunctionName: "dt" },
 			"postcss-custom-media": { importFrom: { customMedia } },
 			"postcss-nesting": {},
 		},

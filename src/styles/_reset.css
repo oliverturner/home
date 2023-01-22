@@ -4,12 +4,6 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
-
 :where(html) {
 	min-height: 100%;
 	background-color: var(--colour-site-bg);

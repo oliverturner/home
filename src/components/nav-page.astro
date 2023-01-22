@@ -22,13 +22,13 @@ import Nav from "./nav.astro";
 		overflow: hidden;
 		height: 100vh;
 		height: 100svh;
-		max-width: calc(2200px - 2rem);
+		max-width: var(--layout-large);
 		margin: auto;
 
 		@media (--mq-medium) {
 			justify-content: center;
 
-			grid-template-columns: var(--width-content) var(--width-nav);
+			grid-template-columns: 1fr var(--width-nav);
 			grid-template-areas: "content nav";
 		}
 	}

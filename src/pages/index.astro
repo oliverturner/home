@@ -49,6 +49,7 @@ const props = {
 </Base>
 
 <style>
+
 	.page {
 		--site-footer-border: none;
 		--site-footer-bg: #000a;
@@ -75,6 +76,8 @@ const props = {
 		max-width: var(--width-home-nav);
 		margin: 0 auto;
 		padding: var(--step-0);
+
+
 	}
 
 	.logo,
@@ -82,23 +85,38 @@ const props = {
 		padding: var(--step-0);
 		background: var(--bg);
 		color: var(--colour);
+
+		@media (--mq-large) {
+			aspect-ratio: 1;
+		}
 	}
 
 	.logo {
 		--bg: #000;
 		--colour: var(--nord-grey-1);
 
+		display: grid;
+		grid-template-columns: auto auto;
+		justify-content: start;
+		align-content: end;
+		gap: var(--step--2);
+
+		padding-bottom: var(--step--2);
 		font-size: 130%;
 		font-weight: 700;
 		line-height: 1;
 		letter-spacing: 4px;
 
 		@media (--mq-medium) {
-			display: grid;
-			align-content: end;
+			font-weight: 300;
+			font-size: 200%;
+		}
+
+		@media (--mq-large) {
+			grid-template-columns: 1fr;
+			gap: 0;
 
 			padding: 4px var(--step-0);
-			font-weight: 300;
 			line-height: 1.2;
 			word-spacing: initial;
 			font-size: 300%;
@@ -134,10 +152,6 @@ const props = {
 		&[href="/in-use"] {
 			--bg: var(--colour-topic-inuse);
 			--colour: var(--colour-topic-inuse-text);
-		}
-
-		@media (--mq-medium) {
-			aspect-ratio: 1;
 		}
 	}
 
