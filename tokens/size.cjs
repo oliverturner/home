@@ -9,6 +9,7 @@ const viewports = {
 };
 
 module.exports = {
+	// @link https://utopia.fyi/type/calculator?c=320,16,1.2,1140,16,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l
 	"step-02": { value: "clamp(0.64rem, calc(0.72rem + -0.11vw), 0.69rem)" },
 	"step-01": { value: "clamp(0.8rem, calc(0.85rem + -0.06vw), 0.83rem)" },
 	"step-0": { value: "1rem" },

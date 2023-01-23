@@ -38,12 +38,12 @@ const { title, description } = Astro.props;
 		grid-template-rows: auto 1fr auto;
 
 		min-height: 100%;
-		background-color: var(--colour-content-bg);
-		color: var(--colour-content-text);
+		background-color: dt("color.content.bg");
+		color: dt("color.content.text");
 	}
 
 	header {
-		padding: var(--step-0);
+		padding: dt("step-0");
 		background-color: var(--content-header-bg, dt("color.light-0"));
 		color: var(--content-header-text, inherit);
 	}

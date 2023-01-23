@@ -22,15 +22,14 @@ function getClassName(url: string) {
 }
 
 <style>
-	a {
-		--colour: var(--colour-site-text);
-		--colour-text: var(--colour-site-bg);
+	@design-tokens url("../styles/generated-tokens.json") format("style-dictionary3");
 
-		padding: var(--step--1) var(--step-1);
+	a {
+		padding: dt("step-01") dt("step-1");
 		line-height: 1;
 		letter-spacing: 2px;
 		text-decoration: none;
-		color: var(--colour);
+		color: var(--text);
 
 		transition: background-color, color;
 		transition-duration: 0.3s;
@@ -41,33 +40,38 @@ function getClassName(url: string) {
 		&:focus {
 			outline: none;
 
-			background-color: var(--colour);
-			color: var(--colour-text);
+			background-color: var(--text);
+			color: var(--bg);
+		}
+
+		&[href="/"] {
+			--text: inherit;
+			--bg: none;
 		}
 
 		&[href="/about"] {
-			--colour: var(--colour-topic-about);
-			--colour-text: var(--colour-topic-about-text);
+			--text: dt("color.bg.about");
+			--bg: dt("color.text.about");
 		}
 
 		&[href="/articles"] {
-			--colour: var(--colour-topic-articles);
-			--colour-text: var(--colour-topic-articles-text);
+			--text: dt("color.bg.articles");
+			--bg: dt("color.text.articles");
 		}
 
 		&[href="/projects"] {
-			--colour: var(--colour-topic-projects);
-			--colour-text: var(--colour-topic-projects-text);
+			--text: dt("color.bg.projects");
+			--bg: dt("color.text.projects");
 		}
 
 		&[href="/weeknotes"] {
-			--colour: var(--colour-topic-weeknotes);
-			--colour-text: var(--colour-topic-weeknotes-text);
+			--text: dt("color.bg.weeknotes");
+			--bg: dt("color.text.weeknotes");
 		}
 
 		&[href="/in-use"] {
-			--colour: var(--colour-topic-inuse);
-			--colour-text: var(--colour-topic-inuse-text);
+			--text: dt("color.bg.inuse");
+			--bg: dt("color.text.inuse");
 		}
 	}
 </style>

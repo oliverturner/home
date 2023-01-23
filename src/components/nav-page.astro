@@ -19,7 +19,7 @@ import Nav from "./nav.astro";
 		display: grid;
 
 		grid-template-areas: "content";
-		gap: var(--step-0);
+		gap: dt("step-0");
 
 		overflow: hidden;
 		height: 100vh;
@@ -30,7 +30,7 @@ import Nav from "./nav.astro";
 		@media (--mq-medium) {
 			justify-content: center;
 
-			grid-template-columns: 1fr var(--width-nav);
+			grid-template-columns: 1fr dt("width.nav");
 			grid-template-areas: "content nav";
 		}
 	}

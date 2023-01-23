@@ -5,7 +5,11 @@ const { icon } = Astro.props;
 <svg><use xlink:href={`/spritesheet.svg#icon-${icon}`}></use></svg>
 
 <style>
+	@design-tokens url("../styles/generated-tokens.json") format("style-dictionary3");
+
 	svg {
+		--icon-wh: dt("size.icon");
+
 		width: var(--icon-wh);
 		height: var(--icon-wh);
 		fill: currentColor;

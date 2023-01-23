@@ -8,10 +8,6 @@
 	margin: 0;
 }
 
-:where(h1, h2, h3, h4, h5, h6, strong, b) {
-	color: var(--text-strong);
-}
-
 :where(main) {
 	max-width: var(--width-content);
 	margin: auto;
