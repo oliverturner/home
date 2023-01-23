@@ -1,5 +1,5 @@
 <nav>
-	<button id="nav-btn" class="nav__btn iconbtn iconbtn--stacked">
+	<button id="nav-btn" class="nav__btn clipped--bl iconbtn iconbtn--stacked">
 		<svg><use href="/spritesheet.svg#icon-burger"></use></svg>
 		<span class="visually-hidden">Menu</span>
 	</button>
@@ -15,14 +15,14 @@
 
 		display: grid;
 		align-content: start;
-		gap: var(--step-1);
+		gap: dt("step-1");
 
-		width: var(--width-nav);
+		width: dt("width.nav");
 		height: 100%;
-		padding: var(--step-1) 0;
+		padding: dt("step-1") 0;
 		font-weight: 700;
 		background-color: #000;
-		color: var(--text-light);
+		color: dt("color.grey-3");
 
 		@media (--mq-max-medium) {
 			grid-area: content;
@@ -42,7 +42,7 @@
 
 		@media (--mq-max-medium) {
 			--clip-size: 0.75rem;
-			--clip: polygon(
+			--clip-bottom-left: polygon(
 				0 0,
 				100% 0,
 				100% 100%,
@@ -56,10 +56,9 @@
 			top: 0;
 			right: 100%;
 
-			clip-path: var(--clip);
-			padding: var(--step--2) var(--step--1);
+			padding: dt("step-02") dt("step-01");
 			background-color: inherit;
-			color: inherit;
+			color: #fff;
 		}
 	}
 </style>

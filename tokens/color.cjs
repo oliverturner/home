@@ -15,7 +15,7 @@ const nord = {
 		dark: {
 			red: "hsl(354, 42%, 8.97%)",
 			orange: "hsl(14, 51%, 20.9%)",
-			yellow: "hsl(40, 71%, 27.84%)",
+			yellow: "hsl(40, 71%, 26.25%)",
 			green: "hsl(92, 28%, 23.77%)",
 			purple: "hsl(311, 20%, 21.32%)",
 		},

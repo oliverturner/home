@@ -38,6 +38,8 @@ const { project } = Astro.props;
 </article>
 
 <style>
+	@design-tokens url("../styles/generated-tokens.json") format("style-dictionary3");
+
 	.project {
 		display: grid;
 		grid-template-areas:
@@ -45,8 +47,8 @@ const { project } = Astro.props;
 			"details"
 			"links";
 
-		background-color: var(--colour-content-bg);
-		color: var(--colour-content-text);
+		background-color: dt("color.content.bg");
+		color: dt("color.content.text");
 
 		@media (--mq-medium) {
 			grid-template-columns: 200px 1fr max-content;
@@ -61,7 +63,7 @@ const { project } = Astro.props;
 	.project__title {
 		grid-area: title;
 
-		padding: var(--step--2);
+		padding: dt("step-02");
 		line-height: 1;
 		font-weight: 400;
 	}
@@ -81,16 +83,16 @@ const { project } = Astro.props;
 	.project__details {
 		grid-area: details;
 
-		padding: var(--step--2) var(--step-1);
+		padding: dt("step-02") dt("step-1");
 		text-decoration: none;
-		background-color: var(--nord-light-1);
+		background-color: dt("color.light-1");
 
 		& p {
 			margin-top: 0;
 		}
 
 		& p + p {
-			margin-top: var(--step--2);
+			margin-top: dt("step-02");
 		}
 	}
 
@@ -98,9 +100,9 @@ const { project } = Astro.props;
 		grid-area: links;
 
 		display: flex;
-		gap: var(--step--2);
+		gap: dt("step-02");
 
-		padding: var(--step--2);
+		padding: dt("step-02");
 
 		& a {
 			text-decoration: none;

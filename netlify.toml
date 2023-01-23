@@ -16,7 +16,7 @@
   [headers.values]
     # Validate CSP on https://securityheaders.com/?q=oliverturner.cloud&followRedirects=on
     Content-Security-Policy = '''
-      default-src 'self'
+      default-src 'self';
       script-src  'self' https://*.netlify.app 'unsafe-inline';
       style-src   'self' https://*.netlify.app 'unsafe-inline';
       object-src  'self' https://*.netlify.app;

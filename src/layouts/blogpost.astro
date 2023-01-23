@@ -7,8 +7,6 @@ const { pathname } = Astro.url;
 const category = pathname.split("/").at(1);
 const headerCls = `header--${category}`;
 
-console.log({ pathname, category, headerCls });
-
 export interface Props {
 	content: {
 		title: string;
@@ -60,8 +58,8 @@ const {
 		grid-template-rows: auto 1fr auto;
 
 		min-height: 100%;
-		background-color: var(--colour-content-bg);
-		color: var(--colour-content-text);
+		background-color: dt("color.content.bg");
+		color: dt("color.content.text");
 	}
 
 	.hero {
@@ -93,7 +91,7 @@ const {
 			--text: dt("color.text.inuse");
 		}
 
-		padding: var(--step-0);
+		padding: dt("step-0");
 		background-color: var(--bg);
 		color: var(--text);
 

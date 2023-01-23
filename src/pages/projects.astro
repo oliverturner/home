@@ -1,48 +1,11 @@
 ---
-import type { Project } from "../types";
-
-interface Layout {
-	frontmatter: {
-		title: string;
-		description: string;
-		tags: string[];
-		url: keyof typeof projects;
-		date: string;
-		dateUpdated?: string;
-	};
-	url: string;
-}
-
-import Layout from "../layouts/minimal.astro";
-import projects from "../data/projects.json";
-import ProjectLink from "../components/project-link.astro";
+import Layout from "../layouts/content.astro";
 
 const title = "Projects";
-const description = "Deeper dives into web development";
-
-// Use Astro.glob() to fetch all posts, and then sort them by date.
-const pages = await Astro.glob("./projects/*.{md,mdx}");
-pages.sort((a, b) => {
-	const aDate = new Date(a.frontmatter.dateUpdated || a.frontmatter.date);
-	const bDate = new Date(b.frontmatter.dateUpdated || b.frontmatter.date);
-
-	return bDate.getTime() - aDate.getTime();
-});
-
-const data: Project[] = [];
-for (const page of pages) {
-	// console.log(page.frontmatter.title, page.frontmatter.date, page.url);
-
-	const pageUrl = page.url as keyof typeof projects;
-	data.push({ pageUrl, ...page.frontmatter, ...projects[pageUrl] });
-}
+const description = "Notes on the process of building";
 ---
 
-<Layout title={title} description={description}>
-	<div class="projects">
-		{data.map((project) => <ProjectLink project={project} />)}
-	</div>
-</Layout>
+<Layout title={title} description={description} />
 
 <style>
 	@design-tokens url("../styles/generated-tokens.json") format("style-dictionary3");
@@ -50,17 +13,5 @@ for (const page of pages) {
 	:root {
 		--content-header-bg: dt("color.bg.projects");
 		--content-header-text: dt("color.text.projects");
-	}
-
-	.projects {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-		grid-gap: var(--step-0);
-
-		padding: var(--step-0);
-
-		@media (--mq-medium) {
-			padding: var(--step-1) 0;
-		}
 	}
 </style>
