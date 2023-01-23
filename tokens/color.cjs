@@ -32,11 +32,11 @@ module.exports = {
 		"dark-4": { value: "hsl(220, 16%, 48.27%)" },
 
 		// Nord "Snow Storm"
-		"light-0": { value: "hsl(218, 27%, 49.24%)" },
-		"light-1": { value: "hsl(218, 27%, 49.24%)" },
-		"light-2": { value: "hsl(218, 27%, 88%)" },
-		"light-3": { value: "hsl(218, 27%, 92%)" },
-		"light-4": { value: "hsl(218, 27%, 94%)" },
+		"light-02": { value: "hsl(218, 27%, 49.24%)" },
+		"light-01": { value: "hsl(218, 27%, 49.24%)" },
+		"light-0": { value: "hsl(218, 27%, 88%)" },
+		"light-1": { value: "hsl(218, 27%, 92%)" },
+		"light-2": { value: "hsl(218, 27%, 94%)" },
 
 		// greys
 		"grey-1": { value: "hsl(220, 6%, 46.7%)" },

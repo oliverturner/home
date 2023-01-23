@@ -13,6 +13,8 @@ import Nav from "./nav.astro";
 </div>
 
 <style>
+	@design-tokens url("../styles/generated-tokens.json") format("style-dictionary3");
+
 	.page {
 		display: grid;
 
@@ -22,7 +24,7 @@ import Nav from "./nav.astro";
 		overflow: hidden;
 		height: 100vh;
 		height: 100svh;
-		max-width: var(--layout-large);
+		max-width: var(--page-w, dt("viewport.medium"));
 		margin: auto;
 
 		@media (--mq-medium) {

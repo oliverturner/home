@@ -45,6 +45,13 @@ for (const page of pages) {
 </Layout>
 
 <style>
+	@design-tokens url("../styles/generated-tokens.json") format("style-dictionary3");
+
+	:root {
+		--content-header-bg: dt("color.bg.projects");
+		--content-header-text: dt("color.text.projects");
+	}
+
 	.projects {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));

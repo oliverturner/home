@@ -33,3 +33,14 @@ const posts = (await Astro.glob("./weeknotes/*.{md,mdx}")).sort(
 		}
 	</ul>
 </Layout>
+
+<style>
+	@design-tokens url("../styles/generated-tokens.json") format("style-dictionary3");
+
+	:root {
+		--content-header-bg: dt("color.bg.weeknotes");
+		--content-header-text: dt("color.text.weeknotes");
+
+		/* --page-w: 100%; */
+	}
+</style>

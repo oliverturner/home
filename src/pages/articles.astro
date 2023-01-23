@@ -10,5 +10,14 @@ const description = "Deeper dives into web development";
 <Layout title={title} description={description}>
 	<h1 slot="header">Articles</h1>
 
-	<p slot="default">WTF?!</p>
+	<p slot="default"></p>
 </Layout>
+
+<style>
+	@design-tokens url("../styles/generated-tokens.json") format("style-dictionary3");
+
+	:root {
+		--content-header-bg: dt("color.bg.articles");
+		--content-header-text: dt("color.text.articles");
+	}
+</style>

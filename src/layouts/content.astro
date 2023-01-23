@@ -25,13 +25,16 @@ const { title, description } = Astro.props;
 </Base>
 
 <style>
+	@design-tokens url("../styles/generated-tokens.json") format("style-dictionary3");
+
 	.content {
 		background-color: var(--nord-light-1);
 	}
 
 	header {
 		padding: var(--step-0);
-		background-color: var(--nord-light-0);
+		background-color: var(--content-header-bg, dt("color.light-0"));
+		color: var(--content-header-text, inherit);
 
 		& p {
 			margin: 0;
