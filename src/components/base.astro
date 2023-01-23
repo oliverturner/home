@@ -18,8 +18,18 @@ export const { title = SITE_TITLE, description = SITE_DESCRIPTION } =
 	<head>
 		<title>{title}</title>
 
-		<link rel="preload" href="/fonts/josefin-sans.woff2" as="font" />
-		<link rel="preload" href="/fonts/lora.woff2" as="font" />
+		<link
+			rel="preload"
+			href="/fonts/josefin-sans.woff2"
+			as="font"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="preload"
+			href="/fonts/lora.woff2"
+			as="font"
+			crossorigin="anonymous"
+		/>
 
 		<BaseMeta title={title} description={description} />
 		<slot name="meta" />
