@@ -1,0 +1,44 @@
+---
+import SiteLinks from "../components/site-links.astro";
+import Nav from "./nav.astro";
+---
+
+<div class="page">
+	<div class="page__content">
+		<slot />
+	</div>
+	<Nav>
+		<SiteLinks />
+	</Nav>
+</div>
+
+<style>
+	@design-tokens url("../styles/generated-tokens.json") format("style-dictionary3");
+
+	.page {
+		display: grid;
+
+		grid-template-areas: "content";
+		gap: var(--step-0);
+
+		overflow: hidden;
+		height: 100vh;
+		height: 100svh;
+		max-width: var(--page-w, dt("viewport.medium"));
+		margin: auto;
+
+		@media (--mq-medium) {
+			justify-content: center;
+
+			grid-template-columns: 1fr var(--width-nav);
+			grid-template-areas: "content nav";
+		}
+	}
+
+	.page__content {
+		grid-area: content;
+
+		overflow-y: auto;
+		min-height: 100%;
+	}
+</style>

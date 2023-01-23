@@ -1,0 +1,26 @@
+---
+import BaseMeta from "../components/base-meta.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+
+import "../styles/global.css";
+
+export type Props = {
+	title?: string;
+	description?: string;
+};
+
+export const { title = SITE_TITLE, description = SITE_DESCRIPTION } =
+	Astro.props || {};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{title}</title>
+		<BaseMeta title={title} description={description} />
+		<slot name="meta" />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>

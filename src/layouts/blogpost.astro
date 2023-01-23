@@ -1,0 +1,111 @@
+---
+import Base from "../components/base.astro";
+import NavPage from "../components/nav-page.astro";
+import ContentFooter from "../components/content-footer.astro";
+
+const { pathname } = Astro.url;
+const category = pathname.split("/").at(1);
+const headerCls = `header--${category}`;
+
+console.log({ pathname, category, headerCls });
+
+export interface Props {
+	content: {
+		title: string;
+		description: string;
+		pubDate?: string;
+		updatedDate?: string;
+		heroImage?: string;
+	};
+}
+
+const {
+	content: { title, description, pubDate, updatedDate, heroImage },
+} = Astro.props;
+---
+
+<Base title={title} description={description}>
+	<NavPage>
+		<article>
+			{
+				heroImage && (
+					<img class="hero" width={720} height={360} src={heroImage} alt="" />
+				)
+			}
+
+			<header class={headerCls}>
+				<h1 class="title">{title}</h1>
+				{pubDate && <time>{pubDate}</time>}
+				{
+					updatedDate && (
+						<p class="subtitle">
+							Last updated: <time>{updatedDate}</time>
+						</p>
+					)
+				}
+			</header>
+			<div class="copy">
+				<slot />
+			</div>
+			<ContentFooter />
+		</article>
+	</NavPage>
+</Base>
+
+<style>
+	@design-tokens url("../styles/generated-tokens.json") format("style-dictionary3");
+
+	article {
+		display: grid;
+		grid-template-rows: auto 1fr auto;
+
+		min-height: 100%;
+		background-color: var(--colour-content-bg);
+		color: var(--colour-content-text);
+	}
+
+	.hero {
+		display: block;
+		width: 100%;
+		max-height: 360px;
+		object-fit: contain;
+	}
+
+	header {
+		&.header--about {
+			--bg: dt("color.bg.about");
+			--text: dt("color.text.about");
+		}
+		&.header--projects {
+			--bg: dt("color.bg.projects");
+			--text: dt("color.text.projects");
+		}
+		&.header--articles {
+			--bg: dt("color.bg.articles");
+			--text: dt("color.text.articles");
+		}
+		&.header--weeknotes {
+			--bg: dt("color.bg.weeknotes");
+			--text: dt("color.text.weeknotes");
+		}
+		&.header--inuse {
+			--bg: dt("color.bg.inuse");
+			--text: dt("color.text.inuse");
+		}
+
+		padding: var(--step-0);
+		background-color: var(--bg);
+		color: var(--text);
+
+		& p {
+			margin: 0;
+		}
+	}
+
+	.title {
+		font-size: 2em;
+	}
+	hr {
+		margin: 0;
+	}
+</style>

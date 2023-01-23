@@ -1,0 +1,15 @@
+{
+	"source": ["./tokens/**/*.{cjs,json}"],
+	"platforms": {
+		"json": {
+			"transformGroup": "js",
+			"buildPath": "./src/styles/",
+			"files": [
+				{
+					"format": "json",
+					"destination": "generated-tokens.json"
+				}
+			]
+		}
+	}
+}

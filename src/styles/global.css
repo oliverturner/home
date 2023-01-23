@@ -1,145 +1,206 @@
-/*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
+@import url("./_tokens.css");
+@import url("./_reset.css");
+@import url("./_fonts.css");
 
-/* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1140,16,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+@design-tokens url("./generated-tokens.json") format("style-dictionary3");
 
 :root {
-  --step--2: clamp(0.64rem, calc(0.72rem + -0.11vw), 0.69rem);
-  --step--1: clamp(0.8rem, calc(0.85rem + -0.06vw), 0.83rem);
-  --step-0: clamp(1rem, calc(1rem + 0vw), 1rem);
-  --step-1: clamp(1.2rem, calc(1.18rem + 0.1vw), 1.25rem);
-  --step-2: clamp(1.44rem, calc(1.39rem + 0.24vw), 1.56rem);
-  --step-3: clamp(1.73rem, calc(1.64rem + 0.44vw), 1.95rem);
-  --step-4: clamp(2.07rem, calc(1.93rem + 0.72vw), 2.44rem);
-  --step-5: clamp(2.49rem, calc(2.27rem + 1.1vw), 3.05rem);
+	/* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1140,16,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+	--step--2: clamp(0.64rem, calc(0.72rem + -0.11vw), 0.69rem);
+	--step--1: clamp(0.8rem, calc(0.85rem + -0.06vw), 0.83rem);
+	--step-0: clamp(1rem, calc(1rem + 0vw), 1rem);
+	--step-1: clamp(1.2rem, calc(1.18rem + 0.1vw), 1.25rem);
+	--step-2: clamp(1.44rem, calc(1.39rem + 0.24vw), 1.56rem);
+	--step-3: clamp(1.73rem, calc(1.64rem + 0.44vw), 1.95rem);
+	--step-4: clamp(2.07rem, calc(1.93rem + 0.72vw), 2.44rem);
+	--step-5: clamp(2.49rem, calc(2.27rem + 1.1vw), 3.05rem);
 
-  --text-light: var(--gray-1);
-  --text-mid: var(--gray-6);
-  --text-normal: var(--gray-8);
-  --text-strong: var(--gray-9);
-  --text-link: var(--blue-6);
+	--text-light: dt("color.grey-3");
+	--text-mid: var(--gray-6);
+	--text-normal: var(--gray-8);
+	--text-strong: var(--gray-9);
+	--text-link: var(--blue-6);
 
-  --site-header-bg: var(--bg-transparent-dark);
-  --site-header-text: var(--text-light);
+	--site-header-bg: var(--colour-transparent-dark);
+	--site-header-text: var(--text-light);
 
-  --site-footer-border: 1px solid var(--gray-4);
+	--site-footer-border: 1px solid var(--gray-4);
 
-  --bg-transparent-dark: #000b;
-  --tint-bg: #0c0e0d;
-  --tint-bg-start: #000;
-  --tint-bg-end: darkslateblue;
+	--nord-dark-0: #242932;
+	--nord-dark-1: #2e3440;
+	--nord-dark-2: #3b4252;
+	--nord-dark-3: #434c5e;
+	--nord-dark-4: hsl(220, 16%, 48.27%);
 
+	--nord-grey-1: hsl(220, 6%, 46.7%);
 
-  --content-width: 65ch;
-  --content-bg: var(--gray-1);
+	--nord-light--2: hsl(218, 27%, 49.24%);
+	--nord-light-0: hsl(218, 27%, 88%);
+	--nord-light-1: hsl(218, 27%, 92%);
+	--nord-light-2: hsl(218, 27%, 94%);
 
-  --nav-width: 40ch;
-  --nav-padding: var(--step-1);
-  --nav-bg-colour: var(--bg-transparent-dark);
-  --nav-text-colour: var(--text-light);
+	--nord-aurora-red: hsl(354, 42%, 56%);
+	--nord-aurora-orange: hsl(14, 51%, 63%);
+	--nord-aurora-yellow: hsl(40, 71%, 73%);
+	--nord-aurora-green: hsl(92, 28%, 65%);
+	--nord-aurora-purple: hsl(311, 20%, 63%);
+
+	--nord-aurora-dark-red: hsl(354, 42%, 8.97%);
+	--nord-aurora-dark-orange: hsl(14, 51%, 20.9%);
+	--nord-aurora-dark-yellow: hsl(40, 71%, 26.2%);
+	--nord-aurora-dark-green: hsl(92, 28%, 23.77%);
+	--nord-aurora-dark-purple: hsl(311, 20%, 21.32%);
+
+	--colour-transparent-dark: #000c;
+	--colour-transparent-light: #fffc;
+
+	--colour-site-bg: var(--nord-dark-0);
+	--colour-site-text: var(--nord-light-0);
+
+	--colour-topic-about: var(--nord-aurora-red);
+	--colour-topic-about-text: var(--nord-aurora-dark-red);
+	--colour-topic-projects: var(--nord-aurora-orange);
+	--colour-topic-projects-text: var(--nord-aurora-dark-orange);
+	--colour-topic-articles: var(--nord-aurora-yellow);
+	--colour-topic-articles-text: var(--nord-aurora-dark-yellow);
+	--colour-topic-weeknotes: var(--nord-aurora-green);
+	--colour-topic-weeknotes-text: var(--nord-aurora-dark-green);
+	--colour-topic-inuse: var(--nord-aurora-purple);
+	--colour-topic-inuse-text: var(--nord-aurora-dark-purple);
+
+	--colour-content-bg: var(--nord-light-0);
+	--colour-content-text: var(--nord-dark-1);
+
+	/* TODO: use a container unit based on width/height */
+	--clip-size: 1.5rem;
+	--clip-bottom-right: polygon(
+		0 0,
+		100% 0,
+		100% calc(100% - var(--clip-size)),
+		calc(100% - var(--clip-size)) 100%,
+		0% 100%,
+		0 0
+	);
+
+	--clip-bottom-left: polygon(
+		0 0,
+		100% 0,
+		100% 100%,
+		var(--clip-size) 100%,
+		0 calc(100% - var(--clip-size)),
+		0 0
+	);
+
+	--nav-x: 0;
+	--icon-wh: dt("size.icon");
+	--width-nav: dt("width.nav");
+	--width-home-nav: var(--layout-large);
+
+	&.nav-open {
+		--nav-x: calc(dt("width.nav") * -1);
+	}
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+:where(html) {
+	min-height: 100%;
+	background-color: var(--colour-site-bg);
+	background-image: linear-gradient(
+		180deg,
+		var(--colour-site-bg-start),
+		var(--colour-site-bg-end)
+	);
+
+	color: var(--text-normal);
 }
 
 :where(body) {
-  margin: 0;
-  font-family: system-ui, Verdana, sans-serif;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  line-height: 1.5;
-  background-repeat: no-repeat;
-
-  background-image: url("/bg.avif"),
-    linear-gradient(180deg, var(--tint-bg-start), var(--tint-bg-end));
-  background-position: center;
-  background-size: cover;
-
-  @media (min-width: 900px) {
-    background-size: auto;
-    background-position: center top;
-  }
-
-  background-color: var(--tint-bg);
-  color: var(--text-normal);
+	margin: 0;
+	font-family: system-ui, Verdana, sans-serif;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	line-height: 1.5;
 }
 
-:where(h1, h2, h3, h4, h5, h6, strong, b) {
-  color: var(--text-strong);
+:where(h1, .title) {
+	font-family: "Josefin Sans", sans-serif;
+	font-style: normal;
+	text-transform: uppercase;
 }
 
-:where(main) {
-  max-width: var(--content-width);
-  margin: auto;
+:where(h2, .subtitle) {
+	font-family: "Lora", serif;
+	font-style: italic;
 }
 
-:where(a) {
-  color: inherit;
+:where(.content) {
+	min-height: 100%;
+
+	background-color: var(--colour-content-bg);
+	color: var(--colour-content-text);
 }
 
-textarea {
-  width: 100%;
-  font-size: 16px;
-}
+:where(.content__header) {
+	& > * {
+		margin: 0;
+	}
 
-input {
-  font-size: 16px;
-}
-
-content {
-  line-height: 1.6;
-}
-
-table {
-  width: 100%;
-}
-
-:where(img) {
-  max-width: 100%;
-  height: auto;
-}
-
-code {
-  padding: 2px 5px;
-  background-color: #f2f2f2;
-}
-
-pre {
-  padding: 1rem;
-
-  & > code {
-    all: unset;
-  }
-}
-
-blockquote {
-  border: 1px solid #999;
-  color: #222;
-  padding: 2px 0px 2px 20px;
-  margin: 0px;
-  font-style: italic;
+	& .subtitle {
+		font-size: 1.2rem;
+	}
 }
 
 :where(.copy) {
-  padding: var(--step-0);
+	padding: var(--step-2) var(--step-1);
+	background-color: var(--nord-light-1);
 
-  & > * {
-    margin: 0;
-  }
+	& > * {
+		margin: 0;
+	}
 
-  & > * + * {
-    margin-top: var(--step-1);
-  }
+	& > * + * {
+		margin-top: var(--step-1);
+	}
 
-  & img {
-    display: block;
-    margin: var(--step-2) auto;
-    max-height: 30ch;
-  }
+	& img {
+		display: block;
+		margin: var(--step-2) auto;
+		max-height: 30ch;
+	}
+}
+
+:where(.visually-hidden) {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: auto;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	white-space: nowrap;
+}
+
+:where(.clipped--br) {
+	clip-path: var(--clip-bottom-right);
+}
+
+:where(.clipped--bl) {
+	clip-path: var(--clip-bottom-left);
+}
+
+:where(.iconbtn) {
+	display: flex;
+	align-items: center;
+	gap: var(--size-1);
+
+	&.iconbtn--stacked {
+		flex-direction: column;
+	}
+
+	& svg {
+		display: block;
+		width: var(--icon-wh);
+		aspect-ratio: 1;
+		stroke: currentColor;
+	}
 }

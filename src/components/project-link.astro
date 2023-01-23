@@ -1,0 +1,109 @@
+---
+import type { Project } from "../types";
+
+import Icon from "./icon.astro";
+
+export interface Props {
+	project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<article class="project clipped">
+	<img
+		class="project__img"
+		src={project.screenshotUrl}
+		alt={`Screenshot of ${project.title}`}
+	/>
+	<h2 class="project__title subtitle">{project.title}</h2>
+	<a href={project.pageUrl} class="project__details">
+		<p>{project.description}</p>
+	</a>
+	<div class="project__links">
+		<a class="iconbtn" href={project.repoUrl}>
+			<svg><use href="/spritesheet.svg#icon-github"></use></svg>
+			Source
+		</a>
+		{
+			// Don't show the launch button if the URL is this site
+			project.appUrl && (
+				<a class="iconbtn" href={project.appUrl}>
+					<Icon icon="link-external" />
+					Launch site
+				</a>
+			)
+		}
+	</div>
+</article>
+
+<style>
+	.project {
+		display: grid;
+		grid-template-areas:
+			"title"
+			"details"
+			"links";
+
+		background-color: var(--colour-content-bg);
+		color: var(--colour-content-text);
+
+		@media (--mq-medium) {
+			grid-template-columns: 200px 1fr max-content;
+			grid-template-rows: auto 1fr;
+			grid-template-areas:
+				"img title"
+				"img details"
+				"img links";
+		}
+	}
+
+	.project__title {
+		grid-area: title;
+
+		padding: var(--step--2);
+		line-height: 1;
+		font-weight: 400;
+	}
+
+	.project__img {
+		grid-area: img;
+
+		width: 100%;
+		aspect-ratio: 1;
+		object-fit: cover;
+
+		@media (--mq-max-medium) {
+			display: none;
+		}
+	}
+
+	.project__details {
+		grid-area: details;
+
+		padding: var(--step--2) var(--step-1);
+		text-decoration: none;
+		background-color: var(--nord-light-1);
+
+		& p {
+			margin-top: 0;
+		}
+
+		& p + p {
+			margin-top: var(--step--2);
+		}
+	}
+
+	.project__links {
+		grid-area: links;
+
+		display: flex;
+		gap: var(--step--2);
+
+		padding: var(--step--2);
+
+		& a {
+			text-decoration: none;
+		}
+	}
+</style>

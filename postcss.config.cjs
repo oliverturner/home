@@ -1,22 +1,22 @@
-const OpenProps = require("open-props");
-const postcssJitProps = require("postcss-jit-props");
-const postcssPresetEnv = require("postcss-preset-env");
+async function getConfig() {
+	const { default: size } = await import("./tokens/size.cjs");
 
-const { customMedia, customProperties } = require("./src/theme.cjs");
+	const customMedia = {};
+	for (const [k, v] of Object.entries(size.viewport)) {
+		const n = parseInt(v.value, 10);
+		customMedia[`--mq-${k}`] = `(min-width: ${n}ch)`;
+		customMedia[`--mq-max-${k}`] = `(max-width: ${n}ch)`;
+	}
 
-console.log({ customMedia, customProperties });
+	console.log({ customMedia });
 
-module.exports = {
-  plugins: [
-    postcssJitProps({
-      ...OpenProps,
-      ...customProperties,
-    }),
-    postcssPresetEnv({
-      features: {
-        "nesting-rules": true,
-        "custom-media-queries": { importFrom: [{ customMedia }] },
-      },
-    }),
-  ],
-};
+	return {
+		plugins: {
+			"@csstools/postcss-design-tokens": { valueFunctionName: "dt" },
+			"postcss-custom-media": { importFrom: { customMedia } },
+			"postcss-nesting": {},
+		},
+	};
+}
+
+module.exports = getConfig();

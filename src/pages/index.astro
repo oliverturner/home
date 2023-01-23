@@ -1,18 +1,129 @@
 ---
-import Page from "../layouts/page.astro";
+import Base from "../components/base.astro";
+import Link from "../components/home-link.astro";
 
 const props = {
-  title: "Welcome",
-  description: "Oliver Turner's personal website",
-}
+	title: "Home",
+	description: "Oliver Turner's personal website",
+};
 ---
 
-<Page {...props}>
-  <div></div>
-</Page>
+<Base {...props}>
+	<div class="page">
+		<nav>
+			<h1 class="logo clipped--br">
+				<span>Oliver</span>
+				<span>Turner</span>
+			</h1>
+
+			<Link href="/about">
+				<Fragment slot="subtitle">
+					Hello, I'm Oliver. <br />Pleased to meet you!
+				</Fragment>
+				<Fragment slot="title">An introduction</Fragment>
+			</Link>
+
+			<Link href="/projects">
+				<Fragment slot="subtitle">
+					Notes on the <br />process of building
+				</Fragment>
+				<Fragment slot="title">Side projects</Fragment>
+			</Link>
+
+			<Link href="/articles">
+				<Fragment slot="subtitle">
+					Thoughts on <br />development & the web
+				</Fragment>
+				<Fragment slot="title">Some articles</Fragment>
+			</Link>
+
+			<Link href="/weeknotes">
+				<Fragment slot="subtitle">
+					Tracking the <br />personal & professional
+				</Fragment>
+				<Fragment slot="title">Weeknotes</Fragment>
+			</Link>
+
+			<Link href="/in-use">
+				<Fragment slot="subtitle">
+					These are a few <br />of my favourite things
+				</Fragment>
+				<Fragment slot="title">In use</Fragment>
+			</Link>
+		</nav>
+	</div>
+</Base>
 
 <style>
-  :root {
-    --content-bg: transparent;
-  }
+	@design-tokens url("../styles/generated-tokens.json") format("style-dictionary3");
+
+	.page {
+		--site-footer-border: none;
+		--site-footer-bg: #000a;
+		--site-footer-text: var(--stone-6);
+
+		display: grid;
+		align-items: start;
+
+		overflow-x: hidden;
+		overflow-y: auto;
+		min-height: 100vh;
+		min-height: 100svh;
+
+		@media (--mq-medium) {
+			align-items: center;
+		}
+	}
+	nav {
+		--gap: dt("step-0");
+
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: var(--gap);
+
+		width: 100vw;
+		max-width: dt("viewport.large");
+		margin: 0 auto;
+		padding: var(--gap);
+	}
+
+	.logo {
+		--bg: #000;
+		--colour: var(--nord-grey-1);
+
+		display: grid;
+		grid-template-columns: auto auto;
+		justify-content: start;
+		align-content: end;
+		gap: dt("step-02");
+
+		padding: var(--gap);
+		padding-bottom: dt("step-02");
+		line-height: 1;
+		font-size: 130%;
+		font-weight: 700;
+		letter-spacing: 4px;
+
+		background: var(--bg);
+		color: var(--colour);
+
+		@media (--mq-medium) {
+			padding: dt("step-0");
+			font-weight: 400;
+			font-size: 200%;
+		}
+
+		@media (--mq-large) {
+			grid-template-columns: 1fr;
+
+			aspect-ratio: 1;
+			line-height: 1.2;
+			font-size: 300%;
+			font-weight: 300;
+
+			& span {
+				margin-bottom: -0.3rem;
+			}
+		}
+	}
 </style>

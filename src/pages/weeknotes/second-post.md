@@ -1,8 +1,8 @@
 ---
-layout: "../../layouts/page-blogpost.astro"
-title: "Third post"
+layout: "../../layouts/blogpost.astro"
+title: "Second post"
 description: "Lorem ipsum dolor sit amet"
-pubDate: "Jul 15 2022"
+pubDate: "Jul 22 2022"
 heroImage: "/placeholder-hero.jpg"
 ---
 
