@@ -12,8 +12,7 @@ const props = {
 	<div class="page">
 		<nav>
 			<h1 class="logo clipped--br">
-				<span>Oliver</span>
-				<span>Turner</span>
+				<span>Oliver Turner</span>
 			</h1>
 
 			<Link href="/about">
@@ -90,13 +89,11 @@ const props = {
 
 		display: grid;
 		grid-template-columns: auto auto;
-		justify-content: start;
-		align-content: end;
-		gap: dt("step-02");
+		place-content: end start;
 
 		padding: var(--gap);
 		padding-bottom: dt("step-02");
-		line-height: 1;
+		/* line-height: 1; */
 		font-size: 130%;
 		font-weight: 700;
 		letter-spacing: 4px;
@@ -106,8 +103,8 @@ const props = {
 
 		@media (--mq-medium) {
 			padding: dt("step-0");
-			font-weight: 400;
 			font-size: 200%;
+			font-weight: 300;
 		}
 
 		@media (--mq-large) {
@@ -116,7 +113,6 @@ const props = {
 			aspect-ratio: 1;
 			line-height: 1.2;
 			font-size: 300%;
-			font-weight: 300;
 
 			& span {
 				margin-bottom: -0.3rem;
