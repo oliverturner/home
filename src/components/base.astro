@@ -3,6 +3,7 @@ import BaseMeta from "../components/base-meta.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
 import "../styles/global.css";
+import BaseAssets from "./base-assets.astro";
 
 export type Props = {
 	title?: string;
@@ -18,21 +19,10 @@ export const { title = SITE_TITLE, description = SITE_DESCRIPTION } =
 	<head>
 		<title>{title}</title>
 
-		<link
-			rel="preload"
-			href="/fonts/josefin-sans.woff2"
-			as="font"
-			crossorigin="anonymous"
-		/>
-		<link
-			rel="preload"
-			href="/fonts/lora.woff2"
-			as="font"
-			crossorigin="anonymous"
-		/>
-
-		<BaseMeta title={title} description={description} />
-		<slot name="meta" />
+		<BaseMeta title={title} description={description}>
+			<slot name="meta" />
+		</BaseMeta>
+		<BaseAssets />
 	</head>
 	<body>
 		<slot />
