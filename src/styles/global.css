@@ -1,5 +1,4 @@
 @import url("./_reset.css");
-@import url("./_fonts.css");
 
 @design-tokens url("./generated-tokens.json") format("style-dictionary3");
 

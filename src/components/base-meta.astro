@@ -33,3 +33,6 @@ const { title, description, image = "/placeholder-social.jpg" } = Astro.props;
 	title="RSS Feed for oliverturner.cloud"
 	href="/rss.xml"
 />
+
+<!-- Page-specific additions -->
+<slot name="meta" />
