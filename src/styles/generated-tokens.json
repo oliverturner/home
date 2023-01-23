@@ -1,810 +1,665 @@
 {
-  "color": {
-    "dark-0": {
-      "value": "#242932",
-      "filePath": "./tokens/color.cjs",
-      "isSource": true,
-      "original": {
-        "value": "#242932"
-      },
-      "name": "ColorDark0",
-      "attributes": {
-        "category": "color",
-        "type": "dark-0"
-      },
-      "path": [
-        "color",
-        "dark-0"
-      ]
-    },
-    "dark-1": {
-      "value": "#2e3440",
-      "filePath": "./tokens/color.cjs",
-      "isSource": true,
-      "original": {
-        "value": "#2e3440"
-      },
-      "name": "ColorDark1",
-      "attributes": {
-        "category": "color",
-        "type": "dark-1"
-      },
-      "path": [
-        "color",
-        "dark-1"
-      ]
-    },
-    "dark-2": {
-      "value": "#3b4252",
-      "filePath": "./tokens/color.cjs",
-      "isSource": true,
-      "original": {
-        "value": "#3b4252"
-      },
-      "name": "ColorDark2",
-      "attributes": {
-        "category": "color",
-        "type": "dark-2"
-      },
-      "path": [
-        "color",
-        "dark-2"
-      ]
-    },
-    "dark-3": {
-      "value": "#434c5e",
-      "filePath": "./tokens/color.cjs",
-      "isSource": true,
-      "original": {
-        "value": "#434c5e"
-      },
-      "name": "ColorDark3",
-      "attributes": {
-        "category": "color",
-        "type": "dark-3"
-      },
-      "path": [
-        "color",
-        "dark-3"
-      ]
-    },
-    "dark-4": {
-      "value": "#67758f",
-      "filePath": "./tokens/color.cjs",
-      "isSource": true,
-      "original": {
-        "value": "hsl(220, 16%, 48.27%)"
-      },
-      "name": "ColorDark4",
-      "attributes": {
-        "category": "color",
-        "type": "dark-4"
-      },
-      "path": [
-        "color",
-        "dark-4"
-      ]
-    },
-    "light-02": {
-      "value": "#5c759f",
-      "filePath": "./tokens/color.cjs",
-      "isSource": true,
-      "original": {
-        "value": "hsl(218, 27%, 49.24%)"
-      },
-      "name": "ColorLight02",
-      "attributes": {
-        "category": "color",
-        "type": "light-02"
-      },
-      "path": [
-        "color",
-        "light-02"
-      ]
-    },
-    "light-01": {
-      "value": "#5c759f",
-      "filePath": "./tokens/color.cjs",
-      "isSource": true,
-      "original": {
-        "value": "hsl(218, 27%, 49.24%)"
-      },
-      "name": "ColorLight01",
-      "attributes": {
-        "category": "color",
-        "type": "light-01"
-      },
-      "path": [
-        "color",
-        "light-01"
-      ]
-    },
-    "light-0": {
-      "value": "#d8dee9",
-      "filePath": "./tokens/color.cjs",
-      "isSource": true,
-      "original": {
-        "value": "hsl(218, 27%, 88%)"
-      },
-      "name": "ColorLight0",
-      "attributes": {
-        "category": "color",
-        "type": "light-0"
-      },
-      "path": [
-        "color",
-        "light-0"
-      ]
-    },
-    "light-1": {
-      "value": "#e5e9f0",
-      "filePath": "./tokens/color.cjs",
-      "isSource": true,
-      "original": {
-        "value": "hsl(218, 27%, 92%)"
-      },
-      "name": "ColorLight1",
-      "attributes": {
-        "category": "color",
-        "type": "light-1"
-      },
-      "path": [
-        "color",
-        "light-1"
-      ]
-    },
-    "light-2": {
-      "value": "#eceff4",
-      "filePath": "./tokens/color.cjs",
-      "isSource": true,
-      "original": {
-        "value": "hsl(218, 27%, 94%)"
-      },
-      "name": "ColorLight2",
-      "attributes": {
-        "category": "color",
-        "type": "light-2"
-      },
-      "path": [
-        "color",
-        "light-2"
-      ]
-    },
-    "grey-1": {
-      "value": "#70757e",
-      "filePath": "./tokens/color.cjs",
-      "isSource": true,
-      "original": {
-        "value": "hsl(220, 6%, 46.7%)"
-      },
-      "name": "ColorGrey1",
-      "attributes": {
-        "category": "color",
-        "type": "grey-1"
-      },
-      "path": [
-        "color",
-        "grey-1"
-      ]
-    },
-    "grey-2": {
-      "value": "#93979f",
-      "filePath": "./tokens/color.cjs",
-      "isSource": true,
-      "original": {
-        "value": "hsl(220, 6%, 60%)"
-      },
-      "name": "ColorGrey2",
-      "attributes": {
-        "category": "color",
-        "type": "grey-2"
-      },
-      "path": [
-        "color",
-        "grey-2"
-      ]
-    },
-    "grey-3": {
-      "value": "#aeb1b7",
-      "filePath": "./tokens/color.cjs",
-      "isSource": true,
-      "original": {
-        "value": "hsl(220, 6%, 70%)"
-      },
-      "name": "ColorGrey3",
-      "attributes": {
-        "category": "color",
-        "type": "grey-3"
-      },
-      "path": [
-        "color",
-        "grey-3"
-      ]
-    },
-    "transparent": {
-      "dark": {
-        "value": "#000000",
-        "filePath": "./tokens/color.cjs",
-        "isSource": true,
-        "original": {
-          "value": "#000c"
-        },
-        "name": "ColorTransparentDark",
-        "attributes": {
-          "category": "color",
-          "type": "transparent",
-          "item": "dark"
-        },
-        "path": [
-          "color",
-          "transparent",
-          "dark"
-        ]
-      },
-      "light": {
-        "value": "#ffffff",
-        "filePath": "./tokens/color.cjs",
-        "isSource": true,
-        "original": {
-          "value": "#fffc"
-        },
-        "name": "ColorTransparentLight",
-        "attributes": {
-          "category": "color",
-          "type": "transparent",
-          "item": "light"
-        },
-        "path": [
-          "color",
-          "transparent",
-          "light"
-        ]
-      }
-    },
-    "site": {
-      "bg": {
-        "value": "#242932",
-        "filePath": "./tokens/color.cjs",
-        "isSource": true,
-        "original": {
-          "value": "{color.dark-0.value}"
-        },
-        "name": "ColorSiteBg",
-        "attributes": {
-          "category": "color",
-          "type": "site",
-          "item": "bg"
-        },
-        "path": [
-          "color",
-          "site",
-          "bg"
-        ]
-      },
-      "text": {
-        "value": "#d8dee9",
-        "filePath": "./tokens/color.cjs",
-        "isSource": true,
-        "original": {
-          "value": "{color.light-0.value}"
-        },
-        "name": "ColorSiteText",
-        "attributes": {
-          "category": "color",
-          "type": "site",
-          "item": "text"
-        },
-        "path": [
-          "color",
-          "site",
-          "text"
-        ]
-      }
-    },
-    "content": {
-      "bg": {
-        "value": "#d8dee9",
-        "filePath": "./tokens/color.cjs",
-        "isSource": true,
-        "original": {
-          "value": "{color.light-0.value}"
-        },
-        "name": "ColorContentBg",
-        "attributes": {
-          "category": "color",
-          "type": "content",
-          "item": "bg"
-        },
-        "path": [
-          "color",
-          "content",
-          "bg"
-        ]
-      },
-      "text": {
-        "value": "#2e3440",
-        "filePath": "./tokens/color.cjs",
-        "isSource": true,
-        "original": {
-          "value": "{color.dark-1.value}"
-        },
-        "name": "ColorContentText",
-        "attributes": {
-          "category": "color",
-          "type": "content",
-          "item": "text"
-        },
-        "path": [
-          "color",
-          "content",
-          "text"
-        ]
-      }
-    },
-    "bg": {
-      "about": {
-        "value": "#be6069",
-        "filePath": "./tokens/color.cjs",
-        "isSource": true,
-        "original": {
-          "value": "hsl(354, 42%, 56%)"
-        },
-        "name": "ColorBgAbout",
-        "attributes": {
-          "category": "color",
-          "type": "bg",
-          "item": "about"
-        },
-        "path": [
-          "color",
-          "bg",
-          "about"
-        ]
-      },
-      "projects": {
-        "value": "#d18771",
-        "filePath": "./tokens/color.cjs",
-        "isSource": true,
-        "original": {
-          "value": "hsl(14, 51%, 63%)"
-        },
-        "name": "ColorBgProjects",
-        "attributes": {
-          "category": "color",
-          "type": "bg",
-          "item": "projects"
-        },
-        "path": [
-          "color",
-          "bg",
-          "projects"
-        ]
-      },
-      "articles": {
-        "value": "#ebca89",
-        "filePath": "./tokens/color.cjs",
-        "isSource": true,
-        "original": {
-          "value": "hsl(40, 71%, 73%)"
-        },
-        "name": "ColorBgArticles",
-        "attributes": {
-          "category": "color",
-          "type": "bg",
-          "item": "articles"
-        },
-        "path": [
-          "color",
-          "bg",
-          "articles"
-        ]
-      },
-      "weeknotes": {
-        "value": "#a4bf8d",
-        "filePath": "./tokens/color.cjs",
-        "isSource": true,
-        "original": {
-          "value": "hsl(92, 28%, 65%)"
-        },
-        "name": "ColorBgWeeknotes",
-        "attributes": {
-          "category": "color",
-          "type": "bg",
-          "item": "weeknotes"
-        },
-        "path": [
-          "color",
-          "bg",
-          "weeknotes"
-        ]
-      },
-      "inuse": {
-        "value": "#b48ead",
-        "filePath": "./tokens/color.cjs",
-        "isSource": true,
-        "original": {
-          "value": "hsl(311, 20%, 63%)"
-        },
-        "name": "ColorBgInuse",
-        "attributes": {
-          "category": "color",
-          "type": "bg",
-          "item": "inuse"
-        },
-        "path": [
-          "color",
-          "bg",
-          "inuse"
-        ]
-      }
-    },
-    "text": {
-      "about": {
-        "value": "#200d0f",
-        "filePath": "./tokens/color.cjs",
-        "isSource": true,
-        "original": {
-          "value": "hsl(354, 42%, 8.97%)"
-        },
-        "name": "ColorTextAbout",
-        "attributes": {
-          "category": "color",
-          "type": "text",
-          "item": "about"
-        },
-        "path": [
-          "color",
-          "text",
-          "about"
-        ]
-      },
-      "projects": {
-        "value": "#50271a",
-        "filePath": "./tokens/color.cjs",
-        "isSource": true,
-        "original": {
-          "value": "hsl(14, 51%, 20.9%)"
-        },
-        "name": "ColorTextProjects",
-        "attributes": {
-          "category": "color",
-          "type": "text",
-          "item": "projects"
-        },
-        "path": [
-          "color",
-          "text",
-          "projects"
-        ]
-      },
-      "articles": {
-        "value": "#795815",
-        "filePath": "./tokens/color.cjs",
-        "isSource": true,
-        "original": {
-          "value": "hsl(40, 71%, 27.84%)"
-        },
-        "name": "ColorTextArticles",
-        "attributes": {
-          "category": "color",
-          "type": "text",
-          "item": "articles"
-        },
-        "path": [
-          "color",
-          "text",
-          "articles"
-        ]
-      },
-      "weeknotes": {
-        "value": "#3b4e2c",
-        "filePath": "./tokens/color.cjs",
-        "isSource": true,
-        "original": {
-          "value": "hsl(92, 28%, 23.77%)"
-        },
-        "name": "ColorTextWeeknotes",
-        "attributes": {
-          "category": "color",
-          "type": "text",
-          "item": "weeknotes"
-        },
-        "path": [
-          "color",
-          "text",
-          "weeknotes"
-        ]
-      },
-      "inuse": {
-        "value": "#412b3d",
-        "filePath": "./tokens/color.cjs",
-        "isSource": true,
-        "original": {
-          "value": "hsl(311, 20%, 21.32%)"
-        },
-        "name": "ColorTextInuse",
-        "attributes": {
-          "category": "color",
-          "type": "text",
-          "item": "inuse"
-        },
-        "path": [
-          "color",
-          "text",
-          "inuse"
-        ]
-      }
-    }
-  },
-  "font": {
-    "family": {
-      "base": {
-        "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-        "filePath": "./tokens/font.json",
-        "isSource": true,
-        "original": {
-          "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif"
-        },
-        "name": "FontFamilyBase",
-        "attributes": {
-          "category": "font",
-          "type": "family",
-          "item": "base"
-        },
-        "path": [
-          "font",
-          "family",
-          "base"
-        ]
-      },
-      "code": {
-        "value": "source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace",
-        "filePath": "./tokens/font.json",
-        "isSource": true,
-        "original": {
-          "value": "source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace"
-        },
-        "name": "FontFamilyCode",
-        "attributes": {
-          "category": "font",
-          "type": "family",
-          "item": "code"
-        },
-        "path": [
-          "font",
-          "family",
-          "code"
-        ]
-      }
-    }
-  },
-  "step-02": {
-    "value": "clamp(0.64rem, calc(0.72rem + -0.11vw), 0.69rem)",
-    "filePath": "./tokens/size.cjs",
-    "isSource": true,
-    "original": {
-      "value": "clamp(0.64rem, calc(0.72rem + -0.11vw), 0.69rem)"
-    },
-    "name": "Step02",
-    "attributes": {
-      "category": "step-02"
-    },
-    "path": [
-      "step-02"
-    ]
-  },
-  "step-01": {
-    "value": "clamp(0.8rem, calc(0.85rem + -0.06vw), 0.83rem)",
-    "filePath": "./tokens/size.cjs",
-    "isSource": true,
-    "original": {
-      "value": "clamp(0.8rem, calc(0.85rem + -0.06vw), 0.83rem)"
-    },
-    "name": "Step01",
-    "attributes": {
-      "category": "step-01"
-    },
-    "path": [
-      "step-01"
-    ]
-  },
-  "step-0": {
-    "value": "1rem",
-    "filePath": "./tokens/size.cjs",
-    "isSource": true,
-    "original": {
-      "value": "1rem"
-    },
-    "name": "Step0",
-    "attributes": {
-      "category": "step-0"
-    },
-    "path": [
-      "step-0"
-    ]
-  },
-  "step-1": {
-    "value": "clamp(1.2rem, calc(1.18rem + 0.1vw), 1.25rem)",
-    "filePath": "./tokens/size.cjs",
-    "isSource": true,
-    "original": {
-      "value": "clamp(1.2rem, calc(1.18rem + 0.1vw), 1.25rem)"
-    },
-    "name": "Step1",
-    "attributes": {
-      "category": "step-1"
-    },
-    "path": [
-      "step-1"
-    ]
-  },
-  "step-2": {
-    "value": "clamp(1.44rem, calc(1.39rem + 0.24vw), 1.56rem)",
-    "filePath": "./tokens/size.cjs",
-    "isSource": true,
-    "original": {
-      "value": "clamp(1.44rem, calc(1.39rem + 0.24vw), 1.56rem)"
-    },
-    "name": "Step2",
-    "attributes": {
-      "category": "step-2"
-    },
-    "path": [
-      "step-2"
-    ]
-  },
-  "step-3": {
-    "value": "clamp(1.73rem, calc(1.64rem + 0.44vw), 1.95rem)",
-    "filePath": "./tokens/size.cjs",
-    "isSource": true,
-    "original": {
-      "value": "clamp(1.73rem, calc(1.64rem + 0.44vw), 1.95rem)"
-    },
-    "name": "Step3",
-    "attributes": {
-      "category": "step-3"
-    },
-    "path": [
-      "step-3"
-    ]
-  },
-  "step-4": {
-    "value": "clamp(2.07rem, calc(1.93rem + 0.72vw), 2.44rem)",
-    "filePath": "./tokens/size.cjs",
-    "isSource": true,
-    "original": {
-      "value": "clamp(2.07rem, calc(1.93rem + 0.72vw), 2.44rem)"
-    },
-    "name": "Step4",
-    "attributes": {
-      "category": "step-4"
-    },
-    "path": [
-      "step-4"
-    ]
-  },
-  "step-5": {
-    "value": "clamp(2.49rem, calc(2.27rem + 1.1vw), 3.05rem)",
-    "filePath": "./tokens/size.cjs",
-    "isSource": true,
-    "original": {
-      "value": "clamp(2.49rem, calc(2.27rem + 1.1vw), 3.05rem)"
-    },
-    "name": "Step5",
-    "attributes": {
-      "category": "step-5"
-    },
-    "path": [
-      "step-5"
-    ]
-  },
-  "width": {
-    "nav": {
-      "value": "20ch",
-      "filePath": "./tokens/size.cjs",
-      "isSource": true,
-      "original": {
-        "value": "20ch"
-      },
-      "name": "WidthNav",
-      "attributes": {
-        "category": "width",
-        "type": "nav"
-      },
-      "path": [
-        "width",
-        "nav"
-      ]
-    },
-    "content": {
-      "value": "60ch",
-      "filePath": "./tokens/size.cjs",
-      "isSource": true,
-      "original": {
-        "value": "60ch"
-      },
-      "name": "WidthContent",
-      "attributes": {
-        "category": "width",
-        "type": "content"
-      },
-      "path": [
-        "width",
-        "content"
-      ]
-    }
-  },
-  "viewport": {
-    "medium": {
-      "value": "80ch",
-      "filePath": "./tokens/size.cjs",
-      "isSource": true,
-      "original": {
-        "value": "80ch"
-      },
-      "name": "ViewportMedium",
-      "attributes": {
-        "category": "viewport",
-        "type": "medium"
-      },
-      "path": [
-        "viewport",
-        "medium"
-      ]
-    },
-    "large": {
-      "value": "100ch",
-      "filePath": "./tokens/size.cjs",
-      "isSource": true,
-      "original": {
-        "value": "100ch"
-      },
-      "name": "ViewportLarge",
-      "attributes": {
-        "category": "viewport",
-        "type": "large"
-      },
-      "path": [
-        "viewport",
-        "large"
-      ]
-    }
-  },
-  "size": {
-    "clip": {
-      "value": "1.5rem",
-      "filePath": "./tokens/size.cjs",
-      "isSource": true,
-      "original": {
-        "value": 1.5
-      },
-      "name": "SizeClip",
-      "attributes": {
-        "category": "size",
-        "type": "clip"
-      },
-      "path": [
-        "size",
-        "clip"
-      ]
-    },
-    "icon": {
-      "value": "1.5rem",
-      "filePath": "./tokens/size.cjs",
-      "isSource": true,
-      "original": {
-        "value": 1.5
-      },
-      "name": "SizeIcon",
-      "attributes": {
-        "category": "size",
-        "type": "icon"
-      },
-      "path": [
-        "size",
-        "icon"
-      ]
-    },
-    "text": {}
-  }
+	"color": {
+		"dark-0": {
+			"value": "#242932",
+			"filePath": "./tokens/color.cjs",
+			"isSource": true,
+			"original": {
+				"value": "#242932"
+			},
+			"name": "ColorDark0",
+			"attributes": {
+				"category": "color",
+				"type": "dark-0"
+			},
+			"path": ["color", "dark-0"]
+		},
+		"dark-1": {
+			"value": "#2e3440",
+			"filePath": "./tokens/color.cjs",
+			"isSource": true,
+			"original": {
+				"value": "#2e3440"
+			},
+			"name": "ColorDark1",
+			"attributes": {
+				"category": "color",
+				"type": "dark-1"
+			},
+			"path": ["color", "dark-1"]
+		},
+		"dark-2": {
+			"value": "#3b4252",
+			"filePath": "./tokens/color.cjs",
+			"isSource": true,
+			"original": {
+				"value": "#3b4252"
+			},
+			"name": "ColorDark2",
+			"attributes": {
+				"category": "color",
+				"type": "dark-2"
+			},
+			"path": ["color", "dark-2"]
+		},
+		"dark-3": {
+			"value": "#434c5e",
+			"filePath": "./tokens/color.cjs",
+			"isSource": true,
+			"original": {
+				"value": "#434c5e"
+			},
+			"name": "ColorDark3",
+			"attributes": {
+				"category": "color",
+				"type": "dark-3"
+			},
+			"path": ["color", "dark-3"]
+		},
+		"dark-4": {
+			"value": "#67758f",
+			"filePath": "./tokens/color.cjs",
+			"isSource": true,
+			"original": {
+				"value": "hsl(220, 16%, 48.27%)"
+			},
+			"name": "ColorDark4",
+			"attributes": {
+				"category": "color",
+				"type": "dark-4"
+			},
+			"path": ["color", "dark-4"]
+		},
+		"light-02": {
+			"value": "#5c759f",
+			"filePath": "./tokens/color.cjs",
+			"isSource": true,
+			"original": {
+				"value": "hsl(218, 27%, 49.24%)"
+			},
+			"name": "ColorLight02",
+			"attributes": {
+				"category": "color",
+				"type": "light-02"
+			},
+			"path": ["color", "light-02"]
+		},
+		"light-01": {
+			"value": "#5c759f",
+			"filePath": "./tokens/color.cjs",
+			"isSource": true,
+			"original": {
+				"value": "hsl(218, 27%, 49.24%)"
+			},
+			"name": "ColorLight01",
+			"attributes": {
+				"category": "color",
+				"type": "light-01"
+			},
+			"path": ["color", "light-01"]
+		},
+		"light-0": {
+			"value": "#d8dee9",
+			"filePath": "./tokens/color.cjs",
+			"isSource": true,
+			"original": {
+				"value": "hsl(218, 27%, 88%)"
+			},
+			"name": "ColorLight0",
+			"attributes": {
+				"category": "color",
+				"type": "light-0"
+			},
+			"path": ["color", "light-0"]
+		},
+		"light-1": {
+			"value": "#e5e9f0",
+			"filePath": "./tokens/color.cjs",
+			"isSource": true,
+			"original": {
+				"value": "hsl(218, 27%, 92%)"
+			},
+			"name": "ColorLight1",
+			"attributes": {
+				"category": "color",
+				"type": "light-1"
+			},
+			"path": ["color", "light-1"]
+		},
+		"light-2": {
+			"value": "#eceff4",
+			"filePath": "./tokens/color.cjs",
+			"isSource": true,
+			"original": {
+				"value": "hsl(218, 27%, 94%)"
+			},
+			"name": "ColorLight2",
+			"attributes": {
+				"category": "color",
+				"type": "light-2"
+			},
+			"path": ["color", "light-2"]
+		},
+		"grey-1": {
+			"value": "#70757e",
+			"filePath": "./tokens/color.cjs",
+			"isSource": true,
+			"original": {
+				"value": "hsl(220, 6%, 46.7%)"
+			},
+			"name": "ColorGrey1",
+			"attributes": {
+				"category": "color",
+				"type": "grey-1"
+			},
+			"path": ["color", "grey-1"]
+		},
+		"grey-2": {
+			"value": "#93979f",
+			"filePath": "./tokens/color.cjs",
+			"isSource": true,
+			"original": {
+				"value": "hsl(220, 6%, 60%)"
+			},
+			"name": "ColorGrey2",
+			"attributes": {
+				"category": "color",
+				"type": "grey-2"
+			},
+			"path": ["color", "grey-2"]
+		},
+		"grey-3": {
+			"value": "#aeb1b7",
+			"filePath": "./tokens/color.cjs",
+			"isSource": true,
+			"original": {
+				"value": "hsl(220, 6%, 70%)"
+			},
+			"name": "ColorGrey3",
+			"attributes": {
+				"category": "color",
+				"type": "grey-3"
+			},
+			"path": ["color", "grey-3"]
+		},
+		"transparent": {
+			"dark": {
+				"value": "#000000",
+				"filePath": "./tokens/color.cjs",
+				"isSource": true,
+				"original": {
+					"value": "#000c"
+				},
+				"name": "ColorTransparentDark",
+				"attributes": {
+					"category": "color",
+					"type": "transparent",
+					"item": "dark"
+				},
+				"path": ["color", "transparent", "dark"]
+			},
+			"light": {
+				"value": "#ffffff",
+				"filePath": "./tokens/color.cjs",
+				"isSource": true,
+				"original": {
+					"value": "#fffc"
+				},
+				"name": "ColorTransparentLight",
+				"attributes": {
+					"category": "color",
+					"type": "transparent",
+					"item": "light"
+				},
+				"path": ["color", "transparent", "light"]
+			}
+		},
+		"site": {
+			"bg": {
+				"value": "#242932",
+				"filePath": "./tokens/color.cjs",
+				"isSource": true,
+				"original": {
+					"value": "{color.dark-0.value}"
+				},
+				"name": "ColorSiteBg",
+				"attributes": {
+					"category": "color",
+					"type": "site",
+					"item": "bg"
+				},
+				"path": ["color", "site", "bg"]
+			},
+			"text": {
+				"value": "#d8dee9",
+				"filePath": "./tokens/color.cjs",
+				"isSource": true,
+				"original": {
+					"value": "{color.light-0.value}"
+				},
+				"name": "ColorSiteText",
+				"attributes": {
+					"category": "color",
+					"type": "site",
+					"item": "text"
+				},
+				"path": ["color", "site", "text"]
+			}
+		},
+		"content": {
+			"bg": {
+				"value": "#d8dee9",
+				"filePath": "./tokens/color.cjs",
+				"isSource": true,
+				"original": {
+					"value": "{color.light-0.value}"
+				},
+				"name": "ColorContentBg",
+				"attributes": {
+					"category": "color",
+					"type": "content",
+					"item": "bg"
+				},
+				"path": ["color", "content", "bg"]
+			},
+			"text": {
+				"value": "#2e3440",
+				"filePath": "./tokens/color.cjs",
+				"isSource": true,
+				"original": {
+					"value": "{color.dark-1.value}"
+				},
+				"name": "ColorContentText",
+				"attributes": {
+					"category": "color",
+					"type": "content",
+					"item": "text"
+				},
+				"path": ["color", "content", "text"]
+			}
+		},
+		"bg": {
+			"about": {
+				"value": "#be6069",
+				"filePath": "./tokens/color.cjs",
+				"isSource": true,
+				"original": {
+					"value": "hsl(354, 42%, 56%)"
+				},
+				"name": "ColorBgAbout",
+				"attributes": {
+					"category": "color",
+					"type": "bg",
+					"item": "about"
+				},
+				"path": ["color", "bg", "about"]
+			},
+			"projects": {
+				"value": "#d18771",
+				"filePath": "./tokens/color.cjs",
+				"isSource": true,
+				"original": {
+					"value": "hsl(14, 51%, 63%)"
+				},
+				"name": "ColorBgProjects",
+				"attributes": {
+					"category": "color",
+					"type": "bg",
+					"item": "projects"
+				},
+				"path": ["color", "bg", "projects"]
+			},
+			"articles": {
+				"value": "#ebca89",
+				"filePath": "./tokens/color.cjs",
+				"isSource": true,
+				"original": {
+					"value": "hsl(40, 71%, 73%)"
+				},
+				"name": "ColorBgArticles",
+				"attributes": {
+					"category": "color",
+					"type": "bg",
+					"item": "articles"
+				},
+				"path": ["color", "bg", "articles"]
+			},
+			"weeknotes": {
+				"value": "#a4bf8d",
+				"filePath": "./tokens/color.cjs",
+				"isSource": true,
+				"original": {
+					"value": "hsl(92, 28%, 65%)"
+				},
+				"name": "ColorBgWeeknotes",
+				"attributes": {
+					"category": "color",
+					"type": "bg",
+					"item": "weeknotes"
+				},
+				"path": ["color", "bg", "weeknotes"]
+			},
+			"inuse": {
+				"value": "#b48ead",
+				"filePath": "./tokens/color.cjs",
+				"isSource": true,
+				"original": {
+					"value": "hsl(311, 20%, 63%)"
+				},
+				"name": "ColorBgInuse",
+				"attributes": {
+					"category": "color",
+					"type": "bg",
+					"item": "inuse"
+				},
+				"path": ["color", "bg", "inuse"]
+			}
+		},
+		"text": {
+			"about": {
+				"value": "#200d0f",
+				"filePath": "./tokens/color.cjs",
+				"isSource": true,
+				"original": {
+					"value": "hsl(354, 42%, 8.97%)"
+				},
+				"name": "ColorTextAbout",
+				"attributes": {
+					"category": "color",
+					"type": "text",
+					"item": "about"
+				},
+				"path": ["color", "text", "about"]
+			},
+			"projects": {
+				"value": "#50271a",
+				"filePath": "./tokens/color.cjs",
+				"isSource": true,
+				"original": {
+					"value": "hsl(14, 51%, 20.9%)"
+				},
+				"name": "ColorTextProjects",
+				"attributes": {
+					"category": "color",
+					"type": "text",
+					"item": "projects"
+				},
+				"path": ["color", "text", "projects"]
+			},
+			"articles": {
+				"value": "#795815",
+				"filePath": "./tokens/color.cjs",
+				"isSource": true,
+				"original": {
+					"value": "hsl(40, 71%, 27.84%)"
+				},
+				"name": "ColorTextArticles",
+				"attributes": {
+					"category": "color",
+					"type": "text",
+					"item": "articles"
+				},
+				"path": ["color", "text", "articles"]
+			},
+			"weeknotes": {
+				"value": "#3b4e2c",
+				"filePath": "./tokens/color.cjs",
+				"isSource": true,
+				"original": {
+					"value": "hsl(92, 28%, 23.77%)"
+				},
+				"name": "ColorTextWeeknotes",
+				"attributes": {
+					"category": "color",
+					"type": "text",
+					"item": "weeknotes"
+				},
+				"path": ["color", "text", "weeknotes"]
+			},
+			"inuse": {
+				"value": "#412b3d",
+				"filePath": "./tokens/color.cjs",
+				"isSource": true,
+				"original": {
+					"value": "hsl(311, 20%, 21.32%)"
+				},
+				"name": "ColorTextInuse",
+				"attributes": {
+					"category": "color",
+					"type": "text",
+					"item": "inuse"
+				},
+				"path": ["color", "text", "inuse"]
+			}
+		}
+	},
+	"font": {
+		"family": {
+			"base": {
+				"value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+				"filePath": "./tokens/font.json",
+				"isSource": true,
+				"original": {
+					"value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif"
+				},
+				"name": "FontFamilyBase",
+				"attributes": {
+					"category": "font",
+					"type": "family",
+					"item": "base"
+				},
+				"path": ["font", "family", "base"]
+			},
+			"code": {
+				"value": "source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace",
+				"filePath": "./tokens/font.json",
+				"isSource": true,
+				"original": {
+					"value": "source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace"
+				},
+				"name": "FontFamilyCode",
+				"attributes": {
+					"category": "font",
+					"type": "family",
+					"item": "code"
+				},
+				"path": ["font", "family", "code"]
+			}
+		}
+	},
+	"step-02": {
+		"value": "clamp(0.64rem, calc(0.72rem + -0.11vw), 0.69rem)",
+		"filePath": "./tokens/size.cjs",
+		"isSource": true,
+		"original": {
+			"value": "clamp(0.64rem, calc(0.72rem + -0.11vw), 0.69rem)"
+		},
+		"name": "Step02",
+		"attributes": {
+			"category": "step-02"
+		},
+		"path": ["step-02"]
+	},
+	"step-01": {
+		"value": "clamp(0.8rem, calc(0.85rem + -0.06vw), 0.83rem)",
+		"filePath": "./tokens/size.cjs",
+		"isSource": true,
+		"original": {
+			"value": "clamp(0.8rem, calc(0.85rem + -0.06vw), 0.83rem)"
+		},
+		"name": "Step01",
+		"attributes": {
+			"category": "step-01"
+		},
+		"path": ["step-01"]
+	},
+	"step-0": {
+		"value": "1rem",
+		"filePath": "./tokens/size.cjs",
+		"isSource": true,
+		"original": {
+			"value": "1rem"
+		},
+		"name": "Step0",
+		"attributes": {
+			"category": "step-0"
+		},
+		"path": ["step-0"]
+	},
+	"step-1": {
+		"value": "clamp(1.2rem, calc(1.18rem + 0.1vw), 1.25rem)",
+		"filePath": "./tokens/size.cjs",
+		"isSource": true,
+		"original": {
+			"value": "clamp(1.2rem, calc(1.18rem + 0.1vw), 1.25rem)"
+		},
+		"name": "Step1",
+		"attributes": {
+			"category": "step-1"
+		},
+		"path": ["step-1"]
+	},
+	"step-2": {
+		"value": "clamp(1.44rem, calc(1.39rem + 0.24vw), 1.56rem)",
+		"filePath": "./tokens/size.cjs",
+		"isSource": true,
+		"original": {
+			"value": "clamp(1.44rem, calc(1.39rem + 0.24vw), 1.56rem)"
+		},
+		"name": "Step2",
+		"attributes": {
+			"category": "step-2"
+		},
+		"path": ["step-2"]
+	},
+	"step-3": {
+		"value": "clamp(1.73rem, calc(1.64rem + 0.44vw), 1.95rem)",
+		"filePath": "./tokens/size.cjs",
+		"isSource": true,
+		"original": {
+			"value": "clamp(1.73rem, calc(1.64rem + 0.44vw), 1.95rem)"
+		},
+		"name": "Step3",
+		"attributes": {
+			"category": "step-3"
+		},
+		"path": ["step-3"]
+	},
+	"step-4": {
+		"value": "clamp(2.07rem, calc(1.93rem + 0.72vw), 2.44rem)",
+		"filePath": "./tokens/size.cjs",
+		"isSource": true,
+		"original": {
+			"value": "clamp(2.07rem, calc(1.93rem + 0.72vw), 2.44rem)"
+		},
+		"name": "Step4",
+		"attributes": {
+			"category": "step-4"
+		},
+		"path": ["step-4"]
+	},
+	"step-5": {
+		"value": "clamp(2.49rem, calc(2.27rem + 1.1vw), 3.05rem)",
+		"filePath": "./tokens/size.cjs",
+		"isSource": true,
+		"original": {
+			"value": "clamp(2.49rem, calc(2.27rem + 1.1vw), 3.05rem)"
+		},
+		"name": "Step5",
+		"attributes": {
+			"category": "step-5"
+		},
+		"path": ["step-5"]
+	},
+	"width": {
+		"nav": {
+			"value": "20ch",
+			"filePath": "./tokens/size.cjs",
+			"isSource": true,
+			"original": {
+				"value": "20ch"
+			},
+			"name": "WidthNav",
+			"attributes": {
+				"category": "width",
+				"type": "nav"
+			},
+			"path": ["width", "nav"]
+		},
+		"content": {
+			"value": "60ch",
+			"filePath": "./tokens/size.cjs",
+			"isSource": true,
+			"original": {
+				"value": "60ch"
+			},
+			"name": "WidthContent",
+			"attributes": {
+				"category": "width",
+				"type": "content"
+			},
+			"path": ["width", "content"]
+		}
+	},
+	"viewport": {
+		"medium": {
+			"value": "80ch",
+			"filePath": "./tokens/size.cjs",
+			"isSource": true,
+			"original": {
+				"value": "80ch"
+			},
+			"name": "ViewportMedium",
+			"attributes": {
+				"category": "viewport",
+				"type": "medium"
+			},
+			"path": ["viewport", "medium"]
+		},
+		"large": {
+			"value": "100ch",
+			"filePath": "./tokens/size.cjs",
+			"isSource": true,
+			"original": {
+				"value": "100ch"
+			},
+			"name": "ViewportLarge",
+			"attributes": {
+				"category": "viewport",
+				"type": "large"
+			},
+			"path": ["viewport", "large"]
+		}
+	},
+	"size": {
+		"clip": {
+			"value": "1.5rem",
+			"filePath": "./tokens/size.cjs",
+			"isSource": true,
+			"original": {
+				"value": 1.5
+			},
+			"name": "SizeClip",
+			"attributes": {
+				"category": "size",
+				"type": "clip"
+			},
+			"path": ["size", "clip"]
+		},
+		"icon": {
+			"value": "1.5rem",
+			"filePath": "./tokens/size.cjs",
+			"isSource": true,
+			"original": {
+				"value": 1.5
+			},
+			"name": "SizeIcon",
+			"attributes": {
+				"category": "size",
+				"type": "icon"
+			},
+			"path": ["size", "icon"]
+		},
+		"text": {}
+	}
 }
