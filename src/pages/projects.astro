@@ -31,7 +31,7 @@ pages.sort((a, b) => {
 
 const data: Project[] = [];
 for (const page of pages) {
-	console.log(page.frontmatter.title, page.frontmatter.date, page.url);
+	// console.log(page.frontmatter.title, page.frontmatter.date, page.url);
 
 	const pageUrl = page.url as keyof typeof projects;
 	data.push({ pageUrl, ...page.frontmatter, ...projects[pageUrl] });

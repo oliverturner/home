@@ -16,14 +16,14 @@ const props = {
 				<span>Turner</span>
 			</h1>
 
-			<Link class="link clipped--br" href="/about">
+			<Link href="/about">
 				<Fragment slot="subtitle">
 					Hello, I'm Oliver. <br />Pleased to meet you!
 				</Fragment>
 				<Fragment slot="title">An introduction</Fragment>
 			</Link>
 
-			<Link class="link clipped--br" href="/projects">
+			<Link href="/projects">
 				<Fragment slot="subtitle">
 					Notes on the <br />process of building
 				</Fragment>
@@ -109,7 +109,7 @@ const props = {
 
 		@media (--mq-medium) {
 			padding: dt("step-0");
-			font-weight: 300;
+			font-weight: 400;
 			font-size: 200%;
 		}
 
@@ -119,6 +119,7 @@ const props = {
 			aspect-ratio: 1;
 			line-height: 1.2;
 			font-size: 300%;
+			font-weight: 300;
 
 			& span {
 				margin-bottom: -0.3rem;

@@ -1,9 +1,8 @@
 ---
 import Layout from "../layouts/content.astro";
 
-const title = "Articles";
-const description = "Thoughts on development & the web";
-
+const title = "In use";
+const description = "A list of things I use";
 ---
 
 <Layout title={title} description={description} />
@@ -12,7 +11,7 @@ const description = "Thoughts on development & the web";
 	@design-tokens url("../styles/generated-tokens.json") format("style-dictionary3");
 
 	:root {
-		--content-header-bg: dt("color.bg.articles");
-		--content-header-text: dt("color.text.articles");
+		--content-header-bg: dt("color.bg.inuse");
+		--content-header-text: dt("color.text.inuse");
 	}
 </style>

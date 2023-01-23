@@ -11,9 +11,11 @@ const { href } = Astro.props;
 	@design-tokens url("../styles/generated-tokens.json") format("style-dictionary3");
 
 	.link {
+		--gap: dt("step-1");
+
 		display: grid;
 		align-content: end;
-		gap: dt("step-1");
+		gap: var(--gap);
 
 		padding: dt("step-0");
 		line-height: 1;
@@ -58,8 +60,8 @@ const { href } = Astro.props;
 		}
 
 		& span {
-			--offset-plus: 6px;
-			--offset-minus: -6px;
+			--offset-plus: 8px;
+			--offset-minus: -8px;
 
 			padding: 6px 0;
 			background-color: var(--bg);
@@ -68,13 +70,19 @@ const { href } = Astro.props;
 		}
 
 		@media (--mq-large) {
+			--border: calc(100% - 2rem);
+
 			aspect-ratio: 1;
+
+			background-size: var(--border) var(--border);
+			background-position: center;
+			background-repeat: no-repeat;
 		}
 	}
 
 	.subtitle {
 		font-size: 1.45rem;
-		line-height: 1.35;
+		line-height: 1.5;
 	}
 
 	.title {

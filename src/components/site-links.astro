@@ -1,14 +1,20 @@
 ---
 import links from "../data/links.json";
 
-const currentUrl = new URL(Astro.request.url).pathname;
+const { pathname } = Astro.url;
+const activeCategory = pathname.split("/").at(1);
+
+function getClassName(url: string) {
+	const urlCategory = url.split("/").at(1);
+	const isActive = urlCategory === activeCategory;
+	return isActive ? "title is-active" : "title";
+}
 ---
 
 {
 	links.map(({ url, label }) => {
-		const cls = url === currentUrl ? "title is-active" : "title";
 		return (
-			<a class={cls} href={url?.length ? url : "/"}>
+			<a class={getClassName(url)} href={url?.length ? url : "/"}>
 				{label}
 			</a>
 		);

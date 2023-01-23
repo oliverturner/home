@@ -3,6 +3,12 @@ import Base from "../components/base.astro";
 import NavPage from "../components/nav-page.astro";
 import ContentFooter from "../components/content-footer.astro";
 
+const { pathname } = Astro.url;
+const category = pathname.split("/").at(1);
+const headerCls = `header--${category}`;
+
+console.log({ pathname, category, headerCls });
+
 export interface Props {
 	content: {
 		title: string;
@@ -27,12 +33,12 @@ const {
 				)
 			}
 
-			<header>
+			<header class={headerCls}>
 				<h1 class="title">{title}</h1>
 				{pubDate && <time>{pubDate}</time>}
 				{
 					updatedDate && (
-						<p>
+						<p class="subtitle">
 							Last updated: <time>{updatedDate}</time>
 						</p>
 					)
@@ -47,11 +53,13 @@ const {
 </Base>
 
 <style>
+	@design-tokens url("../styles/generated-tokens.json") format("style-dictionary3");
+
 	article {
 		display: grid;
 		grid-template-rows: auto 1fr auto;
 
-		height: 100%;
+		min-height: 100%;
 		background-color: var(--colour-content-bg);
 		color: var(--colour-content-text);
 	}
@@ -64,11 +72,33 @@ const {
 	}
 
 	header {
+		&.header--about {
+			--bg: dt("color.bg.about");
+			--text: dt("color.text.about");
+		}
+		&.header--projects {
+			--bg: dt("color.bg.projects");
+			--text: dt("color.text.projects");
+		}
+		&.header--articles {
+			--bg: dt("color.bg.articles");
+			--text: dt("color.text.articles");
+		}
+		&.header--weeknotes {
+			--bg: dt("color.bg.weeknotes");
+			--text: dt("color.text.weeknotes");
+		}
+		&.header--inuse {
+			--bg: dt("color.bg.inuse");
+			--text: dt("color.text.inuse");
+		}
+
 		padding: var(--step-0);
+		background-color: var(--bg);
+		color: var(--text);
 
 		& p {
 			margin: 0;
-			font-size: var(--step--1);
 		}
 	}
 
@@ -77,10 +107,5 @@ const {
 	}
 	hr {
 		margin: 0;
-	}
-
-	.copy {
-		padding: var(--step-2) var(--step-1);
-		background-color: var(--nord-light-1);
 	}
 </style>

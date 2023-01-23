@@ -2,37 +2,10 @@
 import Layout from "../layouts/content.astro";
 
 const title = "Weeknotes";
-const description =
-	"Musings on the web, design, and development. Occasionally, foxes.";
-
-// Use Astro.glob() to fetch all posts, and then sort them by date.
-const posts = (await Astro.glob("./weeknotes/*.{md,mdx}")).sort(
-	(a, b) =>
-		new Date(b.frontmatter.pubDate).valueOf() -
-		new Date(a.frontmatter.pubDate).valueOf()
-);
+const description = "Tracking the personal & professional";
 ---
 
-<Layout title={title} description={description}>
-	<h1 slot="header">Weeknotes</h1>
-
-	<ul>
-		{
-			posts.map((post) => (
-				<li>
-					<time datetime={post.frontmatter.pubDate}>
-						{new Date(post.frontmatter.pubDate).toLocaleDateString("en-us", {
-							year: "numeric",
-							month: "short",
-							day: "numeric",
-						})}
-					</time>
-					<a href={post.url}>{post.frontmatter.title}</a>
-				</li>
-			))
-		}
-	</ul>
-</Layout>
+<Layout title={title} description={description} />
 
 <style>
 	@design-tokens url("../styles/generated-tokens.json") format("style-dictionary3");
@@ -40,7 +13,5 @@ const posts = (await Astro.glob("./weeknotes/*.{md,mdx}")).sort(
 	:root {
 		--content-header-bg: dt("color.bg.weeknotes");
 		--content-header-text: dt("color.text.weeknotes");
-
-		/* --page-w: 100%; */
 	}
 </style>
