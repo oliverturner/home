@@ -12,8 +12,7 @@ const props = {
 	<div class="page">
 		<nav>
 			<h1 class="logo clipped--br">
-				<span>Oliver</span>
-				<span>Turner</span>
+				<span>Oliver Turner</span>
 			</h1>
 
 			<Link href="/about">
@@ -74,7 +73,7 @@ const props = {
 		--gap: dt("step-0");
 
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
 		gap: var(--gap);
 
 		box-sizing: border-box;
@@ -85,41 +84,39 @@ const props = {
 	}
 
 	.logo {
-		--bg: #000;
-		--colour: dt("color.grey-1");
+		--gap: dt("step-0");
 
 		display: grid;
 		grid-template-columns: auto auto;
-		justify-content: start;
-		align-content: end;
-		gap: dt("step-02");
+		place-content: end start;
 
 		padding: var(--gap);
-		padding-bottom: dt("step-02");
-		line-height: 1;
-		font-size: 130%;
-		font-weight: 700;
-		letter-spacing: 4px;
+		background: #000;
+		color: dt("color.grey-1");
 
-		background: var(--bg);
-		color: var(--colour);
-
-		@media (--mq-medium) {
-			padding: dt("step-0");
+		& span {
+			font-size: 1.75rem;
 			font-weight: 400;
-			font-size: 200%;
+			letter-spacing: 4px;
+			margin-bottom: -0.6rem;
 		}
 
-		@media (--mq-large) {
-			grid-template-columns: 1fr;
+		@media (--mq-medium) {
+			& span {
+				font-size: 2.3rem;
+				font-weight: 300;
+				margin-bottom: -0.8rem;
+			}
+		}
+
+		@media (min-width: 889px) {
+			--gap: dt("step-1");
 
 			aspect-ratio: 1;
-			line-height: 1.2;
-			font-size: 300%;
-			font-weight: 300;
 
 			& span {
-				margin-bottom: -0.3rem;
+				font-size: 2.65rem;
+				margin-bottom: -1rem;
 			}
 		}
 	}

@@ -59,17 +59,7 @@ const { href } = Astro.props;
 			margin: 0;
 		}
 
-		& span {
-			--offset-plus: 8px;
-			--offset-minus: -8px;
-
-			padding: 6px 0;
-			background-color: var(--bg);
-			filter: drop-shadow(var(--offset-minus) 0 0 var(--bg))
-				drop-shadow(var(--offset-plus) 0 0 var(--bg));
-		}
-
-		@media (--mq-large) {
+		@media (min-width: 889px) {
 			--border: calc(100% - 2rem);
 
 			aspect-ratio: 1;
@@ -80,15 +70,32 @@ const { href } = Astro.props;
 		}
 	}
 
+	:where(.subtitle, .title) {
+		--offset-plus: 8px;
+		--offset-minus: -8px;
+
+		background-color: var(--bg);
+		filter: drop-shadow(var(--offset-minus) 0 0 var(--bg))
+			drop-shadow(var(--offset-plus) 0 0 var(--bg));
+	}
+
 	.subtitle {
-		font-size: 1.45rem;
-		line-height: 1.5;
+		padding: 2px 0;
+		font-size: 1.3rem;
+		line-height: 1.4;
+
+		@media (--mq-large) {
+			padding: 4px 0;
+			font-size: 1.45rem;
+			line-height: 1.5;
+		}
 	}
 
 	.title {
+		padding: 12px 0 6px;
 		font-size: 1.25rem;
 		font-weight: 700;
 		letter-spacing: 2px;
-		line-height: 1.6;
+		line-height: 1.2;
 	}
 </style>
