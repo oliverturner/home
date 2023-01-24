@@ -24,7 +24,7 @@
 		background-color: #000;
 		color: dt("color.grey-3");
 
-		@media (--mq-max-medium) {
+		@media (max-width: dt("viewport.medium")) {
 			grid-area: content;
 
 			position: fixed;
@@ -40,7 +40,7 @@
 	.nav__btn {
 		display: none;
 
-		@media (--mq-max-medium) {
+		@media (max-width: dt("viewport.medium")) {
 			--clip-size: 0.75rem;
 			--clip-bottom-left: polygon(
 				0 0,

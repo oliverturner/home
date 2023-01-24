@@ -50,7 +50,7 @@ const { project } = Astro.props;
 		background-color: dt("color.content.bg");
 		color: dt("color.content.text");
 
-		@media (--mq-medium) {
+		@media (min-width: dt("viewport.medium")) {
 			grid-template-columns: 200px 1fr max-content;
 			grid-template-rows: auto 1fr;
 			grid-template-areas:
@@ -75,7 +75,7 @@ const { project } = Astro.props;
 		aspect-ratio: 1;
 		object-fit: cover;
 
-		@media (--mq-max-medium) {
+		@media (max-width: dt("viewport.medium")) {
 			display: none;
 		}
 	}
