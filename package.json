@@ -9,11 +9,11 @@
 	},
 	"devDependencies": {
 		"@csstools/postcss-design-tokens": "^1.2.0",
-		"@netlify/plugin-lighthouse": "4.0.5",
+		"@netlify/plugin-lighthouse": "4.0.6",
 		"htm": "^3.1.1",
-		"lefthook": "1.2.7",
+		"lefthook": "1.2.8",
 		"npm-run-all": "^4.1.5",
-		"open-props": "^1.5.3",
+		"open-props": "^1.5.5",
 		"postcss-custom-media": "8.0.2",
 		"postcss-jit-props": "^1.0.9",
 		"postcss-lab-function": "4.2.1",
@@ -23,10 +23,10 @@
 		"style-dictionary": "^3.7.2"
 	},
 	"dependencies": {
-		"@astrojs/mdx": "0.14.0",
-		"@astrojs/rss": "2.0.0",
+		"@astrojs/mdx": "0.15.0",
+		"@astrojs/rss": "2.1.0",
 		"@astrojs/sitemap": "1.0.0",
-		"astro": "^2.0.0-beta.2"
+		"astro": "^2.0.0"
 	},
 	"scripts": {
 		"lint:format": "prettier --write src",
