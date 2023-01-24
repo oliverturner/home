@@ -80,9 +80,15 @@ const { href } = Astro.props;
 	}
 
 	.subtitle {
-		padding: 4px 0;
-		font-size: 1.45rem;
-		line-height: 1.5;
+		padding: 2px 0;
+		font-size: 1.3rem;
+		line-height: 1.4;
+
+		@media (--mq-large) {
+			padding: 4px 0;
+			font-size: 1.45rem;
+			line-height: 1.5;
+		}
 	}
 
 	.title {
