@@ -27,7 +27,7 @@ import Nav from "./nav.astro";
 		max-width: var(--page-w, dt("viewport.medium"));
 		margin: auto;
 
-		@media (--mq-medium) {
+		@media (min-width: dt("viewport.medium")) {
 			justify-content: center;
 
 			grid-template-columns: 1fr dt("width.nav");

@@ -65,7 +65,7 @@ const props = {
 		min-height: 100vh;
 		min-height: 100svh;
 
-		@media (--mq-medium) {
+		@media (min-width: dt("viewport.medium")) {
 			align-items: center;
 		}
 	}
@@ -101,7 +101,7 @@ const props = {
 			margin-bottom: -0.6rem;
 		}
 
-		@media (--mq-medium) {
+		@media (min-width: dt("viewport.medium")) {
 			& span {
 				font-size: 2.3rem;
 				font-weight: 300;
