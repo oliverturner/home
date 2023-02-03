@@ -3,7 +3,11 @@ import type { BaseProps } from "../types";
 
 export type Props = BaseProps;
 
-const { title, description, image = "/placeholder-social.jpg" } = Astro.props;
+const {
+	title,
+	description,
+	image = "/images/placeholder-social.jpg",
+} = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -26,7 +30,14 @@ const { title, description, image = "/placeholder-social.jpg" } = Astro.props;
 <link rel="me" href="https://toot.cafe/@oliverturner" />
 <link rel="me" href="https://github.com/oliverturner" />
 
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<!-- Favicon -->
+<meta name="theme-color" content="#ffffff" />
+<link rel="icon" href="/favicon.svg" />
+<link rel="mask-icon" href="/favicon-mask.svg" color="#000000" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.json" />
+
+<!-- RSS -->
 <link
 	rel="alternate"
 	type="application/rss+xml"
