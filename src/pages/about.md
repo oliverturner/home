@@ -9,7 +9,7 @@ Hi! I'm Oliver. I work at [The Financial Times](https://ft.com) on the Advertisi
 
 I got into software development (after deciding I didn't want to be a barrister) in about 2007 because I wanted to help make the web more accessible; fifteen years later that aspiration continues to guide & inspire. From designing and documenting Cloud architecture and scalable APIs, to authoring maintainable CSS and accessible markup, and from thinking about testable systems to observability, I love building for the web.
 
-![Portrait of Oliver](/portrait.avif)
+![Portrait of Oliver](/images/portrait.avif)
 
 In my free time I co-organise [London CSS](https://londoncss.dev), coach at [Codebar](https://codebar.io), and teach myself new tricks by building projects with tools, frameworks and technologies I find interesting. You can see a list of some of the things I've built on [my projects page](/projects).
 
