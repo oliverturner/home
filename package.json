@@ -4,8 +4,8 @@
 	"version": "0.0.1",
 	"private": true,
 	"volta": {
-		"node": "18.12.1",
-		"npm": "9.1.2"
+		"node": "18.14.0",
+		"npm": "9.4.1"
 	},
 	"devDependencies": {
 		"@csstools/postcss-design-tokens": "^2.0.0",
