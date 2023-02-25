@@ -1,14 +1,17 @@
 ---
 import Base from "../components/base.astro";
 import Link from "../components/home-link.astro";
+import GHLink from "../components/gh-corner.astro";
 
 const props = {
 	title: "Home",
 	description: "Oliver Turner's personal website",
+	image: "/favicon.svg",
 };
 ---
 
 <Base {...props}>
+	<GHLink repo="home" />
 	<div class="page">
 		<nav>
 			<h1 class="logo clipped--br">

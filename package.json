@@ -4,27 +4,27 @@
 	"version": "0.0.1",
 	"private": true,
 	"volta": {
-		"node": "18.12.1",
-		"npm": "9.1.2"
+		"node": "18.14.0",
+		"npm": "9.4.1"
 	},
 	"devDependencies": {
-		"@csstools/postcss-design-tokens": "^2.0.0",
-		"@netlify/plugin-lighthouse": "4.0.6",
+		"@csstools/postcss-design-tokens": "^2.0.3",
+		"@netlify/plugin-lighthouse": "4.0.7",
 		"htm": "^3.1.1",
-		"lefthook": "1.2.8",
+		"lefthook": "1.3.0",
 		"npm-run-all": "^4.1.5",
 		"open-props": "^1.5.5",
-		"postcss-jit-props": "^1.0.9",
-		"postcss-nesting": "11.0.0",
-		"prettier": "2.8.3",
-		"prettier-plugin-astro": "0.7.2",
+		"postcss-jit-props": "^1.0.11",
+		"postcss-nesting": "11.2.1",
+		"prettier": "2.8.4",
+		"prettier-plugin-astro": "0.8.0",
 		"style-dictionary": "^3.7.2"
 	},
 	"dependencies": {
-		"@astrojs/mdx": "0.15.0",
-		"@astrojs/rss": "2.1.0",
-		"@astrojs/sitemap": "1.0.0",
-		"astro": "^2.0.0"
+		"@astrojs/mdx": "0.17.2",
+		"@astrojs/rss": "2.1.1",
+		"@astrojs/sitemap": "1.1.0",
+		"astro": "2.0.15"
 	},
 	"scripts": {
 		"lint:format": "prettier --write src",
