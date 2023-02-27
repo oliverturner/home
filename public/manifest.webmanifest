@@ -7,5 +7,5 @@
 	],
 	"background_color": "#000",
 	"theme_color": "#000",
-	"display": "fullscreen"
+	"display": "browser"
 }
