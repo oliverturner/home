@@ -24,7 +24,7 @@ import Nav from "./nav.astro";
 		overflow: hidden;
 		height: 100vh;
 		height: 100svh;
-		max-width: var(--page-w, dt("viewport.medium"));
+		max-width: var(--page-w, dt("viewport.large"));
 		margin: auto;
 
 		@media (min-width: dt("viewport.medium")) {
@@ -32,6 +32,7 @@ import Nav from "./nav.astro";
 
 			grid-template-columns: 1fr dt("width.nav");
 			grid-template-areas: "content nav";
+			gap: 0;
 		}
 	}
 
@@ -40,5 +41,9 @@ import Nav from "./nav.astro";
 
 		overflow-y: auto;
 		min-height: 100%;
+
+		& .copy {
+			max-width: dt("width.content");
+		}
 	}
 </style>

@@ -21,16 +21,19 @@ for = "/*"
 [headers.values]
 # Validate CSP on https://securityheaders.com/?q=oliverturner.cloud&followRedirects=on
 Content-Security-Policy = '''
-      default-src 'self';
-      script-src  'self' https://*.netlify.app 'unsafe-inline';
-      style-src   'self' https://*.netlify.app 'unsafe-inline';
-      object-src  'self' https://*.netlify.app;
-      frame-src   'self' https://*.netlify.com;
-    '''
+  default-src 'self';
+  script-src  'self' https://*.netlify.app 'unsafe-inline';
+  style-src   'self' https://*.netlify.app 'unsafe-inline';
+  object-src  'self' https://*.netlify.app;
+  frame-src   'self' https://*.netlify.com;
+'''
 Referrer-Policy = "same-origin"
 X-Content-Type-Options = "nosniff"
 X-Frame-Options = "DENY"
 X-XSS-Protection = "1; mode=block"
+Permissions-Policy = '''
+  geolocation=(), microphone=()
+'''
 
 # Fediverse-related redirects
 [[redirects]]

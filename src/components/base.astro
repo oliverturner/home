@@ -1,8 +1,10 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+
 import BaseMeta from "../components/base-meta.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
-
 import "../styles/global.css";
+
 import BaseAssets from "./base-assets.astro";
 
 export type Props = {
@@ -14,15 +16,14 @@ export const { title = SITE_TITLE, description = SITE_DESCRIPTION } =
 	Astro.props || {};
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
-		<title>{title}</title>
-
-		<BaseMeta title={title} description={description}>
+		<BaseMeta {title} {description}>
 			<slot name="meta" />
 		</BaseMeta>
 		<BaseAssets />
+		<ViewTransitions />
 	</head>
 	<body>
 		<slot />
