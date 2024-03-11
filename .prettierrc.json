@@ -1,3 +1,18 @@
 {
-  "useTabs": true
+	"plugins": ["prettier-plugin-astro"],
+	"useTabs": true,
+	"overrides": [
+		{
+			"files": "package.json",
+			"options": {
+				"useTabs": false
+			}
+		},
+		{
+			"files": "*.astro",
+			"options": {
+				"parser": "astro"
+			}
+		}
+	]
 }
