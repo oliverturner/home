@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "volta": {
-    "node": "20.5.1"
+    "node": "24.13.1"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.6",
