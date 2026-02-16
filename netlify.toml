@@ -1,6 +1,4 @@
 [[plugins]]
-# Installs the Lighthouse Build Plugin for all deploy contexts
-package = "@netlify/plugin-lighthouse"
 
 # Fail build when a category is below a threshold
 [plugins.inputs.thresholds]
