@@ -4,7 +4,7 @@ pre-push:
   commands:
     packages-audit:
       tags: frontend security
-      run: npm audit
+      run: npm audit --audit-level=high
 
 pre-commit:
   parallel: true
@@ -12,6 +12,3 @@ pre-commit:
     format:
       glob: "*.{css,js,ts,md,json,astro}"
       run: npx prettier --write {staged_files}
-#  scripts:
-#    "hello.js":
-#      runner: node
