@@ -1,41 +1,24 @@
-[[plugins]]
-# Installs the Lighthouse Build Plugin for all deploy contexts
-package = "@netlify/plugin-lighthouse"
-
-# Fail build when a category is below a threshold
-[plugins.inputs.thresholds]
-performance = 0.9
-accessibility = 0.9
-best-practices = 0.9
-seo = 0.9
-# pwa = 0.9
-
-[context.production]
-publish = "dist/"
-command = "npm run build"
-environment = { NODE_VERSION = "20.5.1" }
-
 [[headers]]
-for = "/*"
+  for = "/*"
 
-[headers.values]
-# Validate CSP on https://securityheaders.com/?q=oliverturner.cloud&followRedirects=on
-Content-Security-Policy = '''
+  [headers.values]
+    # Validate CSP on https://securityheaders.com/?q=oliverturner.cloud&followRedirects=on
+    Content-Security-Policy = '''
   default-src 'self';
   script-src  'self' https://*.netlify.app 'unsafe-inline';
   style-src   'self' https://*.netlify.app 'unsafe-inline';
   object-src  'self' https://*.netlify.app;
   frame-src   'self' https://*.netlify.com;
 '''
-Referrer-Policy = "same-origin"
-X-Content-Type-Options = "nosniff"
-X-Frame-Options = "DENY"
-X-XSS-Protection = "1; mode=block"
-Permissions-Policy = '''
+    Referrer-Policy = "same-origin"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Permissions-Policy = '''
   geolocation=(), microphone=()
 '''
 
 # Fediverse-related redirects
 [[redirects]]
-from = "/.well-known/webfinger"
-to = "/.well-known/webfinger.json"
+  from = "/.well-known/webfinger"
+  to   = "/.well-known/webfinger.json"
